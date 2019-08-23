@@ -4,4 +4,5 @@ from django.contrib import admin
 from django.contrib import admin
 from .models import Vaccine_Compare
 
+# show the data
 admin.site.register(Vaccine_Compare)
