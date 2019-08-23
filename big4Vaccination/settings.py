@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'cool_vaccine', # here is the app's name
+    'cool_vaccine.apps.CoolVaccineConfig', # here is the app's name
 ]
 
 MIDDLEWARE = [

@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="09912ede-26ad-43b1-a602-949de0b5fcc2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/big4Vaccination/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/big4Vaccination/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cool_vaccine/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/cool_vaccine/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cool_vaccine/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/cool_vaccine/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
@@ -43,6 +43,7 @@
   </component>
   <component name="ProjectId" id="1Pjm0qmTme5BjudfxQCgFNvxluo" />
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -99,6 +100,7 @@
       <workItem from="1566395684949" duration="3609000" />
       <workItem from="1566399427649" duration="450000" />
       <workItem from="1566429475701" duration="6018000" />
+      <workItem from="1566549021722" duration="3908000" />
     </task>
     <servers />
   </component>
