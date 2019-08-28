@@ -10593,9 +10593,26 @@ hr.light {
   border: none;
   border-radius: 10rem;
 }
-
+.card-body {
+	margin-bottom: 1.5rem !important;
+}
 .page-section {
   padding: 8rem 0;
+}
+.btn-link.faq {
+	background-color: #000;
+	border-color: #000;
+}
+.faq {
+	background-color: #000;
+	border-color: #000;
+}
+
+.jumbotron {
+  background-color:  #563d7c;
+  border: 1px solid #563d7c;
+  padding: 1rem;
+  border-radius: 0;
 }
 
 #mainNav {
@@ -10753,5 +10770,7 @@ header.masthead h1 {
 }
 
 #portfolio .container-fluid .portfolio-box:hover .portfolio-box-caption {
-  opacity: 1;
-}
+  opacity: 1; 
+  }
+  
+  
