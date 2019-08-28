@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>immunisation</title>
+  <title>Immunisation</title>
 
   <!-- Font Awesome Icons -->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -30,17 +30,17 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="/index.html">Vaccination</a>
+      <a class="navbar-brand js-scroll-trigger" href="index.html">Vaccination</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto my-2 my-lg-0">
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="/about_us.html">About us</a>
+            <a class="nav-link js-scroll-trigger" href="about_us.html">About us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="faq.html">What's know</a>
+            <a class="nav-link js-scroll-trigger" href="faq.html">FAQ</a>
           </li>
           <!-- <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
@@ -72,8 +72,11 @@
   <!-- Services Section -->
     <!-- Profile -->
     <!-- card1-->
-
-    <div class="profile-card">
+	<br> 
+	<br>
+   <div class="row text-center">
+  <div class="col-md-4">
+  <div class="profile-card">
         <div class="profile-cover">
             <div class="menu-container">
                 <a class="list-icon" title="Expand" href="javascript:void(0);"></a>
@@ -117,8 +120,10 @@
             <div class="clear"></div>
         </div>
     </div>
-
-    <div class="profile-card">
+  </div>
+  <div class="col-md-4">
+  
+  <div class="profile-card">
         <div class="profile-cover">
             <div class="menu-container">
                 <a class="list-icon" title="Expand" href="javascript:void(0);"></a>
@@ -162,8 +167,12 @@
             <div class="clear"></div>
         </div>
     </div>
-    
-    <div class="profile-card">
+  </div>
+  </div>
+  
+  <div class="row text-center">
+  <div class="col-md-4">
+  <div class="profile-card">
         <div class="profile-cover">
             <div class="menu-container">
                 <a class="list-icon" title="Expand" href="javascript:void(0);"></a>
@@ -207,8 +216,9 @@
             <div class="clear"></div>
         </div>
     </div>
-    
-    <div class="profile-card">
+  </div>
+  <div class="col-md-4">
+  <div class="profile-card">
         <div class="profile-cover">
             <div class="menu-container">
                 <a class="list-icon" title="Expand" href="javascript:void(0);"></a>
@@ -251,9 +261,34 @@
             <div class="clear"></div>
         </div>
     </div>
-
+  </div>
+   </div>
+	
+    
+    
+    
   <!-- Footer -->
-
+<footer id="contact">
+        <div class="container-fluid padding bg-white">
+          <div class="row text-center">
+            <div class="col-md-8">
+              <!-- <img src="img/w3newbie.png"> -->
+              <hr class="light">
+              <h4 class="text-uppercase font-weight-bold">We provide general information only.</h4> 
+              <h4 class="text-uppercase font-weight-bold">Please see a healthcare professional for medical advice.</h4>
+            </div>
+            <div class="col-md-4">
+                <hr class="light">
+                <h4 class="text-uppercase font-weight-bold">Let's Get In Touch</h4>
+                <h4 class="text-uppercase font-weight-bold">+7 777 55-99</h4>
+            </div>
+            <div class="col-12">
+              <hr class="light-100">
+              <h5>&copy;monash.edu</h5>
+            </div>
+          </div>
+        </div>
+      </footer>
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -277,16 +312,17 @@ h1 { font-size: 18px; }
 h6 { font-size: 13px; }
 
 .profile-card {
-    margin-left: 33%;
-    width: 500px;
-    height: 400px;
+    margin-left: 14%;
+	margin-right: 14%;
+    width: 400px;
+    height: 320px;
     font: 12px "Myriad Pro";
 }
 
 .profile-card .profile-cover {
     background: url('https://dl.dropboxusercontent.com/s/b9zehob0bif4zr0/newyork.jpg') no-repeat center;
     position: relative;
-    height: 260px;
+    height: 220px;
 
     -webkit-border-top-left-radius: 5px;
     -webkit-border-top-right-radius: 5px;
@@ -447,7 +483,7 @@ h6 { font-size: 13px; }
 .menu-container {
     position: relative;
     margin: 10px 0 0 10px;
-    float: left;
+    float: right;
 }
 .menu-container .list-icon {
     background: url('https://dl.dropboxusercontent.com/s/zgj5vdngzkemvpe/list-icon.png') no-repeat;
@@ -480,7 +516,7 @@ h6 { font-size: 13px; }
 }
 .menu-container .profile-actions li a {
     display: block;
-    width: 100px;
+    width: 95px;
     padding: 5px;
     color: #ffffff;
     text-decoration: none;

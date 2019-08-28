@@ -47,7 +47,9 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-
+html, body {
+  height: 100%;
+width: 100%;}
 html {
   font-family: sans-serif;
   line-height: 1.15;
@@ -557,8 +559,9 @@ pre code {
 
 .container {
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
+  height: 100%;
+  padding-right: 10px;
+  padding-left: 10px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -601,8 +604,7 @@ pre code {
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
+  margin-right: -300px;
 }
 
 .no-gutters {
