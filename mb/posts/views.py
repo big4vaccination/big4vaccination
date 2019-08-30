@@ -80,6 +80,22 @@ def index(request):
         # select_task_by_priority(conn, 1)
         test = select_all_tasks(conn)
     return HttpResponse(str(test))
+
+def Australia_vaccine(request):
+    database = os.path.join(BASE_DIR, '6.db')
+    #database = r".\db.db"
+    conn =  create_connection(database)
+    cur = conn.cursor()
+    cur.execute("SELECT country_name, schedule, vaccine_code, vaccine_desc from VaccineInfoSet where country_name = 'Armenia'")
+    rows = cur.fetchall()
+    for row in rows:
+        print(row)
+    #return rows
+    return HttpResponse((rows), content_type="text/plain")
+    #return render(request, rows)
+
+
+
     # cur = create_connection()
     # cur = request.cursor()
     # cur.execute("SELECT * FROM VaccineInfoSet")
