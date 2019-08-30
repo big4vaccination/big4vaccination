@@ -78,18 +78,25 @@ WSGI_APPLICATION = 'mb_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'sql_server.pyodbc',
-        'NAME': 'big4Vaccination',
-        'USER': 'keepdreamlive',
-        'PASSWORD': 'woai1ban.',
-        'HOST': 'big4vaccine.database.windows.net',
-        'PORT': '1433',
-
-        'OPTIONS': {
-            'driver': 'ODBC Driver 13 for SQL Server',
-        },
-    },
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, '5.db'),
+    }
 }
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'sql_server.pyodbc',
+#         'NAME': 'big4Vaccination',
+#         'USER': 'keepdreamlive',
+#         'PASSWORD': 'woai1ban.',
+#         'HOST': 'big4vaccine.database.windows.net',
+#         'PORT': '1433',
+#         'OPTIONS': {
+#             'driver': 'ODBC Driver 17 for SQL Server',
+#         },
+#     },
+# }
 
 
 # Password validation

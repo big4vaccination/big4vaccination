@@ -16,10 +16,11 @@ Including another URLconf
 
 from django.urls import path
 from .views import HomePageView, About_us, faq
+from .views import create_connection, index
 
 urlpatterns = [
     path('faq', faq.as_view(), name = 'faq'),
     path('about_us', About_us.as_view(), name = 'about_us'),
     path('', HomePageView.as_view(), name = 'home'),
-    path('',views.index,name= 'index'),
+    path('index', index,name= 'index'),
 ]
