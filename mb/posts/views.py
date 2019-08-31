@@ -86,7 +86,6 @@ def advanced_searched(request):
     rows = cur.fetchall()
     slice_ = int(len(rows) / 2)
     data = rows[:slice_]
-    print(data[0][0])
     push_data = [{}]
 
     for i in range(len(data)):
