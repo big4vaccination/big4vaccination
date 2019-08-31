@@ -22,6 +22,10 @@ urlpatterns = [
     path('faq', faq.as_view(), name = 'faq'),
     path('about_us', About_us.as_view(), name = 'about_us'),
     path('', HomePageView.as_view(), name = 'home'),
+<<<<<<< HEAD
     path('advanced_search', advanced_searched,name= 'advanced_search'),
+=======
+    path('advanced_search', index, name='advanced_search'),
+>>>>>>> d39682d09256a6c62856834eb02a41ec2d1b12da
     path('quick_search', Australia_vaccine, name='quick_search'),
 ]

@@ -6,6 +6,9 @@ import sqlite3
 from sqlite3 import Error
 import os
 import json
+import pandas as pd 
+import dash 
+import dash_table
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -103,14 +106,35 @@ def Australia_vaccine(request):
     #database = r".\db.db"
     conn =  create_connection(database)
     cur = conn.cursor()
-    cur.execute("SELECT country_name, schedule, vaccine_code, vaccine_desc from VaccineInfoSet where country_name = 'Armenia'")
-    rows = cur.fetchall()
-    print(rows[0][0])
+    cur.execute("SELECT vaccine_code, schedule, vaccine_desc from VaccineInfoSet where country_name = 'Australia'")
+    title = cur.fetchall()
+    #print(type(title[0]))
+    new_1= []
+    print("THIS IS")
+    for i in title:
+        new_1.append(list(i))
+    #new_1='\n'.join(str(new_1))
+    new_2 = pd.DataFrame(new_1, columns=['Vaccine name', 'Schedule', 'Dscription'])
+    print(new_2)
+    app = dash.Dash(__name__)
+    app.layout = dash_table.DataTable(
+        id = 'table',
+        columns= [{"name":i, "id":i} for i in new_2],
+        data = new_2.to_dict('records')
+    )
+    print(app.layout)
+
+
+    #title_d = { i : new_1[i] for i in range(0, len(new_1) ) }
+    #print(title_d)
+    #print(rows[0][0])
     # for row in rows:
     #     print(row)
     #return rows
-    return render(request,'quick_search.html',{'data':rows})
-    #return render(request, rows)
+    #return HttpResponse(title)
+    #return render(request,'quick_search.html',{'data':json.dumps(title_d)})
+    return render(request,'quick_search.html',{'data':new_2})
+    #return render(request,'quick_search.html', rows)
 
 
 
