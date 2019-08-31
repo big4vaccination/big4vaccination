@@ -15,10 +15,12 @@
       </select>
         <input type="submit" onclick="AjaxSubmit();" value="submit">
       </form>
-      <p>{{ data }}</p>
+      <table>
+
+      </table>
      </body>
 
-    <script>
+      <script>
         // add this part of code to solve csrf problem
         $.ajaxSend(function(event, xhr, settings) {
     function getCookie(name) {
@@ -68,6 +70,37 @@
             })
         }
         // code end
-    </script>
+          </script>
+      <script>
+          let table_data = {{ data|safe }}
+          console.log(table_data)
+
+          function generateTableHead(table,data){
+              let thead = table.createTHead();
+              let row = thead.insertRow();
+              for(let key of data){
+                  let th = document.createElement("th")
+                  let text = document.createTextNode(key)
+                  th.appendChild(text)
+                  row.appendChild(th)
+              }
+          }
+
+          function generateTable(table,data) {
+              for(let element of data){
+                  let row = table.insertRow();
+                  for (let key in element){
+                      let cell = row.insertCell()
+                      let text = document.createTextNode(element[key])
+                      cell.appendChild(text)
+                  }
+              }
+          }
+
+          let table = document.querySelector("table");
+          let data = Object.keys(table_data[0]);
+          generateTable(table,table_data)
+          generateTableHead(table,data)
+      </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
  </html>

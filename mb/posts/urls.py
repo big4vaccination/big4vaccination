@@ -16,12 +16,12 @@ Including another URLconf
 
 from django.urls import path
 from .views import HomePageView, About_us, faq
-from .views import index, Australia_vaccine
+from .views import advanced_searched, Australia_vaccine
 
 urlpatterns = [
     path('faq', faq.as_view(), name = 'faq'),
     path('about_us', About_us.as_view(), name = 'about_us'),
     path('', HomePageView.as_view(), name = 'home'),
-    path('index', index,name= 'index'),
+    path('advanced_search', advanced_searched,name= 'advanced_search'),
     path('quick_search', Australia_vaccine, name='quick_search'),
 ]

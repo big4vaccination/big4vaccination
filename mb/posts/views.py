@@ -68,7 +68,7 @@ def create_connection(db):
  
     return conn
 
-def index(request):
+def advanced_searched(request):
     """
     Query all rows in the tasks table
     :param conn: the Connection object
@@ -81,11 +81,22 @@ def index(request):
     excute_sentence = "SELECT country_name, schedule, vaccine_code, vaccine_desc from VaccineInfoSet where country_name = '" + str(country_name) + "'"
     cur.execute(excute_sentence)
     rows = cur.fetchall()
+    slice_ = int(len(rows) / 2)
+    data = rows[:slice_]
+    print(data[0][0])
+    push_data = [{}]
+
+    for i in range(len(data)):
+        push_data[i]["Country Name"] = data[i][0]
+        push_data[i]["Schedule"] = data[i][1]
+        push_data[i]["Vaccine Code"] = data[i][2]
+        push_data[i]["Description"] = data[i][3]
+        push_data.append({})
     # with conn:
     #     # print("1. Query task by priority:")
     #     # select_task_by_priority(conn, 1)
     #     test = select_all_tasks(conn)
-    return render(request,'advanced_search.html',{'data':json.dumps(list(rows))})  # using json.dumps to push the data, using render to pass the content to htmlfile
+    return render(request,'advanced_search.html',{'data':json.dumps(list(push_data))})  # using json.dumps to push the data, using render to pass the content to htmlfile
 
 def Australia_vaccine(request):
     database = os.path.join(BASE_DIR, '6.db')
