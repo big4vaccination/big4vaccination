@@ -22,6 +22,6 @@ urlpatterns = [
     path('faq', faq.as_view(), name = 'faq'),
     path('about_us', About_us.as_view(), name = 'about_us'),
     path('', HomePageView.as_view(), name = 'home'),
-    path('index', index,name= 'index'),
+    path('advanced_search', index, name='advanced_search'),
     path('quick_search', Australia_vaccine, name='quick_search'),
 ]
