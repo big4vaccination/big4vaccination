@@ -5,9 +5,11 @@ from django.http import HttpResponse
 import sqlite3
 from sqlite3 import Error
 import os
+import json
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 # Create your views here.
 class HomePageView(ListView):
     model = Post
@@ -72,14 +74,18 @@ def index(request):
     :param conn: the Connection object
     :return:
     """
-    database = os.path.join(BASE_DIR, '5.db')
-    #database = r".\db.db"
-    conn =  create_connection(database)
-    with conn:
-        # print("1. Query task by priority:")
-        # select_task_by_priority(conn, 1)
-        test = select_all_tasks(conn)
-    return HttpResponse(str(test))
+    database = os.path.join(BASE_DIR, '6.db')
+    conn = create_connection(database)
+    cur = conn.cursor()
+    country_name = request.POST.get('country',False)
+    excute_sentence = "SELECT country_name, schedule, vaccine_code, vaccine_desc from VaccineInfoSet where country_name = '" + str(country_name) + "'"
+    cur.execute(excute_sentence)
+    rows = cur.fetchall()
+    # with conn:
+    #     # print("1. Query task by priority:")
+    #     # select_task_by_priority(conn, 1)
+    #     test = select_all_tasks(conn)
+    return render(request,'advanced_search.html',{'data':json.dumps(list(rows))})  # using json.dumps to push the data, using render to pass the content to htmlfile
 
 def Australia_vaccine(request):
     database = os.path.join(BASE_DIR, '6.db')
@@ -88,10 +94,11 @@ def Australia_vaccine(request):
     cur = conn.cursor()
     cur.execute("SELECT country_name, schedule, vaccine_code, vaccine_desc from VaccineInfoSet where country_name = 'Armenia'")
     rows = cur.fetchall()
-    for row in rows:
-        print(row)
+    print(rows[0][0])
+    # for row in rows:
+    #     print(row)
     #return rows
-    return HttpResponse((rows), content_type="text/plain")
+    return render(request,'quick_search.html',{'data':rows})
     #return render(request, rows)
 
 
