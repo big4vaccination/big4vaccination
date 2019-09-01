@@ -6,9 +6,9 @@ import sqlite3
 from sqlite3 import Error
 import os
 import json
-import pandas as pd 
-import dash 
-import dash_table
+# import pandas as pd 
+# import dash 
+# import dash_table
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

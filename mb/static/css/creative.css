@@ -3177,12 +3177,12 @@ fieldset:disabled a.btn {
 
 .btn-link {
   font-weight: 400;
-  color: #f4623a;
+  color: #007bff;
   text-decoration: none;
 }
 
 .btn-link:hover {
-  color: #d6370c;
+  color: #007bff;
   text-decoration: underline;
 }
 
@@ -10602,12 +10602,12 @@ hr.light {
   padding: 8rem 0;
 }
 .btn-link.faq {
-	background-color: #000;
-	border-color: #000;
+	background-color: #ffffff;
+	border-color: #ffffff;
 }
 .faq {
-	background-color: #000;
-	border-color: #000;
+	background-color: #ffffff;
+	border-color: #ffffff;
 }
 
 .jumbotron {
