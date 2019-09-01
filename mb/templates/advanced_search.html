@@ -13,13 +13,14 @@
       </div>
     </div>
   </section>
-      <h1>Select the country</h1>
+      <h1>Select one country to compare with Australia</h1>
       <form method="POST" action="">
           {% csrf_token %}
           <select name="country" id="input">
-          <option value="Australia">Australia</option>
-          <option value="China">China</option>
-      </select>
+              <option value="China">China</option>
+              <option value="India">India</option>
+              <option value="Japan">Japan</option>
+          </select>
         <input type="submit" onclick="AjaxSubmit();" value="submit">
       </form>
       <table>
@@ -71,7 +72,7 @@
         function AjaxSubmit() {
             var value = $('select#input option:selected').val()
             $.ajax({
-                url:'index',
+                url:'advanced_searched',
                 type:'POST',
                 data: value,
             })

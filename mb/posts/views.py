@@ -81,19 +81,31 @@ def advanced_searched(request):
     conn = create_connection(database)
     cur = conn.cursor()
     country_name = request.POST.get('country',False)
+    australia_data = "SELECT schedule, vaccine_code, vaccine_desc from VaccineInfoSet where country_name = 'Australia'"
     excute_sentence = "SELECT country_name, schedule, vaccine_code, vaccine_desc from VaccineInfoSet where country_name = '" + str(country_name) + "'"
-    cur.execute(excute_sentence)
-    rows = cur.fetchall()
-    slice_ = int(len(rows) / 2)
-    data = rows[:slice_]
-    push_data = [{}]
 
-    for i in range(len(data)):
-        push_data[i]["Country Name"] = data[i][0]
-        push_data[i]["Schedule"] = data[i][1]
-        push_data[i]["Vaccine Code"] = data[i][2]
-        push_data[i]["Description"] = data[i][3]
-        push_data.append({})
+    country1 = cur.execute(australia_data)
+    rows1 = country1.fetchall()
+    slice_1 = int(len(rows1) / 2)
+    data1 = rows1[:slice_1]
+
+    country2 = cur.execute(excute_sentence)
+    rows2 = country2.fetchall()
+    slice_2 = int(len(rows2) / 2)
+    data2 = rows2[:slice_2]
+
+    push_data = [{}]
+    if country_name:
+        for i in range(len(data1)):
+            push_data[i]["Country Name"] = country_name
+            push_data[i]["Vaccine Code"] = data1[i][1]
+            push_data[i]["AU Schedule"] = data1[i][0]
+            push_data[i][(str(country_name) + " Schedule")] = ""
+            push_data[i]["Description"] = data1[i][2]
+            push_data.append({})
+            for j in range(len(data2)):
+                if data1[i][1] == data2[j][2]:
+                    push_data[i][(str(country_name) + " Schedule")] = data2[j][1]
     # with conn:
     #     # print("1. Query task by priority:")
     #     # select_task_by_priority(conn, 1)
