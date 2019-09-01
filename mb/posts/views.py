@@ -106,46 +106,29 @@ def advanced_searched(request):
             for j in range(len(data2)):
                 if data1[i][1] == data2[j][2]:
                     push_data[i][(str(country_name) + " Schedule")] = data2[j][1]
-    # with conn:
-    #     # print("1. Query task by priority:")
-    #     # select_task_by_priority(conn, 1)
-    #     test = select_all_tasks(conn)
+
     return render(request,'advanced_search.html',{'data':json.dumps(list(push_data))})  # using json.dumps to push the data, using render to pass the content to htmlfile
 
 def Australia_vaccine(request):
     database = os.path.join(BASE_DIR, '6.db')
-    #database = r".\db.db"
-    conn =  create_connection(database)
+    conn = create_connection(database)
     cur = conn.cursor()
-    cur.execute("SELECT vaccine_code, schedule, vaccine_desc from VaccineInfoSet where country_name = 'Australia'")
-    title = cur.fetchall()
-    #print(type(title[0]))
-    new_1= []
-    print("THIS IS")
-    for i in title:
-        new_1.append(list(i))
-    #new_1='\n'.join(str(new_1))
-    new_2 = pd.DataFrame(new_1, columns=['Vaccine name', 'Schedule', 'Dscription'])
-    print(new_2)
-    app = dash.Dash(__name__)
-    app.layout = dash_table.DataTable(
-        id = 'table',
-        columns= [{"name":i, "id":i} for i in new_2],
-        data = new_2.to_dict('records')
-    )
-    print(app.layout)
+    australia_data = "SELECT country_name, vaccine_code, schedule, vaccine_desc from VaccineInfoSet where country_name = 'Australia'"
+    country1 = cur.execute(australia_data)
+    rows = country1.fetchall()
+    slice_ = int(len(rows) / 2)
+    data1 = rows[:slice_]
 
+    push_data = [{}]
+    if data1:
+        for i in range(len(data1)):
+            push_data[i]["Country Name"] = data1[i][0]
+            push_data[i]["Vaccine Code"] = data1[i][1]
+            push_data[i]["AU Schedule"] = data1[i][2]
+            push_data[i]["Description"] = data1[i][3]
+            push_data.append({})
 
-    #title_d = { i : new_1[i] for i in range(0, len(new_1) ) }
-    #print(title_d)
-    #print(rows[0][0])
-    # for row in rows:
-    #     print(row)
-    #return rows
-    #return HttpResponse(title)
-    #return render(request,'quick_search.html',{'data':json.dumps(title_d)})
-    return render(request,'quick_search.html',{'data':new_2})
-    #return render(request,'quick_search.html', rows)
+    return render(request,'quick_search.html',{'data':json.dumps(list(push_data))})
 
 
 
