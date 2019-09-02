@@ -81,7 +81,8 @@ def advanced_searched(request):
     conn = create_connection(database)
     cur = conn.cursor()
     country_name = request.POST.get('country',False)
-    australia_data = "SELECT schedule, vaccine_code, vaccine_desc from Vaccine_Info where country_name = 'Australia'"
+    age = request.POST.get('age',False)
+    australia_data = "SELECT schedule, vaccine_code, vaccine_desc from Vaccine_Info where country_name = 'Australia' and tag = '" + str(age) +"'"
     excute_sentence = "SELECT country_name, schedule, vaccine_code, vaccine_desc from Vaccine_Info where country_name = '" + str(country_name) + "'"
 
     country1 = cur.execute(australia_data)
@@ -89,21 +90,20 @@ def advanced_searched(request):
 
     country2 = cur.execute(excute_sentence)
     data2 = country2.fetchall()
-
     push_data = [{}]
     if country_name:
         for i in range(len(data1)):
             push_data[i]["Country Name"] = country_name
             push_data[i]["Vaccine Code"] = data1[i][1]
             push_data[i]["AU Schedule"] = data1[i][0]
-            push_data[i][(str(country_name) + " Schedule")] = ""
+            push_data[i][(str(country_name) + " Schedule")] = "-"
             push_data[i]["Description"] = data1[i][2]
             push_data.append({})
             for j in range(len(data2)):
                 if data1[i][1] == data2[j][2]:
                     push_data[i][(str(country_name) + " Schedule")] = data2[j][1]
 
-    return render(request,'compare_schedule.html',{'data':json.dumps(list(push_data))})  # using json.dumps to push the data, using render to pass the content to htmlfile
+    return render(request,'compare_schedule.html',{'data':json.dumps(list(push_data)),'country_name':country_name,'age':age})  # using json.dumps to push the data, using render to pass the content to htmlfile
 
 def Australia_vaccine(request):
     database = os.path.join(BASE_DIR, '6.db')
