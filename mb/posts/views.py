@@ -107,13 +107,14 @@ def advanced_searched(request):
                 if data1[i][1] == data2[j][2]:
                     push_data[i][(str(country_name) + " Schedule")] = data2[j][1]
 
-    return render(request,'advanced_search.html',{'data':json.dumps(list(push_data))})  # using json.dumps to push the data, using render to pass the content to htmlfile
+    return render(request,'compare_schedule.html',{'data':json.dumps(list(push_data))})  # using json.dumps to push the data, using render to pass the content to htmlfile
 
 def Australia_vaccine(request):
     database = os.path.join(BASE_DIR, '6.db')
     conn = create_connection(database)
     cur = conn.cursor()
     australia_data = "SELECT country_name, vaccine_code, schedule, vaccine_desc from VaccineInfoSet where country_name = 'Australia'"
+    #australia_data = "SELECT country_name, schedule, vaccine_desc from VaccineInfoSet where country_name = 'Australia'"
     country1 = cur.execute(australia_data)
     rows = country1.fetchall()
     slice_ = int(len(rows) / 2)
@@ -123,12 +124,12 @@ def Australia_vaccine(request):
     if data1:
         for i in range(len(data1)):
             push_data[i]["Country Name"] = data1[i][0]
-            push_data[i]["Vaccine Code"] = data1[i][1]
-            push_data[i]["AU Schedule"] = data1[i][2]
+            push_data[i]["Vaccine Name"] = data1[i][1]
+            push_data[i]["Australian Schedule"] = data1[i][2]
             push_data[i]["Description"] = data1[i][3]
             push_data.append({})
 
-    return render(request,'quick_search.html',{'data':json.dumps(list(push_data))})
+    return render(request,'au_schedule.html',{'data':json.dumps(list(push_data))})
 
 
 

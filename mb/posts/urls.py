@@ -23,7 +23,7 @@ urlpatterns = [
     path('about_us', About_us.as_view(), name = 'about_us'),
     path('', HomePageView.as_view(), name = 'home'),
 
-    path('advanced_search', advanced_searched,name= 'advanced_search'),
+    path('compare_schedule', advanced_searched,name= 'compare_schedule'),
 
-    path('quick_search', Australia_vaccine, name='quick_search'),
+    path('au_schedule', Australia_vaccine, name='au_schedule'),
 ]
