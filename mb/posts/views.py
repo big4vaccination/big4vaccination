@@ -81,18 +81,14 @@ def advanced_searched(request):
     conn = create_connection(database)
     cur = conn.cursor()
     country_name = request.POST.get('country',False)
-    australia_data = "SELECT schedule, vaccine_code, vaccine_desc from VaccineInfoSet where country_name = 'Australia'"
-    excute_sentence = "SELECT country_name, schedule, vaccine_code, vaccine_desc from VaccineInfoSet where country_name = '" + str(country_name) + "'"
+    australia_data = "SELECT schedule, vaccine_code, vaccine_desc from Vaccine_Info where country_name = 'Australia'"
+    excute_sentence = "SELECT country_name, schedule, vaccine_code, vaccine_desc from Vaccine_Info where country_name = '" + str(country_name) + "'"
 
     country1 = cur.execute(australia_data)
-    rows1 = country1.fetchall()
-    slice_1 = int(len(rows1) / 2)
-    data1 = rows1[:slice_1]
+    data1 = country1.fetchall()
 
     country2 = cur.execute(excute_sentence)
-    rows2 = country2.fetchall()
-    slice_2 = int(len(rows2) / 2)
-    data2 = rows2[:slice_2]
+    data2 = country2.fetchall()
 
     push_data = [{}]
     if country_name:
@@ -113,12 +109,10 @@ def Australia_vaccine(request):
     database = os.path.join(BASE_DIR, '6.db')
     conn = create_connection(database)
     cur = conn.cursor()
-    australia_data = "SELECT country_name, vaccine_code, schedule, vaccine_desc from VaccineInfoSet where country_name = 'Australia'"
+    australia_data = "SELECT country_name, vaccine_code, schedule, vaccine_desc from Vaccine_Info where country_name = 'Australia'"
     #australia_data = "SELECT country_name, schedule, vaccine_desc from VaccineInfoSet where country_name = 'Australia'"
     country1 = cur.execute(australia_data)
-    rows = country1.fetchall()
-    slice_ = int(len(rows) / 2)
-    data1 = rows[:slice_]
+    data1 = country1.fetchall()
 
     push_data = [{}]
     if data1:
