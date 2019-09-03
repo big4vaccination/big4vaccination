@@ -102,6 +102,8 @@ def advanced_searched(request):
             for j in range(len(data2)):
                 if data1[i][1] == data2[j][2]:
                     push_data[i][(str(country_name) + " Schedule")] = data2[j][1]
+    if push_data == [{}]:
+        push_data = [{"result":"No such record"}]
 
     return render(request,'compare_schedule.html',{'data':json.dumps(list(push_data)),'country_name':country_name,'age':age})  # using json.dumps to push the data, using render to pass the content to htmlfile
 

@@ -94,7 +94,7 @@
             var value = $('select#input option:selected').val()
             var age = $('select#age option:selected').val()
 
-            if (value == "" && age == "") {
+            if (value == false && age == false) {
                 alert("Please select a country or an age group")
             } else {
                 $.ajax({
