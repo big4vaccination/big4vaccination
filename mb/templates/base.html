@@ -41,6 +41,9 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto my-2 my-lg-0">
+				<li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="{% url 'home' %}">Home</a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="{% url 'about_us' %}">About us</a>
                 </li>
@@ -54,8 +57,9 @@
                     <a class="nav-link js-scroll-trigger" href="" id="navbarDropdown" role="button"
                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{% url 'au_schedule' %}">Quick Search</a>
-                        <a class="dropdown-item" href="{% url 'compare_schedule' %}">Advance Search</a>
+                        <a class="dropdown-item" href="{% url 'au_schedule' %}">View AU schedule</a>
+                        <a class="dropdown-item" href="{% url 'compare_schedule' %}">Compare schedules</a>
+						<a class="dropdown-item" href="#">Find Special GP</a>
                     </div>
                 </li>
             </ul>

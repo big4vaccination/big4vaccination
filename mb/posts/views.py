@@ -94,9 +94,9 @@ def advanced_searched(request):
     if country_name:
         for i in range(len(data1)):
             push_data[i]["Country Name"] = country_name
-            push_data[i]["Vaccine Code"] = data1[i][1]
+            push_data[i]["Vaccine Name"] = data1[i][1]
             push_data[i]["AU Schedule"] = data1[i][0]
-            push_data[i][(str(country_name) + " Schedule")] = "-"
+            push_data[i][(str(country_name) + " Schedule")] = "Missing"
             push_data[i]["Description"] = data1[i][2]
             push_data.append({})
             for j in range(len(data2)):
