@@ -93,6 +93,23 @@ def advanced_searched(request):
     push_data = [{}]
     vaccine_desc = [{}]
 
+    if country_name == "United Kingdom of Great Britain and Northern Ireland (the)":
+        country_name = "England"
+
+    elif country_name == "Philippines (the)":
+        country_name = "Philippines"
+
+    elif country_name == "United States of America (the)":
+        country_name = "United States of Amerca"
+
+    elif country_name == "Iran (Islamic Republic of)":
+        country_name = "Iran"
+
+    elif country_name == "False":
+        country_name = ""
+    else:
+        country_name = country_name
+
     if country_name:
         for i in range(len(data1)):
             push_data[i]["Country Name"] = country_name
