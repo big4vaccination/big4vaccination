@@ -114,7 +114,6 @@ def advanced_searched(request):
         for i in range(len(data1)):
             push_data[i]["Country Name"] = country_name
             push_data[i]["Vaccine Name"] = data1[i][1]
-            push_data[i]["AU Schedule"] = data1[i][0]
             push_data[i][(str(country_name) + " Schedule")] = "-"
             if data1[i][3] == "0":
                 vaccine_desc[i]["Description"] = data1[i][2] + "\n\n"
@@ -125,6 +124,7 @@ def advanced_searched(request):
             for j in range(len(data2)):
                 if data1[i][1] == data2[j][2]:
                     push_data[i][(str(country_name) + " Schedule")] = data2[j][1]
+            push_data[i]["AU Schedule"] = data1[i][0]
     if push_data == [{}]:
         push_data = [{"result":"No such record"}]
 
