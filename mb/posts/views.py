@@ -82,8 +82,8 @@ def advanced_searched(request):
     cur = conn.cursor()
     country_name = request.POST.get('country',False)
     age = request.POST.get('age',False)
-    australia_data = "SELECT schedule, vaccine_code, vaccine_desc from Vaccine_Info where country_name = 'Australia' and tag = '" + str(age) +"'"
-    excute_sentence = "SELECT country_name, schedule, vaccine_code, vaccine_desc from Vaccine_Info where country_name = '" + str(country_name) + "'"
+    australia_data = "SELECT schedule, vaccine_code, vaccine_desc, comments from Vaccine_Info where country_name = 'Australia' and tag = '" + str(age) +"'"
+    excute_sentence = "SELECT country_name, schedule, vaccine_code, comments from Vaccine_Info where country_name = '" + str(country_name) + "'"
 
     country1 = cur.execute(australia_data)
     data1 = country1.fetchall()
@@ -91,21 +91,27 @@ def advanced_searched(request):
     country2 = cur.execute(excute_sentence)
     data2 = country2.fetchall()
     push_data = [{}]
+    vaccine_desc = [{}]
+
     if country_name:
         for i in range(len(data1)):
             push_data[i]["Country Name"] = country_name
             push_data[i]["Vaccine Name"] = data1[i][1]
             push_data[i]["AU Schedule"] = data1[i][0]
-            push_data[i][(str(country_name) + " Schedule")] = "Missing"
-            push_data[i]["Description"] = data1[i][2]
+            push_data[i][(str(country_name) + " Schedule")] = "-"
+            if data1[i][3] == "0":
+                vaccine_desc[i]["Description"] = data1[i][2] + "\n\n"
+            else:
+                vaccine_desc[i]["Description"] = data1[i][2] + ", " + data1[i][3]
             push_data.append({})
+            vaccine_desc.append({})
             for j in range(len(data2)):
                 if data1[i][1] == data2[j][2]:
                     push_data[i][(str(country_name) + " Schedule")] = data2[j][1]
     if push_data == [{}]:
         push_data = [{"result":"No such record"}]
 
-    return render(request,'compare_schedule.html',{'data':json.dumps(list(push_data)),'country_name':country_name,'age':age})  # using json.dumps to push the data, using render to pass the content to htmlfile
+    return render(request,'compare_schedule.html',{'data':json.dumps(list(push_data)),'country_name':country_name,'age':age,'vaccine_desc':json.dumps(list(vaccine_desc))})  # using json.dumps to push the data, using render to pass the content to htmlfile
 
 def Australia_vaccine(request):
     database = os.path.join(BASE_DIR, '6.db')

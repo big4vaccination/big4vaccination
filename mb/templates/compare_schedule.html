@@ -116,6 +116,8 @@
     <script>
         let table_data = {{ data|safe }}
             console.log(table_data)
+        let vaccine_desc = {{ vaccine_desc|safe }}
+            console.log(vaccine_desc)
 
         function generateTableHead(table, data) {
             let thead = table.createTHead();
@@ -129,15 +131,21 @@
         }
 
         function generateTable(table, data) {
+            var index = 0
             for (let element of data) {
                 let row = table.insertRow();
                 for (let key in element) {
                     let cell = row.insertCell()
                     let text = document.createTextNode(element[key])
                     cell.appendChild(text)
+                    if ( (index%4) == 1){
+                        cell.setAttribute("title",vaccine_desc[parseInt(index/4)]["Description"])
+                    }
+                    index++
                 }
             }
         }
+
 
         let table = document.querySelector("table");
         let data = Object.keys(table_data[0]);
