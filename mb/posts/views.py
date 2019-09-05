@@ -99,14 +99,12 @@ def advanced_searched(request):
     elif country_name == "Philippines (the)":
         country_name = "Philippines"
 
-    elif country_name == "United States of America (the)":
-        country_name = "United States of Amerca"
+    elif country_name == "Venezuela (Bolivarian Republic of)":
+        country_name = "Venezuela"
 
     elif country_name == "Iran (Islamic Republic of)":
         country_name = "Iran"
 
-    elif country_name == "False":
-        country_name = ""
     else:
         country_name = country_name
 
@@ -125,8 +123,9 @@ def advanced_searched(request):
                 if data1[i][1] == data2[j][2]:
                     push_data[i][(str(country_name) + " Schedule")] = data2[j][1]
             push_data[i]["AU Schedule"] = data1[i][0]
-    if push_data == [{}]:
-        push_data = [{"result":"No such record"}]
+
+    if country_name == "False" or age == "False" or push_data == [{}]:
+        push_data = [{"Tips":"Select a country and age group, then click the submit to see the results."}]
 
     return render(request,'compare_schedule.html',{'data':json.dumps(list(push_data)),'country_name':country_name,'age':age,'vaccine_desc':json.dumps(list(vaccine_desc))})  # using json.dumps to push the data, using render to pass the content to htmlfile
 
