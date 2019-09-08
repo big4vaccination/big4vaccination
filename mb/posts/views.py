@@ -146,7 +146,8 @@ def Australia_vaccine(request):
             push_data[i]["Australian Schedule"] = data1[i][2]
             push_data[i]["Description"] = data1[i][3]
             push_data.append({})
-    push_data.sort()
+    #print(push_data)
+    # push_data.sort()
     return render(request,'au_schedule.html',{'data':json.dumps(list(push_data))})
 
 # def takeSecond(elem):
