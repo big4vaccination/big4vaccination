@@ -162,6 +162,9 @@ def Australia_vaccine(request):
     # push_data.sort()
     return render(request,'au_schedule.html',{'data':json.dumps(list(push_data))})
 
+def find_GP(request):
+    return render(request,'special_GP.html',{'data':"This is a test."})
+
 # def takeSecond(elem):
 #     return elem[2]
 
