@@ -1,11 +1,14 @@
-from django.shortcuts import render
+from django.shortcuts import render, render_to_response
 from django.views.generic import ListView
+from django.template import RequestContext
 from .models import Post
 from django.http import HttpResponse
 import sqlite3
 from sqlite3 import Error
 import os
 import json
+from django.http import Http404
+
 # import pandas as pd 
 # import dash 
 # import dash_table
@@ -26,6 +29,15 @@ class About_us(ListView):
 class faq(ListView):
     model = Post
     template_name='faq.html'
+
+def handler404(request):
+    response = render_to_response('404.html', {}, context_instance =RequestContext(request) )
+    response.status_code = 404
+    return response
+
+def error_404_view(request, exception):
+    data = {"name": "ThePythonDjango.com"}
+    return render(request,'404.html', data)
 
 def create_connection(db):
     """ create a database connection to the SQLite database

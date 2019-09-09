@@ -15,8 +15,11 @@ Including another URLconf
 """
 
 from django.urls import path
-from .views import HomePageView, About_us, faq
+from django.conf.urls import handler404, handler500
+from .views import HomePageView, About_us, faq, handler404, error_404_view
 from .views import advanced_searched, Australia_vaccine
+
+
 
 urlpatterns = [
     path('faq', faq.as_view(), name = 'faq'),
@@ -27,3 +30,5 @@ urlpatterns = [
 
     path('au_schedule', Australia_vaccine, name='au_schedule'),
 ]
+handler404 = error_404_view
+handler404 = error_404_view
