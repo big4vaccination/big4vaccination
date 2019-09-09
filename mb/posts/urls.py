@@ -32,5 +32,6 @@ urlpatterns = [
 
     path('special_GP',find_GP,name='special_GP'),
 ]
+
 handler404 = error_404_view
 handler404 = error_404_view

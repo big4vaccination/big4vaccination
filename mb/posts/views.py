@@ -163,7 +163,20 @@ def Australia_vaccine(request):
     return render(request,'au_schedule.html',{'data':json.dumps(list(push_data))})
 
 def find_GP(request):
-    return render(request,'special_GP.html',{'data':"This is a test."})
+    database = os.path.join(BASE_DIR, '6.db')
+    conn = create_connection(database)
+    cur = conn.cursor()
+    sentence = "SELECT lat,lng from gp_data where language = 'Vietnamese'"
+    gp_data = cur.execute(sentence).fetchall()
+
+    push_data = [{}]
+    if gp_data:
+        for i in range(len(gp_data)):
+            push_data[i]["lat"] = gp_data[i][0]
+            push_data[i]["lng"] = gp_data[i][1]
+            push_data.append({})
+
+    return render(request,'special_GP.html',{'data':json.dumps(list(push_data))})
 
 # def takeSecond(elem):
 #     return elem[2]
