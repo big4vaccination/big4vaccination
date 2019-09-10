@@ -166,7 +166,8 @@ def find_GP(request):
     database = os.path.join(BASE_DIR, '6.db')
     conn = create_connection(database)
     cur = conn.cursor()
-    sentence = "SELECT lat,lng from gp_data where language = 'Vietnamese'"
+    language = request.POST.get('language', False)
+    sentence = "SELECT lat,lng from gp_data where language = '" + str(language) + "'"
     gp_data = cur.execute(sentence).fetchall()
 
     push_data = [{}]
@@ -176,7 +177,7 @@ def find_GP(request):
             push_data[i]["lng"] = gp_data[i][1]
             push_data.append({})
 
-    return render(request,'special_GP.html',{'data':json.dumps(list(push_data))})
+    return render(request,'special_GP.html',{'data':json.dumps(list(push_data)),'language':language})
 
 # def takeSecond(elem):
 #     return elem[2]
