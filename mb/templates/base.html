@@ -118,6 +118,27 @@
 <!-- Custom scripts for this template -->
 <script src="/static/js/creative.min.js"></script>
 
+<script>
+    function googleTranslateElementInit() {
+
+        new google.translate.TranslateElement(
+            {
+                //The starting language
+                pageLanguage: 'en',
+                //The pakages of languages
+                includedLanguages: 'en,zh-CN,hr,cs,da,nl,fr,de,el,iw,hu,ga,it,ja,ko,pt,ro,ru,sr,es,th,vi',
+                //Select the style of languages
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                //autodisplay setting as true
+                autoDisplay: true,
+            },
+            'page-top'//The trigger of id
+        );
+
+    }
+</script>
+<script src="https://translate.google.cn/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 </body>
 
 
