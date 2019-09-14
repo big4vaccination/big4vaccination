@@ -24,6 +24,24 @@
   padding: 15px;
   #border-top: 2 px solid #b4b4b4;
  }
+ .scheduler {
+ #color: white;
+ #overflow: auto;
+ border: none;
+ border-spacing: 1px;
+ border-collapse: separate !important;
+margin: auto;}
+ 
+ .knopka {
+  padding: 0.48rem;
+  padding-right: 1px;
+  padding-left: 1px;
+  
+}
+.123{
+background-color:#b4b4b4 ;
+padding: 1rem;
+}
  .carousel-caption {
   position: absolute;
   top:52%;
