@@ -20,10 +20,14 @@
     <!-- <h1>Select one country to compare with Australia</h1> -->
     <form method="POST" action="">
         {% csrf_token %}
-        <div class="row">
-            <div class="column">
-                <h6>Select one country</h6>
-                <select name="country" id="input">
+		
+        <div class="row justify-content-md-center">
+			<div class="col-md-auto text-center">
+			<h4 class="h3 mb-2">Select one country</h4>
+			</div>
+            <div class="col-md-auto text-center">
+			
+                <select name="country" id="input" class = "browser-default custom-select  mb-3">
                     <option value="{{ country_name }}">{{ country_name }}</option>
                     <option value="Somalia">Somalia</option>
                     <option value="South Sudan">South Sudan</option>
@@ -56,20 +60,27 @@
                     <option value="Zimbabwe">Zimbabwe</option>
                     <option value="Poland">Poland</option>
                 </select>
+				
             </div>
-            <div class="column">
-                <h6>Select age group</h6>
-                <select name="age" id="age">
-                    <option value="{{ age }}">{{ age }}</option>
-                    <option value="Children">Children</option>
-                    <option value="Adult">Adult</option>
-                    <option value="Older">Older</option>
-                </select>
-            </div>
-            <div class="column">
-                <input type="submit" onclick="AjaxSubmit();" value="submit">
-            </div>
-        </div>
+            <!-- <div class="col-md-auto">  -->
+                <!-- <h6>Select age group</h6> -->
+                <!-- <select name="age" id="age">  -->
+                    <!-- <option value="{{ age }}">{{ age }}</option>  -->
+                    <!-- <option value="Children">Children</option>  -->
+                    <!-- <option value="Adult">Adult</option>  -->
+                    <!-- <option value="Older">Older</option>  -->
+                <!-- </select>  -->
+            <!-- </div>  -->
+			<!-- <div> -->
+			<!-- <input class="btn btn-primary" type = "submit" onclick="AjaxSubmit(); value="submit"> -->
+			<!-- <div> -->
+			
+                <!-- <input type="submit" onclick="AjaxSubmit();" value="submit"> -->
+			<div class="col-md-auto text-center">
+			<input class="btn btn-primary 123" type = "submit" onclick="AjaxSubmit(); value="submit">
+			</div>
+		
+		</div>
     </form>
     <table>
 
@@ -182,7 +193,8 @@
         generateTable(table, table_data)
         generateTableHead(table, data)
     </script>
-
+	
+	
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
