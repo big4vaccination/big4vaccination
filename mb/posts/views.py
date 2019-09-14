@@ -7,6 +7,7 @@ import sqlite3
 from sqlite3 import Error
 import os
 import json
+
 from django.http import Http404
 
 # import pandas as pd 
@@ -16,28 +17,34 @@ from django.http import Http404
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+
 # Create your views here.
 class HomePageView(ListView):
     model = Post
     template_name = 'home.html'
     context_object_name = 'all_posts_list'
 
+
 class About_us(ListView):
     model = Post
-    template_name='about_us.html'
+    template_name = 'about_us.html'
+
 
 class faq(ListView):
     model = Post
-    template_name='faq.html'
+    template_name = 'faq.html'
+
 
 def handler404(request):
-    response = render_to_response('404.html', {}, context_instance =RequestContext(request) )
+    response = render_to_response('404.html', {}, context_instance=RequestContext(request))
     response.status_code = 404
     return response
 
+
 def error_404_view(request, exception):
     data = {"name": "ThePythonDjango.com"}
-    return render(request,'404.html', data)
+    return render(request, '404.html', data)
+
 
 def create_connection(db):
     """ create a database connection to the SQLite database
@@ -51,8 +58,9 @@ def create_connection(db):
         conn = sqlite3.connect(db)
     except Error as e:
         print(e)
- 
+
     return conn
+
 
 def select_all_tasks(conn):
     """
@@ -62,12 +70,13 @@ def select_all_tasks(conn):
     """
     cur = conn.cursor()
     cur.execute("SELECT * FROM VaccineInfoSet")
- 
+
     rows = cur.fetchall()
- 
+
     for row in rows:
         print(row)
     return rows
+
 
 def create_connection(db):
     """ create a database connection to the SQLite database
@@ -80,8 +89,9 @@ def create_connection(db):
         conn = sqlite3.connect(db)
     except Error as e:
         print(e)
- 
+
     return conn
+
 
 def advanced_searched(request):
     """
@@ -92,10 +102,12 @@ def advanced_searched(request):
     database = os.path.join(BASE_DIR, '6.db')
     conn = create_connection(database)
     cur = conn.cursor()
-    country_name = request.POST.get('country',False)
-    age = request.POST.get('age',False)
-    australia_data = "SELECT schedule, vaccine_code, vaccine_desc, comments from Vaccine_Info where country_name = 'Australia' and tag = '" + str(age) +"'"
-    excute_sentence = "SELECT country_name, schedule, vaccine_code, comments from Vaccine_Info where country_name = '" + str(country_name) + "'"
+    country_name = request.POST.get('country', False)
+    age = request.POST.get('age', False)
+    australia_data = "SELECT schedule, vaccine_code, vaccine_desc, comments from Vaccine_Info where country_name = 'Australia' and tag = '" + str(
+        age) + "'"
+    excute_sentence = "SELECT country_name, schedule, vaccine_code, comments from Vaccine_Info where country_name = '" + str(
+        country_name) + "'"
 
     country1 = cur.execute(australia_data)
     data1 = country1.fetchall()
@@ -137,16 +149,19 @@ def advanced_searched(request):
             push_data[i]["AU Schedule"] = data1[i][0]
 
     if country_name == "False" or age == "False" or push_data == [{}]:
-        push_data = [{"Tips":"Select a country and age group, then click the submit to see the results."}]
+        push_data = [{"Tips": "Select a country and age group, then click the submit to see the results."}]
 
-    return render(request,'compare_schedule.html',{'data':json.dumps(list(push_data)),'country_name':country_name,'age':age,'vaccine_desc':json.dumps(list(vaccine_desc))})  # using json.dumps to push the data, using render to pass the content to htmlfile
+    return render(request, 'compare_schedule.html',
+                  {'data': json.dumps(list(push_data)), 'country_name': country_name, 'age': age,
+                   'vaccine_desc': json.dumps(list(
+                       vaccine_desc))})
+
 
 def Australia_vaccine(request):
     database = os.path.join(BASE_DIR, '6.db')
     conn = create_connection(database)
     cur = conn.cursor()
     australia_data = "SELECT country_name, vaccine_code, schedule, vaccine_desc from Vaccine_Info where country_name = 'Australia'"
-    #australia_data = "SELECT country_name, schedule, vaccine_desc from VaccineInfoSet where country_name = 'Australia'"
     country1 = cur.execute(australia_data)
     data1 = country1.fetchall()
 
@@ -158,9 +173,9 @@ def Australia_vaccine(request):
             push_data[i]["Australian Schedule"] = data1[i][2]
             push_data[i]["Description"] = data1[i][3]
             push_data.append({})
-    #print(push_data)
-    # push_data.sort()
-    return render(request,'au_schedule.html',{'data':json.dumps(list(push_data))})
+
+    return render(request, 'au_schedule.html', {'data': json.dumps(list(push_data))})
+
 
 def find_GP(request):
     database = os.path.join(BASE_DIR, '6.db')
@@ -177,20 +192,20 @@ def find_GP(request):
             push_data[i]["lng"] = gp_data[i][1]
             push_data.append({})
 
-    return render(request,'special_GP.html',{'data':json.dumps(list(push_data)),'language':language})
+    return render(request, 'special_GP.html', {'data': json.dumps(list(push_data)), 'language': language})
 
 # def takeSecond(elem):
 #     return elem[2]
 
-    # cur = create_connection()
-    # cur = request.cursor()
-    # cur.execute("SELECT * FROM VaccineInfoSet")
- 
-    # rows = cur.fetchall()
-    # row = cur.fetchone()
-    # return HttpResponse(str(row))
-    # for row in rows:
-    #     print(row)
+# cur = create_connection()
+# cur = request.cursor()
+# cur.execute("SELECT * FROM VaccineInfoSet")
+
+# rows = cur.fetchall()
+# row = cur.fetchone()
+# return HttpResponse(str(row))
+# for row in rows:
+#     print(row)
 
 #     row = cursor.fetchone()
 
