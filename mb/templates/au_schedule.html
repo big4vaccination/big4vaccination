@@ -23,11 +23,15 @@
     </div>
   </section>
   <br>
-      <center ><h4>Australian Vaccine Schedule</h4></center>
-      <table>
+      <!-- <center ><h4>Australian Vaccine Schedule</h4></center> -->
+	  <div class="col-md-auto text-center">
+			<h4 class="h3 mb-2">Australian vaccine schedule for children</h4>
+			</div>
+     <div class="col-md-auto text-center">
+	  <table>
 
       </table>
-
+	</div>
       <script>
           let table_data = {{ data|safe }}
           console.log(table_data)
@@ -62,6 +66,7 @@
 		
 		  
       </script>
+	  <br>
 
       </body>
    <style>
@@ -69,16 +74,22 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
   width: 100%;
-  border: 1px solid #ddd;
+  #height: 100%;
+  border: 2px solid #ddd;
+}
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
 }
 
 th, td {
   text-align: center;
-  padding: 16px;
+  padding: 1px;
 }
 
 th:first-child, td:first-child {
-  text-align: left;
+  text-align: center;
 }
 
 tr:nth-child(even) {
