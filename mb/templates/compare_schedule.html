@@ -23,7 +23,8 @@
 		
         <div class="row justify-content-md-center">
 			<div class="col-md-auto text-center">
-			<h4 class="h3 mb-2">Select one country</h4>
+			<!-- <h4 class="h3 mb-2">Select one country</h4> -->
+			<h4>Select one country</h4>
 			</div>
             <div class="col-md-auto text-center">
 			
@@ -82,8 +83,14 @@
 		
 		</div>
     </form>
+	<div class="col-md-auto text-center">
+	  <table>
+
+      </table>
+	</div>
 	
     <table>
+	
     </table>
 	
     </body>
@@ -162,8 +169,8 @@
             console.log(vaccine_desc)
 		let disease_data = {{disease|safe}}
 			console.log(disease_data)
-		
-		function generateTableHead(table, disease) {
+			
+		function generateTableHead2(table, disease) {
             let thead = table.createTHead();
             let row = thead.insertRow();
             for (let key of disease) {
@@ -184,7 +191,19 @@
                 row.appendChild(th)
             }
         }
-
+		
+		function generateTable2(table, disease) {
+            var index = 0
+            for (let element of disease) {
+                let row = table.insertRow();
+                for (let key in element) {
+                    let cell = row.insertCell()
+                    let text = document.createTextNode(element[key])
+                    cell.appendChild(text)
+                    index++
+                }
+            }
+        }
         function generateTable(table, data) {
             var index = 0
             for (let element of data) {
@@ -202,35 +221,43 @@
         }
 
 
-        let table = document.querySelector("table");
-        let disease = Object.keys(disease_data[0]);
-        generateTable(table, disease_data)
-        generateTableHead(table, disease)
+        let table2 = document.querySelector("table"); 
+        let disease = Object.keys(disease_data[0]); 
+        generateTable2(table2, disease_data)
+        generateTableHead2(table2, disease) 
 		
-		let table2 = document.querySelector("table");
-        let data = Object.keys(table_data[0]);
-        generateTable(table, table_data)
-        generateTableHead(table, data) 
+		<!-- let table = document.querySelector("table");  -->
+        <!-- let data = Object.keys(table_data[0]);  -->
+        <!-- generateTable(table, table_data)  -->
+        <!-- generateTableHead(table, data)  -->
+        
+	
     </script>
 	
 	
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-        table {
+    table {
             border-collapse: collapse;
             border-spacing: 0;
             width: 100%;
-            border: 1px solid #ddd;
+			#height: 100%;
+            border: 2px solid #ddd;
         }
+		tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+		}
 
         th, td {
             text-align: center;
-            padding: 0.5px;
+            padding: 0.2px;
         }
 
         th:first-child, td:first-child {
-            text-align: left;
+            text-align: center;
         }
 
         tr:nth-child(even) {
@@ -246,23 +273,23 @@
         }
     </style>
     <style>
-        * {
-            box-sizing: border-box;
-        }
+        <!-- * { -->
+            <!-- box-sizing: border-box; -->
+        <!-- } -->
 
-        /* Create two equal columns that floats next to each other */
-        .column {
-            float: left;
-            width: 30%;
-            padding-left: 50px;
-            height: 80px; /* Should be removed. Only for demonstration */
-        }
+        <!-- /* Create two equal columns that floats next to each other */ -->
+        <!-- .column { -->
+            <!-- float: left; -->
+            <!-- width: 30%; -->
+            <!-- padding-left: 50px; -->
+            <!-- height: 80px; /* Should be removed. Only for demonstration */ -->
+        <!-- } -->
 
-        /* Clear floats after the columns */
-        .row:after {
-            content: "";
-            display: table;
-            clear: both;
-        }
+        <!-- /* Clear floats after the columns */ -->
+        <!-- .row:after { -->
+            <!-- content: ""; -->
+            <!-- display: table; -->
+            <!-- clear: both; -->
+        <!-- } -->
     </style>
 {% endblock content %}

@@ -28,7 +28,7 @@
 			<h4 class="h3 mb-2">Australian vaccine schedule</h4>
 			</div>
      <div class="col-md-auto text-center">
-	  <table>
+	  <table class="table_au">
 
       </table>
 	</div>
@@ -60,18 +60,24 @@
 
           let table = document.querySelector("table");
           let data = Object.keys(table_data[0]);
-		 
+			
           generateTable(table,table_data)
           generateTableHead(table,data)
 		
 		  
       </script>
 	  <script>
-	  function strReplace(){
-	  var mystr='yes';
-	  var newstr=mystr.replace(/_/g,"&#x2714");
-	  document.getElementById("myText").innerHTML = newStr;
-	  }
+	  <!-- document.body.innerHTML.replace(/y/g,"$"); -->
+	  <!-- var elmOperator = $("#"+elm.attr('table_au').replace('y','$$')); -->
+	  <!-- var temp = new String('y'); -->
+	  <!-- document.write(temp + '<br/>'); -->
+	  <!-- temp = temp.replace(/y/g,'$$'); -->
+	  <!-- document.write(temp) -->
+	  <!-- var mystr='y'; -->
+	  <!-- var newstr=mystr.replace(/y/g, "&#x2714"); -->
+	  <!-- document.getElementById("table_au").innerHTML = newstr; -->
+	  <!-- document.write(newstr); -->
+
 	  </script>
 	  <br>
 

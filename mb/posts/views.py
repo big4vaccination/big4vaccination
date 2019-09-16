@@ -83,34 +83,6 @@ def create_connection(db):
  
     return conn
 
-def disease_on_comparison(request):
-    database = os.path.join(BASE_DIR, '6.db')
-    conn = create_connection(database)
-    cur = conn.cursor()
-    country_name = request.POST.get('country', False)
-    excute_sentence_disease = "SELECT * from disease_proliferation where home_country = '" + str(country_name) + "'"
-    country_disease = cur.execute(excute_sentence_disease)
-    data_disease = country_disease.fetchall()
-    push_data = [{}]
-    if country_name == "United Kingdom of Great Britain and Northern Ireland (the)":
-        country_name = "England"
-
-    elif country_name == "Philippines (the)":
-        country_name = "Philippines"
-
-    elif country_name == "Venezuela (Bolivarian Republic of)":
-        country_name = "Venezuela"
-
-    elif country_name == "Iran (Islamic Republic of)":
-        country_name = "Iran"
-
-    else:
-        country_name = country_name
-    if country_name:
-        for i in range(len(data_disease)):
-            push_data[i]["Disease"] = data_disease[i][4]
-            push_data.append({})
-    return render(request,'compare_schedule.html',{'data':json.dumps(list(push_data)),'country_name':country_name}) 
 
 
 def advanced_searched(request):
@@ -126,10 +98,10 @@ def advanced_searched(request):
     
     #age = request.POST.get('age', False)
     #australia_data = "SELECT schedule, vaccine_code, vaccine_desc, comments from Vaccine_Info where country_name = 'Australia' and tag = '" + str(age) +"'"
-    australia_data = "SELECT schedule, vaccine_code, vaccine_desc, comments from Vaccine_Info where country_name = 'Australia'"
+    australia_data = "SELECT schedule, vaccine_name,Diseases,vaccine_desc, comments, Rating from all_schedule_30 where country_name = 'Australia' order by Rating"
     #excute_sentence = "SELECT country_name, schedule, vaccine_code, comments from Vaccine_Info where country_name = '" + str(country_name) + "'"
-    excute_sentence = "SELECT country_name, schedule, vaccine_code, comments from Vaccine_Info where country_name = '" + str(country_name) + "'"
-    excute_sentence_disease = "SELECT * from disease_proliferation where home_country = '" + str(country_name) + "'"
+    excute_sentence = "SELECT schedule, vaccine_name,Diseases,vaccine_desc, comments, Rating from all_schedule_30 where country_name = '" + str(country_name) + "' order by Rating"
+    excute_sentence_disease = "SELECT * from disease_proliferation where home_country = '" + str(country_name) + "' order by avg_home_cases DESC"
     
     country_disease = cur.execute(excute_sentence_disease)
     data_disease = country_disease.fetchall()
@@ -160,16 +132,18 @@ def advanced_searched(request):
 
     if country_name:
         for i in range(len(data_disease)):
-            push_disease[i]["Disease"]= data_disease[i][4]
-            push_disease[i]["Average annual cases"]= data_disease[i][5]
+            push_disease[i]["Disease name "]= data_disease[i][4]
+            push_disease[i]["Average annual death cases in " + str(country_name)+" for 2018 year"]= data_disease[i][5]
             #push_disease[i]["Average immunisation coverage"]= data_disease[i][3]
-            push_disease[i]["Average annual cases in AU"]= data_disease[i][7]
+            push_disease[i]["Average annual death cases in Australia"]= data_disease[i][7]
             #push_disease[i]["Average immunisation coverage in AU"]= data_disease[i][3]
 
             push_disease.append({})
         for i in range(len(data1)):
             #push_data[i]["Country Name"] = country_name
             push_data[i]["Vaccine Name"] = data1[i][1]
+            #push_data[i]["Vaccine Code"] = data1[i][4]
+            push_data[i]["Diseases"]=data1[i][2]
             push_data[i][(str(country_name) + " Schedule")] = "-"
             if data1[i][3] == "0":
                 vaccine_desc[i]["Description"] = data1[i][2] + "\n\n"
@@ -178,8 +152,8 @@ def advanced_searched(request):
             push_data.append({})
             vaccine_desc.append({})
             for j in range(len(data2)):
-                if data1[i][1] == data2[j][2]:
-                    push_data[i][(str(country_name) + " Schedule")] = data2[j][1]
+                if data1[i][1] == data2[j][1]:
+                    push_data[i][(str(country_name) + " Schedule")] = data2[j][0]
             push_data[i]["AU Schedule"] = data1[i][0]
     print(push_disease)
     #if country_name == "False" or age == "False" or push_data == [{}]:
