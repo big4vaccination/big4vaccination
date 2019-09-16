@@ -25,7 +25,7 @@
   <br>
       <!-- <center ><h4>Australian Vaccine Schedule</h4></center> -->
 	  <div class="col-md-auto text-center">
-			<h4 class="h3 mb-2">Australian vaccine schedule for children</h4>
+			<h4 class="h3 mb-2">Australian vaccine schedule</h4>
 			</div>
      <div class="col-md-auto text-center">
 	  <table>
@@ -66,6 +66,13 @@
 		
 		  
       </script>
+	  <script>
+	  function strReplace(){
+	  var mystr='yes';
+	  var newstr=mystr.replace(/_/g,"&#x2714");
+	  document.getElementById("myText").innerHTML = newStr;
+	  }
+	  </script>
 	  <br>
 
       </body>
@@ -85,7 +92,7 @@ tr {
 
 th, td {
   text-align: center;
-  padding: 1px;
+  padding: 0.2px;
 }
 
 th:first-child, td:first-child {

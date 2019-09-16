@@ -82,9 +82,10 @@
 		
 		</div>
     </form>
+	
     <table>
-
     </table>
+	
     </body>
 
     <script>
@@ -159,7 +160,20 @@
             console.log(table_data)
         let vaccine_desc = {{ vaccine_desc|safe }}
             console.log(vaccine_desc)
-
+		let disease_data = {{disease|safe}}
+			console.log(disease_data)
+		
+		function generateTableHead(table, disease) {
+            let thead = table.createTHead();
+            let row = thead.insertRow();
+            for (let key of disease) {
+                let th = document.createElement("th")
+                let text = document.createTextNode(key)
+                th.appendChild(text)
+                row.appendChild(th)
+            }
+        }
+		
         function generateTableHead(table, data) {
             let thead = table.createTHead();
             let row = thead.insertRow();
@@ -189,9 +203,14 @@
 
 
         let table = document.querySelector("table");
+        let disease = Object.keys(disease_data[0]);
+        generateTable(table, disease_data)
+        generateTableHead(table, disease)
+		
+		let table2 = document.querySelector("table");
         let data = Object.keys(table_data[0]);
         generateTable(table, table_data)
-        generateTableHead(table, data)
+        generateTableHead(table, data) 
     </script>
 	
 	
@@ -207,7 +226,7 @@
 
         th, td {
             text-align: center;
-            padding: 16px;
+            padding: 0.5px;
         }
 
         th:first-child, td:first-child {
