@@ -105,7 +105,7 @@ def advanced_searched(request):
     australia_data = "SELECT schedule, vaccine_name,Diseases,vaccine_desc, comments, Rating from all_schedule_30 where country_name = 'Australia' order by Rating"
     #excute_sentence = "SELECT country_name, schedule, vaccine_code, comments from Vaccine_Info where country_name = '" + str(country_name) + "'"
     excute_sentence = "SELECT schedule, vaccine_name,Diseases,vaccine_desc, comments, Rating from all_schedule_30 where country_name = '" + str(country_name) + "' order by Rating"
-    excute_sentence_disease = "SELECT * from diseases_who where Country = '" + str(country_name) + "' order by Percentageofreportedcases, DESC"
+    excute_sentence_disease = "SELECT * from diseases_who where Country = '" + str(country_name) + "' order by Percentageofreportedcases DESC"
     
     country_disease = cur.execute(excute_sentence_disease)
     data_disease = country_disease.fetchall()
