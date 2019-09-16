@@ -14,8 +14,8 @@
             </div>
         </div>
     </section>
-    <br>
-	<center ><h4>Compare vaccine schedules</h4></center>
+    
+	<!-- <center ><h4>Compare vaccine schedules</h4></center> -->
 	<br>
     <!-- <h1>Select one country to compare with Australia</h1> -->
     <form method="POST" action="">
@@ -83,16 +83,24 @@
 		
 		</div>
     </form>
-	<div class="col-md-auto text-center">
-	<table id="#disease">
 	
+	<div class="col-md-auto text-center">
+	<br>
+	<h4>EXPLANATION</h4>
+	<table id="disease">
+		
     </table>
+	
 	</div>
 	
-	
-	<table>
+	<div class="col-md-auto text-center">
+	<br>
+	<h4>Comparison of vaccine schedules</h4>
+	<table id="table">
 	
     </table>
+	
+	</div>
 	
     
 	
@@ -230,7 +238,7 @@
         generateTable2(table2, disease_data)
         generateTableHead2(table2, disease) 
 		
-		let table = document.querySelector("table"); 
+		let table = document.querySelector("#table"); 
         let data = Object.keys(table_data[0]); 
         generateTable(table, table_data) 
         generateTableHead(table, data) 

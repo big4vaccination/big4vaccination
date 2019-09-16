@@ -105,7 +105,7 @@ def advanced_searched(request):
     australia_data = "SELECT schedule, vaccine_name,Diseases,vaccine_desc, comments, Rating from all_schedule_30 where country_name = 'Australia' order by Rating"
     #excute_sentence = "SELECT country_name, schedule, vaccine_code, comments from Vaccine_Info where country_name = '" + str(country_name) + "'"
     excute_sentence = "SELECT schedule, vaccine_name,Diseases,vaccine_desc, comments, Rating from all_schedule_30 where country_name = '" + str(country_name) + "' order by Rating"
-    excute_sentence_disease = "SELECT * from disease_proliferation where home_country = '" + str(country_name) + "' order by avg_home_cases DESC"
+    excute_sentence_disease = "SELECT * from diseases_who where Country = '" + str(country_name) + "' order by Percentageofreportedcases, DESC"
     
     country_disease = cur.execute(excute_sentence_disease)
     data_disease = country_disease.fetchall()
@@ -136,12 +136,20 @@ def advanced_searched(request):
 
     if country_name:
         for i in range(len(data_disease)):
-            push_disease[i]["Disease name "]= data_disease[i][4]
-            push_disease[i]["Average annual death cases in " + str(country_name)+" for 2018 year"]= data_disease[i][5]
+            push_disease[i]["Disease name "]= data_disease[i][1]
+            if data_disease[i][2] is None:
+                push_disease[i]["Number of reported cases in " + str(country_name)+""]= 0
+            else:
+                push_disease[i]["Number of reported cases in " + str(country_name)+""]= data_disease[i][2]
             #push_disease[i]["Average immunisation coverage"]= data_disease[i][3]
-            push_disease[i]["Average annual death cases in Australia"]= data_disease[i][7]
+            push_disease[i]["Percentage of reported cases in " + str(country_name)+""]= data_disease[i][4]
             #push_disease[i]["Average immunisation coverage in AU"]= data_disease[i][3]
-
+            if data_disease[i][5] is None:
+                push_disease[i]["Number of reported cases in Australia"]= 0
+            else:
+                push_disease[i]["Number of reported cases in Australia"]= data_disease[i][5]
+            push_disease[i]["Percentage of reported cases in Australia"]= data_disease[i][7]
+            
             push_disease.append({})
         for i in range(len(data1)):
             #push_data[i]["Country Name"] = country_name
