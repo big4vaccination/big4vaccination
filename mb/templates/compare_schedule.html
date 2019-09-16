@@ -84,14 +84,18 @@
 		</div>
     </form>
 	<div class="col-md-auto text-center">
-	  <table>
-
-      </table>
-	</div>
-	
-    <table>
+	<table id="#disease">
 	
     </table>
+	</div>
+	
+	
+	<table>
+	
+    </table>
+	
+    
+	
 	
     </body>
 
@@ -221,15 +225,15 @@
         }
 
 
-        let table2 = document.querySelector("table"); 
+        let table2 = document.querySelector("#disease"); 
         let disease = Object.keys(disease_data[0]); 
         generateTable2(table2, disease_data)
         generateTableHead2(table2, disease) 
 		
-		<!-- let table = document.querySelector("table");  -->
-        <!-- let data = Object.keys(table_data[0]);  -->
-        <!-- generateTable(table, table_data)  -->
-        <!-- generateTableHead(table, data)  -->
+		let table = document.querySelector("table"); 
+        let data = Object.keys(table_data[0]); 
+        generateTable(table, table_data) 
+        generateTableHead(table, data) 
         
 	
     </script>

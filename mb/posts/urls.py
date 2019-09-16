@@ -17,12 +17,13 @@ Including another URLconf
 from django.urls import path
 from django.conf.urls import handler404, handler500
 from .views import HomePageView, About_us, faq, handler404, error_404_view
-from .views import advanced_searched, Australia_vaccine,find_GP
+from .views import advanced_searched, Australia_vaccine,find_GP, language
 
 
 
 urlpatterns = [
     path('faq', faq.as_view(), name = 'faq'),
+    path('language', language.as_view(), name = 'language'),
     path('about_us', About_us.as_view(), name = 'about_us'),
     path('', HomePageView.as_view(), name = 'home'),
 

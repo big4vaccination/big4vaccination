@@ -30,6 +30,10 @@ class faq(ListView):
     model = Post
     template_name='faq.html'
 
+class language(ListView):
+    model= Post
+    template_name='language.html'
+
 def handler404(request):
     response = render_to_response('404.html', {}, context_instance =RequestContext(request) )
     response.status_code = 404

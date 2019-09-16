@@ -54,6 +54,7 @@
                         <a class="dropdown-item" href="{% url 'compare_schedule' %}">Compare schedules</a>
 
                         <a class="dropdown-item" href="{% url 'special_GP' %}">Find Special GP</a>
+						<a class="dropdown-item" href="{% url 'language' %}">Language services</a>
 
                     </div>
                 </li>
@@ -63,6 +64,7 @@
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="{% url 'about_us' %}">About us</a>
                 </li>
+				
                 <!-- <li class="nav-item">
                   <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
                 </li> -->
@@ -83,7 +85,7 @@
 	<h4 class="text-center mt-0">Translate this page in 
         your preferred language:</h4>
       
-    <div id="google_translate_element" class="language"></div>  
+    <div class="col-md-auto text-center" id="google_translate_element" class="language"></div>  
     
 	<script type="text/javascript">
      function googleTranslateElementInit() {  
