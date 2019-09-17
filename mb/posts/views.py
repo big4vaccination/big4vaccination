@@ -313,6 +313,7 @@ def Australia_vaccine(request):
                 push_data[i]["Birth"] = "-"
             else:
 <<<<<<< HEAD
+<<<<<<< HEAD
                 push_data[i]["Birth"] = "✔"
                 # push_data[i]["Birth"]=data1[i][5]
 
@@ -333,64 +334,102 @@ def Australia_vaccine(request):
                 # push_data[i]["6 mths"] = data1[i][8]
 =======
                 push_data[i]["Birth"]=data1[i][5]
+=======
+                push_data[i]["Birth"]= "✔"
+                #push_data[i]["Birth"]=data1[i][5]
+                
+
+>>>>>>> 94024388d0add77290afc348d8a911f7030598ad
             if data1[i][6] is None:
                 push_data[i]["2 mths"] = "-"
             else:
-                push_data[i]["2 mths"] = data1[i][6]
+                push_data[i]["2 mths"] ="✔"
+                #push_data[i]["2 mths"] = data1[i][6]
             if data1[i][7] is None:
                 push_data[i]["4 mths"] = "-"
             else:
-                push_data[i]["4 mths"] = data1[i][7]
+                push_data[i]["4 mths"] ="✔"
+                #push_data[i]["4 mths"] = data1[i][7]
             if data1[i][8] is None:
                 push_data[i]["6 mths"] = "-"
             else:
+<<<<<<< HEAD
                 push_data[i]["6 mths"] = data1[i][8]
 >>>>>>> parent of 221388b... Children schedule
+=======
+                push_data[i]["6 mths"] = "✔"
+                #push_data[i]["6 mths"] = data1[i][8]
+>>>>>>> 94024388d0add77290afc348d8a911f7030598ad
             if data1[i][9] is None:
                 push_data[i]["12 mths"] = "-"
             else:
+<<<<<<< HEAD
 <<<<<<< HEAD
                 push_data[i]["12 mths"] = "✔"
                 # push_data[i]["12 mths"] = data1[i][9]
 =======
                 push_data[i]["12 mths"] = data1[i][9]
 >>>>>>> parent of 221388b... Children schedule
+=======
+                push_data[i]["12 mths"] ="✔"
+                #push_data[i]["12 mths"] = data1[i][9]
+>>>>>>> 94024388d0add77290afc348d8a911f7030598ad
             if data1[i][10] is None:
                 push_data[i]["18 mths"] = "-"
             else:
+<<<<<<< HEAD
 <<<<<<< HEAD
                 push_data[i]["18 mths"] = "✔"
                 # push_data[i]["18 mths"] = data1[i][10]
 =======
                 push_data[i]["18 mths"] = data1[i][10]
 >>>>>>> parent of 221388b... Children schedule
+=======
+                push_data[i]["18 mths"] ="✔"
+                #push_data[i]["18 mths"] = data1[i][10]
+>>>>>>> 94024388d0add77290afc348d8a911f7030598ad
             if data1[i][11] is None:
                 push_data[i]["2-4 yrs"] = "-"
             else:
+<<<<<<< HEAD
 <<<<<<< HEAD
                 push_data[i]["2-4 yrs"] = "✔"
                 # push_data[i]["2-4 yrs"] = data1[i][11]
 =======
                 push_data[i]["2-4 yrs"] = data1[i][11]
 >>>>>>> parent of 221388b... Children schedule
+=======
+                push_data[i]["2-4 yrs"]="✔"
+                #push_data[i]["2-4 yrs"] = data1[i][11]
+>>>>>>> 94024388d0add77290afc348d8a911f7030598ad
             if data1[i][12] is None:
                 push_data[i][">4 yrs"] = "-"
             else:
+<<<<<<< HEAD
 <<<<<<< HEAD
                 push_data[i][">4 yrs"] = "✔"
                 # push_data[i][">4 yrs"] = data1[i][12]
 =======
                 push_data[i][">4 yrs"] = data1[i][12]
 >>>>>>> parent of 221388b... Children schedule
+=======
+                push_data[i][">4 yrs"] ="✔"
+                #push_data[i][">4 yrs"] = data1[i][12]
+>>>>>>> 94024388d0add77290afc348d8a911f7030598ad
             if data1[i][13] is None:
                 push_data[i]["12-18 yrs"] = "-"
             else:
+<<<<<<< HEAD
 <<<<<<< HEAD
                 push_data[i]["12-18 yrs"] = "✔"
                 # push_data[i]["12-18 yrs"] = data1[i][13]
 =======
                 push_data[i]["12-18 yrs"] = data1[i][13]
 >>>>>>> parent of 221388b... Children schedule
+=======
+                push_data[i]["12-18 yrs"] ="✔"
+                #push_data[i]["12-18 yrs"] = data1[i][13]
+>>>>>>> 94024388d0add77290afc348d8a911f7030598ad
             # if data1[i][14] is None:
             #     push_data[i][">18 yrs"]="-"
             # else:
@@ -403,14 +442,20 @@ def Australia_vaccine(request):
                 push_data[i]["pg_w"] = "-"
             else:
 <<<<<<< HEAD
+<<<<<<< HEAD
                 push_data[i]["pg_w"] = "✔"
                 # push_data[i]["pg_w"]=data1[i][16]
 =======
                 push_data[i]["pg_w"]=data1[i][16]
 >>>>>>> parent of 221388b... Children schedule
+=======
+                push_data[i]["pg_w"]="✔"
+                #push_data[i]["pg_w"]=data1[i][16]
+>>>>>>> 94024388d0add77290afc348d8a911f7030598ad
             if data1[i][17] is None:
                 push_data[i][">=60 yrs"] = "-"
             else:
+<<<<<<< HEAD
 <<<<<<< HEAD
                 push_data[i][">=60 yrs"] = "✔"
                 # push_data[i][">=60 yrs"]=data1[i][17]
@@ -418,6 +463,10 @@ def Australia_vaccine(request):
             # push_data[i]["Description"] = data1[i][3]
 =======
                  push_data[i][">=60 yrs"]=data1[i][17]
+=======
+                 push_data[i][">=60 yrs"]="✔"
+                 #push_data[i][">=60 yrs"]=data1[i][17]
+>>>>>>> 94024388d0add77290afc348d8a911f7030598ad
             
             #push_data[i]["Description"] = data1[i][3]
 >>>>>>> parent of 221388b... Children schedule
