@@ -177,8 +177,7 @@
     <script>
         let table_data = {{ data|safe }}
             console.log(table_data)
-        let vaccine_desc = {{ vaccine_desc|safe }}
-            console.log(vaccine_desc)
+
 		let disease_data = {{disease|safe}}
 			console.log(disease_data)
 			
@@ -217,21 +216,15 @@
             }
         }
         function generateTable(table, data) {
-            var index = 0
             for (let element of data) {
                 let row = table.insertRow();
                 for (let key in element) {
                     let cell = row.insertCell()
                     let text = document.createTextNode(element[key])
                     cell.appendChild(text)
-                    if ( (index%4) == 1){
-                        cell.setAttribute("title",vaccine_desc[parseInt(index/4)]["Description"])
-                    }
-                    index++
                 }
             }
         }
-
 
         let table2 = document.querySelector("#disease"); 
         let disease = Object.keys(disease_data[0]); 
