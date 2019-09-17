@@ -33,7 +33,7 @@
                     <option value="Somalia">Somalia</option>
                     <option value="South Sudan">South Sudan</option>
                     <option value="Papua New Guinea">Papua New Guinea</option>
-                    <option value="Venezuela (Bolivarian Republic of)">Venezuela</option>
+{#                    <option value="Venezuela (Bolivarian Republic of)">Venezuela</option>#}
                     <option value="Philippines (the)">Philippines</option>
                     <option value="Afghanistan">Afghanistan</option>
                     <option value="Nigeria">Nigeria</option>
@@ -86,7 +86,7 @@
 	
 	<div class="col-md-auto text-center">
 	<br>
-	<h4>EXPLANATION</h4>
+	<h4>{{ explanation }}</h4>
 	<table id="disease">
 		
     </table>
@@ -95,16 +95,12 @@
 	
 	<div class="col-md-auto text-center">
 	<br>
-	<h4>Comparison of vaccine schedules</h4>
+	<h4>{{ comparison }}</h4>
 	<table id="table">
 	
     </table>
 	
 	</div>
-	
-    
-	
-	
     </body>
 
     <script>
@@ -180,7 +176,8 @@
 
 		let disease_data = {{disease|safe}}
 			console.log(disease_data)
-			
+
+        // this function is for creating disease table
 		function generateTableHead2(table, disease) {
             let thead = table.createTHead();
             let row = thead.insertRow();
@@ -191,7 +188,19 @@
                 row.appendChild(th)
             }
         }
-		
+
+		function generateTable2(table, disease) {
+            for (let element of disease) {
+                let row = table.insertRow();
+                for (let key in element) {
+                    let cell = row.insertCell()
+                    let text = document.createTextNode(element[key])
+                    cell.appendChild(text)
+                }
+            }
+        }
+
+        // This two function is for creating comparison
         function generateTableHead(table, data) {
             let thead = table.createTHead();
             let row = thead.insertRow();
@@ -200,19 +209,6 @@
                 let text = document.createTextNode(key)
                 th.appendChild(text)
                 row.appendChild(th)
-            }
-        }
-		
-		function generateTable2(table, disease) {
-            var index = 0
-            for (let element of disease) {
-                let row = table.insertRow();
-                for (let key in element) {
-                    let cell = row.insertCell()
-                    let text = document.createTextNode(element[key])
-                    cell.appendChild(text)
-                    index++
-                }
             }
         }
         function generateTable(table, data) {

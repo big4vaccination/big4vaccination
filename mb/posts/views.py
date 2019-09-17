@@ -115,12 +115,6 @@ def advanced_searched(request):
 
     ## Here is for adding the SQLite Query
     excute_sentence = "SELECT * from all_schedule_vs_aus_schedule where country_name = '" + str(country_name) + "'"
-    excute_sentence_disease = "SELECT * from diseases_who where Country = '" + str(
-        country_name) + "' order by Percentageofreportedcases DESC"
-
-    ## Here is for generating data content
-    country_disease = cur.execute(excute_sentence_disease)
-    data_disease = country_disease.fetchall()
     compared_data = cur.execute(excute_sentence).fetchall()
 
     ## Variable -- push_data is for generating second table.
@@ -142,18 +136,25 @@ def advanced_searched(request):
     else:
         country_name = country_name
 
+    excute_sentence_disease = "SELECT * from diseases_who where Country = '" + str(
+        country_name) + "' order by Percentageofreportedcases DESC"
+
+    ## Here is for generating data content
+    country_disease = cur.execute(excute_sentence_disease)
+    data_disease = country_disease.fetchall()
+
     ## Generating push content for first table and second table
     if country_name:
         ## Generating push content for first table.
         for i in range(len(data_disease)):
-            if data_disease[i][2] and data_disease[i][5]:
+            if data_disease[i][2] != "0" and data_disease[i][2] is not None:
                 push_disease[i]["Disease name "] = data_disease[i][1]
                 push_disease[i]["Number of reported cases in " + str(country_name) + ""] = data_disease[i][2]
-            # push_disease[i]["Average immunisation coverage"]= data_disease[i][3]
-                #push_disease[i]["Percentage of reported cases in " + str(country_name) + ""] = data_disease[i][4]
-            # push_disease[i]["Average immunisation coverage in AU"]= data_disease[i][3]
+                # push_disease[i]["Average immunisation coverage"]= data_disease[i][3]
+                # push_disease[i]["Percentage of reported cases in " + str(country_name) + ""] = data_disease[i][4]
+                # push_disease[i]["Average immunisation coverage in AU"]= data_disease[i][3]
                 push_disease[i]["Number of reported cases in Australia"] = data_disease[i][5]
-               # push_disease[i]["Percentage of reported cases in Australia"] = data_disease[i][7]
+            # push_disease[i]["Percentage of reported cases in Australia"] = data_disease[i][7]
 
             push_disease.append({})
 
@@ -166,91 +167,91 @@ def advanced_searched(request):
             #     push_data[i]["Diseases"] = compared_data[i][1]
 
             if compared_data[i][4] and compared_data[i][4] == compared_data[i][19]:
-                push_data[i]["Birth"] = "√"
+                push_data[i]["Birth"] = "✔"
             elif compared_data[i][4] != compared_data[i][19]:
                 push_data[i]["Birth"] = "×"
             else:
                 push_data[i]["Birth"] = "-"
 
             if compared_data[i][5] and compared_data[i][5] == compared_data[i][20]:
-                push_data[i]["2 mths"] = "√"
+                push_data[i]["2 mths"] = "✔"
             elif compared_data[i][5] != compared_data[i][20]:
                 push_data[i]["2 mths"] = "×"
             else:
                 push_data[i]["2 mths"] = "-"
 
             if compared_data[i][6] and compared_data[i][6] == compared_data[i][21]:
-                push_data[i]["4 mths"] = "√"
+                push_data[i]["4 mths"] = "✔"
             elif compared_data[i][6] != compared_data[i][21]:
                 push_data[i]["4 mths"] = "×"
             else:
                 push_data[i]["4 mths"] = "-"
 
             if compared_data[i][7] and compared_data[i][7] == compared_data[i][22]:
-                push_data[i]["6 mths"] = "√"
+                push_data[i]["6 mths"] = "✔"
             elif compared_data[i][7] != compared_data[i][22]:
                 push_data[i]["6 mths"] = "×"
             else:
                 push_data[i]["6 mths"] = "-"
 
             if compared_data[i][8] and compared_data[i][8] == compared_data[i][23]:
-                push_data[i]["12 mths"] = "√"
+                push_data[i]["12 mths"] = "✔"
             elif compared_data[i][8] != compared_data[i][23]:
                 push_data[i]["12 mths"] = "×"
             else:
                 push_data[i]["12 mths"] = "-"
 
             if compared_data[i][9] and compared_data[i][9] == compared_data[i][24]:
-                push_data[i]["18 mths"] = "√"
+                push_data[i]["18 mths"] = "✔"
             elif compared_data[i][9] != compared_data[i][24]:
                 push_data[i]["18 mths"] = "×"
             else:
                 push_data[i]["18 mths"] = "-"
 
             if compared_data[i][10] and compared_data[i][10] == compared_data[i][25]:
-                push_data[i]["2-4 yrs"] = "√"
+                push_data[i]["2-4 yrs"] = "✔"
             elif compared_data[i][10] != compared_data[i][25]:
                 push_data[i]["2-4 yrs"] = "×"
             else:
                 push_data[i]["2-4 yrs"] = "-"
 
             if compared_data[i][11] and compared_data[i][11] == compared_data[i][26]:
-                push_data[i][">4 yrs"] = "√"
+                push_data[i][">4 yrs"] = "✔"
             elif compared_data[i][11] != compared_data[i][26]:
                 push_data[i][">4 yrs"] = "×"
             else:
                 push_data[i][">4 yrs"] = "-"
 
             if compared_data[i][12] and compared_data[i][12] == compared_data[i][27]:
-                push_data[i]["12-18 yrs"] = "√"
+                push_data[i]["12-18 yrs"] = "✔"
             elif compared_data[i][12] != compared_data[i][27]:
                 push_data[i]["12-18 yrs"] = "×"
             else:
                 push_data[i]["12-18 yrs"] = "-"
 
             if compared_data[i][13] and compared_data[i][13] == compared_data[i][28]:
-                push_data[i][">18 yrs"] = "√"
+                push_data[i][">18 yrs"] = "✔"
             elif compared_data[i][13] != compared_data[i][28]:
                 push_data[i][">18 yrs"] = "×"
             else:
                 push_data[i][">18 yrs"] = "-"
 
             if compared_data[i][14] and compared_data[i][14] == compared_data[i][29]:
-                push_data[i][">24 yrs"] = "√"
+                push_data[i][">24 yrs"] = "✔"
             elif compared_data[i][14] != compared_data[i][29]:
                 push_data[i][">24 yrs"] = "×"
             else:
                 push_data[i][">24 yrs"] = "-"
 
             if compared_data[i][15] and compared_data[i][15] == compared_data[i][30]:
-                push_data[i][" pg_w"] = "√"
+                push_data[i][" pg_w"] = "✔"
             elif compared_data[i][15] != compared_data[i][30]:
                 push_data[i]["pg_w"] = "×"
             else:
                 push_data[i]["pg_w"] = "-"
 
             if compared_data[i][16] and compared_data[i][16] == compared_data[i][31]:
-                push_data[i][">=60 yrs"] = "√"
+                push_data[i][">=60 yrs"] = "✔"
             elif compared_data[i][16] != compared_data[i][31]:
                 push_data[i][">=60 yrs"] = "×"
             else:
@@ -259,20 +260,20 @@ def advanced_searched(request):
             push_data.append({})
 
     ## Generating Return value for frontend
-    if country_name == "False" or push_data == [{}] or push_disease == [{}]:
-        push_data = [{"Tips": "Select a country, then submit to see the results."}]
+    if country_name == "False" and push_data == [{}] and push_disease == [{}]:
         return render(request, 'compare_schedule.html',
                       {'data': json.dumps(list(push_data)), 'country_name': country_name,
                        'disease': json.dumps(list(push_disease)), })
-    if country_name and push_data == [{}] or push_disease == [{}]:
-        push_data[{"Result": "Sorry, there is no such recording :("}]
+    elif country_name and push_data == [{}] and push_disease == [{}]:
+        # push_data["Result": "Sorry, there is no such recording :("]
         return render(request, 'compare_schedule.html',
                       {'data': json.dumps(list(push_data)), 'country_name': country_name,
                        'disease': json.dumps(list(push_disease)), })
-    if country_name and push_data and push_disease:
+    elif country_name and push_data or push_disease:
         return render(request, 'compare_schedule.html',
                       {'data': json.dumps(list(push_data)), 'country_name': country_name,
-                       'disease': json.dumps(list(push_disease)), })
+                       'disease': json.dumps(list(push_disease)), 'explanation': "Reported cases in 2018",
+                       "comparison": "Comparison of Vaccine Schedules"})
 
 
 def Australia_vaccine(request):
