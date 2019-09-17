@@ -38,6 +38,17 @@ class language(ListView):
     model = Post
     template_name = 'language.html'
 
+class first_intepreting(ListView):
+    model= Post
+    template_name = 'first_intepreting.html'
+
+class second_intepreting(ListView):
+    model= Post
+    template_name = 'second_intepreting.html'
+
+class third_intepreting(ListView):
+    model= Post
+    template_name = 'third_intepreting.html'
 
 def handler404(request):
     response = render_to_response('404.html', {}, context_instance=RequestContext(request))

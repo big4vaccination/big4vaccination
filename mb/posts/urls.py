@@ -17,7 +17,7 @@ Including another URLconf
 from django.urls import path
 from django.conf.urls import handler404, handler500
 from .views import HomePageView, About_us, faq, handler404, error_404_view
-from .views import advanced_searched, Australia_vaccine,find_GP, language
+from .views import advanced_searched, Australia_vaccine,find_GP, language, first_intepreting,second_intepreting,third_intepreting
 
 
 
@@ -32,6 +32,9 @@ urlpatterns = [
     path('au_schedule', Australia_vaccine, name='au_schedule'),
 
     path('special_GP',find_GP,name='special_GP'),
+    path('first_intepreting', first_intepreting.as_view(), name = 'first_intepreting'),
+    path('second_intepreting', second_intepreting.as_view(), name = 'second_intepreting'),
+    path('third_intepreting', third_intepreting.as_view(), name = 'third_intepreting'),
 ]
 
 handler404 = error_404_view
