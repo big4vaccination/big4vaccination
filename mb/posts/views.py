@@ -150,10 +150,10 @@ def advanced_searched(request):
                 push_disease[i]["Disease name "] = data_disease[i][1]
                 push_disease[i]["Number of reported cases in " + str(country_name) + ""] = data_disease[i][2]
             # push_disease[i]["Average immunisation coverage"]= data_disease[i][3]
-                push_disease[i]["Percentage of reported cases in " + str(country_name) + ""] = data_disease[i][4]
+                #push_disease[i]["Percentage of reported cases in " + str(country_name) + ""] = data_disease[i][4]
             # push_disease[i]["Average immunisation coverage in AU"]= data_disease[i][3]
                 push_disease[i]["Number of reported cases in Australia"] = data_disease[i][5]
-                push_disease[i]["Percentage of reported cases in Australia"] = data_disease[i][7]
+               # push_disease[i]["Percentage of reported cases in Australia"] = data_disease[i][7]
 
             push_disease.append({})
 
