@@ -28,14 +28,24 @@
 			<h4 class="h3 mb-2">Australian vaccine schedule</h4>
 			</div>
      <div class="col-md-auto text-center">
-	  <table class="table_au">
+	  <table id="table">
+
+      </table>
+	  <br>
+	  <br>
+	</div>
+	<div class="col-md-auto text-center">
+	  <table id="disease">
 
       </table>
 	</div>
       <script>
           let table_data = {{ data|safe }}
           console.log(table_data)
-
+		  
+		  let disease_data = {{disease|safe }}
+		  console.log(disease_data)
+		  
           function generateTableHead(table,data){
               let thead = table.createTHead();
               let row = thead.insertRow();
@@ -46,7 +56,29 @@
                   row.appendChild(th)
               }
           }
-
+		  
+		  function generateTableHead2(table,disease){
+              let thead = table.createTHead();
+              let row = thead.insertRow();
+              for(let key of disease){
+                  let th = document.createElement("th")
+                  let text = document.createTextNode(key)
+                  th.appendChild(text)
+                  row.appendChild(th)
+              }
+          }
+			
+		 function generateTable2(table,disease) {
+              for(let element of disease){
+                  let row = table.insertRow();
+                  for (let key in element){
+                      let cell = row.insertCell()
+                      let text = document.createTextNode(element[key])
+                      cell.appendChild(text)
+                  }
+              }
+          }
+		  
           function generateTable(table,data) {
               for(let element of data){
                   let row = table.insertRow();
@@ -58,11 +90,16 @@
               }
           }
 
-          let table = document.querySelector("table");
+          let table = document.querySelector("#table");
           let data = Object.keys(table_data[0]);
 			
           generateTable(table,table_data)
           generateTableHead(table,data)
+			
+		    let table2 = document.querySelector("#disease"); 
+			let disease = Object.keys(disease_data[0]); 
+			generateTable2(table2, disease_data)
+			generateTableHead2(table2, disease)
 		
 		  
       </script>
