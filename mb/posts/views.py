@@ -125,9 +125,14 @@ def advanced_searched(request):
     # excute_sentence = "SELECT country_name, schedule, vaccine_code, comments from Vaccine_Info where country_name = '" + str(country_name) + "'"
 
     ## Here is for adding the SQLite Query
-    excute_sentence = "SELECT * from all_schedule_vs_aus_schedule where country_name = '" + str(country_name) + "'"
+    excute_sentence = "SELECT * from all_schedule_vs_aus_schedule where country_name = '" + str(country_name) + "' order by vaccine_name ASC"
+    vaccine_name = "SELECT vaccine_name from all_schedule_vs_aus_schedule where country_name = '" + str(country_name) + "' order by vaccine_name ASC"
+    australia = "SELECT DISTINCT vaccine_name from aus_schedule order by vaccine_name ASC"
     compared_data = cur.execute(excute_sentence).fetchall()
+    australia_vaccine_list = cur.execute(australia).fetchall()
+    other_vaccine_list = cur.execute(vaccine_name).fetchall()
 
+    print(australia_vaccine_list)
     ## Variable -- push_data is for generating second table.
     ##          -- vaccine_desc is not using now
     ##          -- push_disease is for generating first table.
@@ -171,104 +176,97 @@ def advanced_searched(request):
 
         ## Generating push content for second table.
         for i in range(len(compared_data)):
-            push_data[i]["Vaccine Name"] = compared_data[i][0]
-            # if compared_data[i][1] is None:
-            #     push_data[i]["Diseases"] = '-'
-            # else:
-            #     push_data[i]["Diseases"] = compared_data[i][1]
+                push_data[i]["Vaccine Name"] = compared_data[i][0]
+                # if compared_data[i][1] is None:
+                #     push_data[i]["Diseases"] = '-'
+                # else:
+                #     push_data[i]["Diseases"] = compared_data[i][1]
+                if compared_data[i][4] and compared_data[i][4] == compared_data[i][19]:
+                    push_data[i]["Birth"] = "✔"
+                else:
+                    push_data[i]["Birth"] = "-"
 
-            if compared_data[i][4] and compared_data[i][4] == compared_data[i][19]:
-                push_data[i]["Birth"] = "✔"
-            elif compared_data[i][4] != compared_data[i][19]:
-                push_data[i]["Birth"] = "×"
-            else:
-                push_data[i]["Birth"] = "-"
+                if compared_data[i][5] and compared_data[i][5] == compared_data[i][20]:
+                    push_data[i]["2 mths"] = "✔"
+                else:
+                    push_data[i]["2 mths"] = "-"
 
-            if compared_data[i][5] and compared_data[i][5] == compared_data[i][20]:
-                push_data[i]["2 mths"] = "✔"
-            elif compared_data[i][5] != compared_data[i][20]:
-                push_data[i]["2 mths"] = "×"
-            else:
-                push_data[i]["2 mths"] = "-"
+                if compared_data[i][6] and compared_data[i][6] == compared_data[i][21]:
+                    push_data[i]["4 mths"] = "✔"
+                else:
+                    push_data[i]["4 mths"] = "-"
 
-            if compared_data[i][6] and compared_data[i][6] == compared_data[i][21]:
-                push_data[i]["4 mths"] = "✔"
-            elif compared_data[i][6] != compared_data[i][21]:
-                push_data[i]["4 mths"] = "×"
-            else:
-                push_data[i]["4 mths"] = "-"
+                if compared_data[i][7] and compared_data[i][7] == compared_data[i][22]:
+                    push_data[i]["6 mths"] = "✔"
+                else:
+                    push_data[i]["6 mths"] = "-"
 
-            if compared_data[i][7] and compared_data[i][7] == compared_data[i][22]:
-                push_data[i]["6 mths"] = "✔"
-            elif compared_data[i][7] != compared_data[i][22]:
-                push_data[i]["6 mths"] = "×"
-            else:
-                push_data[i]["6 mths"] = "-"
+                if compared_data[i][8] and compared_data[i][8] == compared_data[i][23]:
+                    push_data[i]["12 mths"] = "✔"
+                else:
+                    push_data[i]["12 mths"] = "-"
 
-            if compared_data[i][8] and compared_data[i][8] == compared_data[i][23]:
-                push_data[i]["12 mths"] = "✔"
-            elif compared_data[i][8] != compared_data[i][23]:
-                push_data[i]["12 mths"] = "×"
-            else:
-                push_data[i]["12 mths"] = "-"
+                if compared_data[i][9] and compared_data[i][9] == compared_data[i][24]:
+                    push_data[i]["18 mths"] = "✔"
+                else:
+                    push_data[i]["18 mths"] = "-"
 
-            if compared_data[i][9] and compared_data[i][9] == compared_data[i][24]:
-                push_data[i]["18 mths"] = "✔"
-            elif compared_data[i][9] != compared_data[i][24]:
-                push_data[i]["18 mths"] = "×"
-            else:
-                push_data[i]["18 mths"] = "-"
+                if compared_data[i][10] and compared_data[i][10] == compared_data[i][25]:
+                    push_data[i]["2-4 yrs"] = "✔"
+                else:
+                    push_data[i]["2-4 yrs"] = "-"
 
-            if compared_data[i][10] and compared_data[i][10] == compared_data[i][25]:
-                push_data[i]["2-4 yrs"] = "✔"
-            elif compared_data[i][10] != compared_data[i][25]:
-                push_data[i]["2-4 yrs"] = "×"
-            else:
-                push_data[i]["2-4 yrs"] = "-"
+                if compared_data[i][11] and compared_data[i][11] == compared_data[i][26]:
+                    push_data[i][">4 yrs"] = "✔"
+                else:
+                    push_data[i][">4 yrs"] = "-"
 
-            if compared_data[i][11] and compared_data[i][11] == compared_data[i][26]:
-                push_data[i][">4 yrs"] = "✔"
-            elif compared_data[i][11] != compared_data[i][26]:
-                push_data[i][">4 yrs"] = "×"
-            else:
-                push_data[i][">4 yrs"] = "-"
+                if compared_data[i][12] and compared_data[i][12] == compared_data[i][27]:
+                    push_data[i]["12-18 yrs"] = "✔"
+                else:
+                    push_data[i]["12-18 yrs"] = "-"
 
-            if compared_data[i][12] and compared_data[i][12] == compared_data[i][27]:
-                push_data[i]["12-18 yrs"] = "✔"
-            elif compared_data[i][12] != compared_data[i][27]:
-                push_data[i]["12-18 yrs"] = "×"
-            else:
-                push_data[i]["12-18 yrs"] = "-"
+                if compared_data[i][13] and compared_data[i][13] == compared_data[i][28]:
+                    push_data[i][">18 yrs"] = "✔"
+                else:
+                    push_data[i][">18 yrs"] = "-"
 
-            if compared_data[i][13] and compared_data[i][13] == compared_data[i][28]:
-                push_data[i][">18 yrs"] = "✔"
-            elif compared_data[i][13] != compared_data[i][28]:
-                push_data[i][">18 yrs"] = "×"
-            else:
-                push_data[i][">18 yrs"] = "-"
+                if compared_data[i][14] and compared_data[i][14] == compared_data[i][29]:
+                    push_data[i][">24 yrs"] = "✔"
+                else:
+                    push_data[i][">24 yrs"] = "-"
 
-            if compared_data[i][14] and compared_data[i][14] == compared_data[i][29]:
-                push_data[i][">24 yrs"] = "✔"
-            elif compared_data[i][14] != compared_data[i][29]:
-                push_data[i][">24 yrs"] = "×"
-            else:
-                push_data[i][">24 yrs"] = "-"
+                if compared_data[i][15] and compared_data[i][15] == compared_data[i][30]:
+                    push_data[i]["pg_w"] = "✔"
+                else:
+                    push_data[i]["pg_w"] = "-"
 
-            if compared_data[i][15] and compared_data[i][15] == compared_data[i][30]:
-                push_data[i][" pg_w"] = "✔"
-            elif compared_data[i][15] != compared_data[i][30]:
-                push_data[i]["pg_w"] = "×"
-            else:
-                push_data[i]["pg_w"] = "-"
+                if compared_data[i][16] and compared_data[i][16] == compared_data[i][31]:
+                    push_data[i][">=60 yrs"] = "✔"
+                else:
+                    push_data[i][">=60 yrs"] = "-"
 
-            if compared_data[i][16] and compared_data[i][16] == compared_data[i][31]:
-                push_data[i][">=60 yrs"] = "✔"
-            elif compared_data[i][16] != compared_data[i][31]:
-                push_data[i][">=60 yrs"] = "×"
-            else:
-                push_data[i][">=60 yrs"] = "-"
+                push_data.append({})
 
-            push_data.append({})
+        for i in australia_vaccine_list:
+            temp = {}
+            print(i)
+            if (i not in other_vaccine_list) == True:
+                temp["Vaccine Name"] = i
+                temp["Birth"] = "-"
+                temp["2 mths"] = "-"
+                temp["4 mths"] = "-"
+                temp["6 mths"] = "-"
+                temp["12 mths"] = "-"
+                temp["18 mths"] = "-"
+                temp["2-4 yrs"] = "-"
+                temp[">4 yrs"] = "-"
+                temp["12-18 yrs"] = "-"
+                temp[">18 yrs"] = "-"
+                temp[">24 yrs"] = "-"
+                temp["pg_w"] = "-"
+                temp[">=60 yrs"] = "-"
+            push_data.append(temp)
 
     ## Generating Return value for frontend
     if country_name == False and push_data == [{}] and push_disease == [{}]:
