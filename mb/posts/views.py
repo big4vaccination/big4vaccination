@@ -278,6 +278,7 @@ def advanced_searched(request):
         for i in range(len(australia_vaccine_list)):
             temp = {}
             if (australia_vaccine_list[i][0] not in other) == True:
+
                 temp["Vaccine Name"] = australia_vaccine_list[i][0]
                 if australia_vaccine_list[i][5]:
                     temp["Birth"] = "×"
