@@ -271,16 +271,16 @@ def advanced_searched(request):
             push_data.append({})
 
     ## Generating Return value for frontend
-    if country_name == "False" and push_data == [{}] and push_disease == [{}]:
+    if country_name == False and push_data == [{}] and push_disease == [{}]:
         return render(request, 'compare_schedule.html',
                       {'data': json.dumps(list(push_data)), 'country_name': country_name,
                        'disease': json.dumps(list(push_disease)), })
     elif country_name and push_data == [{}] and push_disease == [{}]:
-        # push_data["Result": "Sorry, there is no such recording :("]
+        # push_data["Result"] =  "Sorry, there is no such recording :("
         return render(request, 'compare_schedule.html',
                       {'data': json.dumps(list(push_data)), 'country_name': country_name,
                        'disease': json.dumps(list(push_disease)), })
-    elif country_name and push_data or push_disease:
+    elif country_name != False and push_data and push_disease:
         return render(request, 'compare_schedule.html',
                       {'data': json.dumps(list(push_data)), 'country_name': country_name,
                        'disease': json.dumps(list(push_disease)), 'explanation': "Reported cases in 2018",
