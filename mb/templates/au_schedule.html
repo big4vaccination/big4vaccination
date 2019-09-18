@@ -3,200 +3,215 @@
 {% block content %}
 
 
-<!-- <!doctype html> -->
-   <html> 
-      <!-- <head> -->
-          <!-- <meta charset="utf-8"> -->
-          <!-- <title>Basic Site Template</title> -->
-      <!-- </head> -->
-  
-      <body>
-	  <div id ="slides" class="carousel slide" data-ride="carousel">
-	<ul class = "carousel-indicators">
-		<!-- <li data-target="#slides" data-slide-to="0"></li> -->
-		<!-- <li data-target="#slides" data-slide-to="1" ></li>  -->
-		<li data-target="#slides" data-slide-to="2" class="active"></li> 
-	</ul>
-	<div class="carousel-inner">
-	<div class="carousel-item active">
-				
-				<img src="/static/img/11.jpg"> 
-				<div class="carousel-caption-4">
-				<div class="container">
-					  <div class="col-md-auto text-center">
-						<h2>Australian vaccine schedule</h2>
-						<a class="btn btn-primary btn-lg js-scroll-trigger" href="#services_">Find Out More</a>
-			<br>
-			</div>
-					</div>				
-			<!-- <h2 class="text-uppercase text-white font-weight-bold">Immunisation is important</h2> -->
-				 <!-- <h2 class="display-2">Free Interpreting Service</h2>  -->
-				 <!-- <h3>Immunisation is a simple and effective way of -->
-                        <!-- protecting children from serious diseases. It not only helps protect individuals, it also -->
-                        <!-- protects the broader community by minimising the spread of disease.</h3> -->
-	
-				<!-- <button type="button" class="btn btn-outline-light btn-lg">VIEW DEMO</button> -->
-				<!-- <a class="btn btn-primary btn-lg js-scroll-trigger" href="#services_">Find Out More</a> -->
-           
-				</div>
-		</div>
-		
-	</div>
-	</div>
-	  <!-- <section class="page-section bg-dark text-white" id="about"> -->
+    <!-- <!doctype html> -->
+    <html>
+    <!-- <head> -->
+    <!-- <meta charset="utf-8"> -->
+    <!-- <title>Basic Site Template</title> -->
+    <!-- </head> -->
+
+    <body>
+    <div id="slides" class="carousel slide" data-ride="carousel">
+        <ul class="carousel-indicators">
+            <!-- <li data-target="#slides" data-slide-to="0"></li> -->
+            <!-- <li data-target="#slides" data-slide-to="1" ></li>  -->
+            <li data-target="#slides" data-slide-to="2" class="active"></li>
+        </ul>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+
+                <img src="/static/img/11.jpg">
+                <div class="carousel-caption-4">
+                    <div class="container">
+                        <div class="col-md-auto text-center">
+                            <h2>Australian vaccine schedule</h2>
+                            <a class="btn btn-primary btn-lg js-scroll-trigger" href="#services_">Find Out More</a>
+                            <br>
+                        </div>
+                    </div>
+                    <!-- <h2 class="text-uppercase text-white font-weight-bold">Immunisation is important</h2> -->
+                    <!-- <h2 class="display-2">Free Interpreting Service</h2>  -->
+                    <!-- <h3>Immunisation is a simple and effective way of -->
+                    <!-- protecting children from serious diseases. It not only helps protect individuals, it also -->
+                    <!-- protects the broader community by minimising the spread of disease.</h3> -->
+
+                    <!-- <button type="button" class="btn btn-outline-light btn-lg">VIEW DEMO</button> -->
+                    <!-- <a class="btn btn-primary btn-lg js-scroll-trigger" href="#services_">Find Out More</a> -->
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- <section class="page-section bg-dark text-white" id="about"> -->
     <!-- <div class="container"> -->
-      <!-- <div class="row justify-content-center"> -->
-        <!-- <div class="col-lg-8 text-center"> -->
-          <!-- <h2 class="text-white mt-0">We've got what you need!</h2> -->
-          <!-- <hr class="divider light my-4"> -->
-          <!-- <p class="h4">Australian Standard Vaccination Schedule</p> -->
-        <!-- </div> -->
-      <!-- </div> -->
+    <!-- <div class="row justify-content-center"> -->
+    <!-- <div class="col-lg-8 text-center"> -->
+    <!-- <h2 class="text-white mt-0">We've got what you need!</h2> -->
+    <!-- <hr class="divider light my-4"> -->
+    <!-- <p class="h4">Australian Standard Vaccination Schedule</p> -->
     <!-- </div> -->
-  <!-- </section> -->
-  <br>
+    <!-- </div> -->
+    <!-- </div> -->
+    <!-- </section> -->
+    <br>
 
-      <!-- <center ><h4>Australian Vaccine Schedule</h4></center> -->
-	  <section id="services_">
-	  <div class="col-md-auto text-center">
-			<h5 class="h5">Australian vaccine schedule</h5>
-			<br>
-			</div>
-	</section>
-     <div class="col-md-auto text-center">
-	  <table id="table">
+    <!-- <center ><h4>Australian Vaccine Schedule</h4></center> -->
+    <section id="services_">
+        <div class="col-md-auto text-center">
+            <h5 class="h5">Australian vaccine schedule</h5>
+            <br>
+        </div>
+    </section>
+    <div class="col-md-auto text-center">
+        <table id="table">
 
-      </table>
-	  <br>
-	  <br>
-	</div>
-	<div class="col-md-auto text-center">
-	  <table id="disease">
+        </table>
+        <br>
+        <br>
+    </div>
+    <div class="col-md-auto text-center">
+        <table id="disease">
 
-      </table>
-	</div>
-      <script>
-          let table_data = {{ data|safe }}
-          console.log(table_data)
-		  
-		  let disease_data = {{disease|safe }}
-		  console.log(disease_data)
-		  
-          function generateTableHead(table,data){
-              let thead = table.createTHead();
-              let row = thead.insertRow();
-              for(let key of data){
-                  let th = document.createElement("th")
-                  let text = document.createTextNode(key)
-                  th.appendChild(text)
-                  row.appendChild(th)
-              }
-          }
-		  
-		  function generateTableHead2(table,disease){
-              let thead = table.createTHead();
-              let row = thead.insertRow();
-              for(let key of disease){
-                  let th = document.createElement("th")
-                  let text = document.createTextNode(key)
-                  th.appendChild(text)
-                  row.appendChild(th)
-              }
-          }
-			
-		 function generateTable2(table,disease) {
-              for(let element of disease){
-			  <!-- var index = 0 -->
-                  let row = table.insertRow();
-                  for (let key in element){
-                      let cell = row.insertCell()
-                      let text = document.createTextNode(element[key])
-                      cell.appendChild(text)
-					  
-					  cell.setAttribute("href",String(text))
-                  }
-				 <!-- index++ -->
-                  }
-              }
-          
-		  
-          function generateTable(table,data) {
-				
-              for(let element of data){
-                  let row = table.insertRow();
-                  for (let key in element){
-                      let cell = row.insertCell()
-                      let text = document.createTextNode(element[key])
-                      cell.appendChild(text)
-					  
-              }
-          }
-		  }
+        </table>
+    </div>
+    <script>
+        let table_data = {{ data|safe }}
+            console.log(table_data)
 
-          let table = document.querySelector("#table");
-          let data = Object.keys(table_data[0]);
-			
-          generateTable(table,table_data)
-          generateTableHead(table,data)
-			
-		    let table2 = document.querySelector("#disease"); 
-			let disease = Object.keys(disease_data[0]); 
-			generateTable2(table2, disease_data)
-			generateTableHead2(table2, disease)
-		
-		  
-      </script>
-	  <script>
-	  <!-- document.body.innerHTML.replace(/y/g,"$"); -->
-	  <!-- var elmOperator = $("#"+elm.attr('table_au').replace('y','$$')); -->
-	  <!-- var temp = new String('y'); -->
-	  <!-- document.write(temp + '<br/>'); -->
-	  <!-- temp = temp.replace(/y/g,'$$'); -->
-	  <!-- document.write(temp) -->
-	  <!-- var mystr='y'; -->
-	  <!-- var newstr=mystr.replace(/y/g, "&#x2714"); -->
-	  <!-- document.getElementById("table_au").innerHTML = newstr; -->
-	  <!-- document.write(newstr); -->
+        let disease_data = {{disease|safe }}
+            console.log(disease_data)
 
-	  </script>
-	  <br>
+        function generateTableHead(table, data) {
+            let thead = table.createTHead();
+            let row = thead.insertRow();
+            for (let key of data) {
+                let th = document.createElement("th")
+                let text = document.createTextNode(key)
+                th.appendChild(text)
+                row.appendChild(th)
+            }
+        }
 
-      </body>
-   <style>
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-  width: 100%;
-  #height: 100%;
-  border: 2px solid #ddd;
-}
-tr {
-    display: table-row;
-    vertical-align: inherit;
-    border-color: inherit;
-}
+        function generateTableHead2(table, disease) {
+            let thead = table.createTHead();
+            let row = thead.insertRow();
+            for (let key of disease) {
+                let th = document.createElement("th")
+                let text = document.createTextNode(key)
+                th.appendChild(text)
+                row.appendChild(th)
+            }
+        }
 
-th, td {
-  text-align: center;
-  padding: 0.2px;
-}
+        function generateTable2(table, disease) {
+            for (let element of disease) {
+                let  index = 0;
+                let row = table.insertRow();
+                for (let key in element) {
+                    let cell = row.insertCell()
+                    let text = document.createTextNode(element[key])
+                    if(index%3 == 2){
+                        var a = document.createElement('a')
+                        a.appendChild(text)
+                        a.href = element[key]
+                        cell.appendChild(a)
+                    }else {
+                        cell.appendChild(text)
+                    }
+                    index++
+                }
+            }
+        }
 
-th:first-child, td:first-child {
-  text-align: center;
-}
 
-tr:nth-child(even) {
-  background-color: #f2f2f2
-}
+        function generateTable(table, data) {
 
-.fa-check {
-  color: green;
-}
+            for (let element of data) {
+                let row = table.insertRow();
+                for (let key in element) {
+                    let cell = row.insertCell()
+                    let text = document.createTextNode(element[key])
+                    cell.appendChild(text)
 
-.fa-remove {
-  color: red;
-}
-</style>
+                }
+            }
+        }
+
+        let table = document.querySelector("#table");
+        let data = Object.keys(table_data[0]);
+
+        generateTable(table, table_data)
+        generateTableHead(table, data)
+
+        let table2 = document.querySelector("#disease");
+        let disease = Object.keys(disease_data[0]);
+        generateTable2(table2, disease_data)
+        generateTableHead2(table2, disease)
+
+
+    </script>
+    <script>
+        <!--
+        document.body.innerHTML.replace(/y/g, "$"); -->
+        <!--
+        var elmOperator = $("#" + elm.attr('table_au').replace('y', '$$')); -->
+        <!--
+        var temp = new String('y'); -->
+        <!--
+        document.write(temp + '<br/>'); -->
+        <!--
+        temp = temp.replace(/y/g, '$$'); -->
+        <!--
+        document.write(temp) -->
+        <!--
+        var mystr = 'y'; -->
+        <!--
+        var newstr = mystr.replace(/y/g, "&#x2714"); -->
+        <!--
+        document.getElementById("table_au").innerHTML = newstr; -->
+        <!-- document.write(newstr); -->
+
+    </script>
+    <br>
+
+    </body>
+    <style>
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            width: 100%;
+            #height: 100%;
+            border: 2px solid #ddd;
+        }
+
+        tr {
+            display: table-row;
+            vertical-align: inherit;
+            border-color: inherit;
+        }
+
+        th, td {
+            text-align: center;
+            padding: 0.2px;
+        }
+
+        th:first-child, td:first-child {
+            text-align: center;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2
+        }
+
+        .fa-check {
+            color: green;
+        }
+
+        .fa-remove {
+            color: red;
+        }
+    </style>
     </html>
- 
- {% endblock content %}
+
+{% endblock content %}
