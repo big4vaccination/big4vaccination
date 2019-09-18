@@ -185,91 +185,91 @@ def advanced_searched(request):
                 if compared_data[i][4] and compared_data[i][4] == compared_data[i][19]:
                     push_data[i]["Birth"] = "✔"
                 elif compared_data[i][4] and compared_data != compared_data[i][19]:
-                    push_data[i]["Birth"] = "×"
+                    push_data[i]["Birth"] = "Χ"
                 else:
                     push_data[i]["Birth"] = ""
 
                 if compared_data[i][5] and compared_data[i][5] == compared_data[i][20]:
                     push_data[i]["2 mths"] = "✔"
                 elif compared_data[i][5] and compared_data != compared_data[i][20]:
-                    push_data[i]["2 mths"] = "×"
+                    push_data[i]["2 mths"] = "Χ"
                 else:
                     push_data[i]["2 mths"] = ""
 
                 if compared_data[i][6] and compared_data[i][6] == compared_data[i][21]:
                     push_data[i]["4 mths"] = "✔"
                 elif compared_data[i][6] and compared_data != compared_data[i][21]:
-                    push_data[i]["4 mths"] = "×"
+                    push_data[i]["4 mths"] = "Χ"
                 else:
                     push_data[i]["4 mths"] = ""
 
                 if compared_data[i][7] and compared_data[i][7] == compared_data[i][22]:
                     push_data[i]["6 mths"] = "✔"
                 elif compared_data[i][7] and compared_data != compared_data[i][22]:
-                    push_data[i]["6 mths"] = "×"
+                    push_data[i]["6 mths"] = "Χ"
                 else:
                     push_data[i]["4 mths"] = ""
 
                 if compared_data[i][8] and compared_data[i][8] == compared_data[i][23]:
                     push_data[i]["12 mths"] = "✔"
                 elif compared_data[i][8] and compared_data != compared_data[i][23]:
-                    push_data[i]["12 mths"] = "×"
+                    push_data[i]["12 mths"] = "Χ"
                 else:
                     push_data[i]["12 mths"] = ""
 
                 if compared_data[i][9] and compared_data[i][9] == compared_data[i][24]:
                     push_data[i]["18 mths"] = "✔"
                 elif compared_data[i][9] and compared_data != compared_data[i][24]:
-                    push_data[i]["18 mths"] = "×"
+                    push_data[i]["18 mths"] = "Χ"
                 else:
                     push_data[i]["18 mths"] = ""
 
                 if compared_data[i][10] and compared_data[i][10] == compared_data[i][25]:
                     push_data[i]["2-4 yrs"] = "✔"
                 elif compared_data[i][10] and compared_data != compared_data[i][25]:
-                    push_data[i]["2-4 yrs"] = "×"
+                    push_data[i]["2-4 yrs"] = "Χ"
                 else:
                     push_data[i]["2-4 yrs"] = ""
 
                 if compared_data[i][11] and compared_data[i][11] == compared_data[i][26]:
                     push_data[i][">4 yrs"] = "✔"
                 elif compared_data[i][11] and compared_data != compared_data[i][26]:
-                    push_data[i][">4 yrs"] = "×"
+                    push_data[i][">4 yrs"] = "Χ"
                 else:
                     push_data[i][">4 yrs"] = ""
 
                 if compared_data[i][12] and compared_data[i][12] == compared_data[i][27]:
                     push_data[i]["12-18 yrs"] = "✔"
                 elif compared_data[i][12] and compared_data != compared_data[i][27]:
-                    push_data[i]["12-18 yrs"] = "×"
+                    push_data[i]["12-18 yrs"] = "Χ"
                 else:
                     push_data[i]["12-18 yrs"] = ""
 
                 if compared_data[i][13] and compared_data[i][13] == compared_data[i][28]:
                     push_data[i][">18 yrs"] = "✔"
                 elif compared_data[i][13] and compared_data != compared_data[i][28]:
-                    push_data[i][">18 yrs"] = "×"
+                    push_data[i][">18 yrs"] = "Χ"
                 else:
                     push_data[i][">18 yrs"] = ""
 
                 if compared_data[i][14] and compared_data[i][14] == compared_data[i][29]:
                     push_data[i][">24 yrs"] = "✔"
                 elif compared_data[i][14] and compared_data != compared_data[i][29]:
-                    push_data[i][">24 yrs"] = "×"
+                    push_data[i][">24 yrs"] = "Χ"
                 else:
                     push_data[i][">24 yrs"] = ""
 
-                if compared_data[i][15] and compared_data[i][15] == compared_data[i][30]:
-                    push_data[i]["pg_w"] = "✔"
-                elif compared_data[i][15] and compared_data != compared_data[i][30]:
-                    push_data[i]["pg_w"] = "×"
-                else:
-                    push_data[i]["pg_w"] = ""
+                # if compared_data[i][15] and compared_data[i][15] == compared_data[i][30]:
+                #     push_data[i]["pg_w"] = "✔"
+                # elif compared_data[i][15] and compared_data != compared_data[i][30]:
+                #     push_data[i]["pg_w"] = "Χ"
+                # else:
+                #     push_data[i]["pg_w"] = ""
 
                 if compared_data[i][16] and compared_data[i][16] == compared_data[i][31]:
                     push_data[i][">=60 yrs"] = "✔"
                 elif compared_data[i][16] and compared_data != compared_data[i][31]:
-                    push_data[i][">=60 yrs"] = "×"
+                    push_data[i][">=60 yrs"] = "Χ"
                 else:
                     push_data[i][">=60 yrs"] = ""
 
@@ -281,67 +281,67 @@ def advanced_searched(request):
 
                 temp["Vaccine Name"] = australia_vaccine_list[i][0]
                 if australia_vaccine_list[i][5]:
-                    temp["Birth"] = "×"
+                    temp["Birth"] = "Χ"
                 else:
                     temp["Birth"] = ""
 
                 if australia_vaccine_list[i][6]:
-                    temp["2 mths"] = "×"
+                    temp["2 mths"] = "Χ"
                 else:
                     temp["2 mths"] = ""
 
                 if australia_vaccine_list[i][7]:
-                    temp["4 mths"] = "×"
+                    temp["4 mths"] = "Χ"
                 else:
                     temp["4 mths"] = ""
 
                 if australia_vaccine_list[i][8]:
-                    temp["6 mths"] = "×"
+                    temp["6 mths"] = "Χ"
                 else:
                     temp["6 mths"] = ""
 
                 if australia_vaccine_list[i][9]:
-                    temp["12 mths"] = "×"
+                    temp["12 mths"] = "Χ"
                 else:
                     temp["12 mths"] = ""
 
                 if australia_vaccine_list[i][10]:
-                    temp["18 mths"] = "×"
+                    temp["18 mths"] = "Χ"
                 else:
                     temp["18 mths"] = ""
 
                 if australia_vaccine_list[i][11]:
-                    temp["2-4 yrs"] = "×"
+                    temp["2-4 yrs"] = "Χ"
                 else:
                     temp["2-4 yrs"] = ""
 
-                if australia_vaccine_list[i][11]:
-                    temp[">4 yrs"] = "×"
+                if australia_vaccine_list[i][12]:
+                    temp[">4 yrs"] = "Χ"
                 else:
                     temp[">4 yrs"] = ""
 
-                if australia_vaccine_list[i][11]:
-                    temp["12-18 yrs"] = "×"
+                if australia_vaccine_list[i][13]:
+                    temp["12-18 yrs"] = "Χ"
                 else:
                     temp["12-18 yrs"] = ""
 
-                if australia_vaccine_list[i][11]:
-                    temp[">18 yrs"] = "×"
+                if australia_vaccine_list[i][14]:
+                    temp[">18 yrs"] = "Χ"
                 else:
                     temp[">18 yrs"] = ""
 
-                if australia_vaccine_list[i][11]:
-                    temp[">24 yrs"] = "×"
+                if australia_vaccine_list[i][15]:
+                    temp[">24 yrs"] = "Χ"
                 else:
                     temp[">24 yrs"] = ""
 
-                if australia_vaccine_list[i][11]:
-                    temp["pg_w"] = "×"
-                else:
-                    temp["pg_w"] = ""
+                # if australia_vaccine_list[i][16]:
+                #     temp["pg_w"] = "Χ"
+                # else:
+                #     temp["pg_w"] = ""
 
-                if australia_vaccine_list[i][11]:
-                    temp[">=60 yrs"] = "×"
+                if australia_vaccine_list[i][17]:
+                    temp[">=60 yrs"] = "Χ"
                 else:
                     temp[">=60 yrs"] = ""
             push_data.append(temp)
@@ -360,7 +360,8 @@ def advanced_searched(request):
         return render(request, 'compare_schedule.html',
                       {'data': json.dumps(list(push_data)), 'country_name': country_name,
                        'disease': json.dumps(list(push_disease)), 'explanation': "Reported cases in 2018",
-                       "comparison": "Comparison of Vaccine Schedules"})
+                       "comparison": "Comparison of Vaccine Schedules","right":"✔ Means the vaccine might already be taken in your country.",
+                       "wrong":"Χ Means the vaccine has not been taken."})
 
 
 def Australia_vaccine(request):
