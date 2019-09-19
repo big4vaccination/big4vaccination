@@ -2,30 +2,34 @@
 
 {% block content %}
 
+	
+	<!-- <div class="container-fluid"> -->
+		<!-- <img src="/static/img/5.jpg" alt="Snow" style="width:100%;height:100%;"> -->
+		<!-- <div class="1-btn">Bottom Left</div> -->
+		<!-- <div class="2-btn">AA</div> -->
+		<!-- <div class="3-btn">CC</div> -->
+	<!-- </div> -->
+
 	<div id ="slides" class="carousel slide" data-ride="carousel">
 	<ul class = "carousel-indicators">
 		<li data-target="#slides" data-slide-to="2" class="active"></li> 
 	</ul>
 	<div class="carousel-inner">
-	
 		<div class="carousel-item active">
 				<img src="/static/img/5.jpg">
-				<div class="carousel-caption">			                
-			<!-- <h2 class="text-uppercase text-white font-weight-bold">Immunisation is important</h2> -->
-				 <h2>Compare the immunisation schedules with Australia</h2> 
-				 <!-- <h3>Immunisation is a simple and effective way of -->
-                        <!-- protecting children from serious diseases. It not only helps protect individuals, it also -->
-                        <!-- protects the broader community by minimising the spread of disease.</h3> -->
-	
-				<!-- <button type="button" class="btn btn-outline-light btn-lg">VIEW DEMO</button> -->
+				<div class="carousel-caption">
+					<h4>Immunisation is a simple and effective way of
+                        protecting children from serious diseases.</h4>
+					<h4>The main features of our website is to provide information about Australian vaccine schedule, comparison of vaccine schdules between your home country
+						and Australia, and finding a GP who speaks in your first language.</h4>
+				 <!-- <h2>Compare the immunisation schedules with Australia</h2>  -->
+				 <a class="btn btn-primary btn-lg js-scroll-trigger" href="{% url 'au_schedule' %}">View schedule</a>
 				<a class="btn btn-primary btn-lg js-scroll-trigger" href="{% url 'compare_schedule' %}">Compare Schedules</a>
-           
+				<a class="btn btn-primary btn-lg js-scroll-trigger" href="{% url 'special_GP' %}">Find the Special GP</a>
 				</div>
 		</div>
-		
 	</div>
-
-</div>
+	</div>
        
     <section class="page-section bg-light" id="services_">
         <div class="container">
