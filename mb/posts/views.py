@@ -117,7 +117,7 @@ def advanced_searched(request):
     database = os.path.join(BASE_DIR, '6.db')
     conn = create_connection(database)
     cur = conn.cursor()
-    country_name = request.POST.get('country', False)
+    country_name = request.POST.get('country',"Select")
 
     # age = request.POST.get('age', False)
     # australia_data = "SELECT schedule, vaccine_code, vaccine_desc, comments from Vaccine_Info where country_name = 'Australia' and tag = '" + str(age) +"'"
@@ -137,9 +137,13 @@ def advanced_searched(request):
     ## Variable -- push_data is for generating second table.
     ##          -- vaccine_desc is not using now
     ##          -- push_disease is for generating first table.
+    ##          -- out_put is for final out_put
+    ##          -- out_put2 is for final out_put2
     push_data = [{}]
     # vaccine_desc = [{}]
     push_disease = [{}]
+    out_put = []
+    out_put2 = []
 
     ## Checking the country name
     if country_name == "United Kingdom of Great Britain and Northern Ireland (the)":
@@ -161,11 +165,11 @@ def advanced_searched(request):
     data_disease = country_disease.fetchall()
 
     ## Generating push content for first table and second table
-    if country_name:
+    if country_name != "Select":
         ## Generating push content for first table.
         for i in range(len(data_disease)):
             if data_disease[i][2] != "0" and data_disease[i][2] is not None:
-                push_disease[i]["Disease name "] = data_disease[i][1]
+                push_disease[i]["Disease Name"] = data_disease[i][1]
                 push_disease[i]["Number of reported cases in " + str(country_name) + ""] = data_disease[i][2]
                 # push_disease[i]["Average immunisation coverage"]= data_disease[i][3]
                 # push_disease[i]["Percentage of reported cases in " + str(country_name) + ""] = data_disease[i][4]
@@ -208,7 +212,7 @@ def advanced_searched(request):
                 elif compared_data[i][7] and compared_data != compared_data[i][22]:
                     push_data[i]["6 mths"] = "Χ"
                 else:
-                    push_data[i]["4 mths"] = ""
+                    push_data[i]["6 mths"] = ""
 
                 if compared_data[i][8] and compared_data[i][8] == compared_data[i][23]:
                     push_data[i]["12 mths"] = "✔"
@@ -275,6 +279,7 @@ def advanced_searched(request):
 
                 push_data.append({})
 
+        # for generating unmatched vaccine
         for i in range(len(australia_vaccine_list)):
             temp = {}
             if (australia_vaccine_list[i][0] not in other) == True:
@@ -344,23 +349,36 @@ def advanced_searched(request):
                     temp[">=60 yrs"] = "Χ"
                 else:
                     temp[">=60 yrs"] = ""
-            push_data.append(temp)
+            if temp is not None:
+                push_data.append(temp)
            # sorted (push_data.keys(vaccine_name))
 
+        # for generating final output by A-Z order
+        for i in push_data:
+            if i != {}:
+                out_put.append(i)
+        out_put = sorted(out_put, key=lambda e:e['Vaccine Name'],reverse=False)
+
+        # for generating final output by A-Z order
+        for i in push_disease:
+            if i != {}:
+                out_put2.append(i)
+        out_put2 = sorted(out_put2, key=lambda e:e['Disease Name'],reverse=False)
+
     ## Generating Return value for frontend
-    if country_name == False and push_data == [{}] and push_disease == [{}]:
+    if country_name == "Select" and out_put == [] and out_put2 == []:
         return render(request, 'compare_schedule.html',
-                      {'data': json.dumps(list(push_data)), 'country_name': country_name,
-                       'disease': json.dumps(list(push_disease)), })
-    elif country_name and push_data == [{}] and push_disease == [{}]:
+                      {'data': json.dumps(list(out_put)), 'country_name': country_name,
+                       'disease': json.dumps(list(out_put2)), })
+    elif country_name and out_put == [] and out_put2 == []:
         # push_data["Result"] =  "Sorry, there is no such recording :("
         return render(request, 'compare_schedule.html',
-                      {'data': json.dumps(list(push_data)), 'country_name': country_name,
-                       'disease': json.dumps(list(push_disease)), })
-    elif country_name != False and push_data and push_disease:
+                      {'data': json.dumps(list(out_put)), 'country_name': country_name,
+                       'disease': json.dumps(list(out_put2)), })
+    elif country_name != False and out_put and out_put2:
         return render(request, 'compare_schedule.html',
-                      {'data': json.dumps(list(push_data)), 'country_name': country_name,
-                       'disease': json.dumps(list(push_disease)), 'explanation': "Reported Cases in 2018",
+                      {'data': json.dumps(list(out_put)), 'country_name': country_name,
+                       'disease': json.dumps(list(out_put2)), 'explanation': "Reported Cases in 2018",
                        "comparison": "Comparison of Vaccine Schedules","right":" ✔ Vaccine is recommended in your home country.",
                        "wrong":"Χ Vaccine is optional in your home country, but recommended in Australia."})
 
@@ -387,8 +405,8 @@ def Australia_vaccine(request):
     # print(data1)
     if data1:
         for i in range(len(data1)):
-            push_data[i]["Vaccine name"] = data1[i][0]
-            disease_data[i]["Vaccine name"] = data1[i][0]
+            push_data[i]["Vaccine Name"] = data1[i][0]
+            disease_data[i]["Vaccine Name"] = data1[i][0]
             # push_data[i]["Vaccine code"] = data1[i][1]
             # print(type(data1[i][2]))
             if data1[i][2] is None:
@@ -473,17 +491,30 @@ def Australia_vaccine(request):
             # push_data[i]["Description"] = data1[i][3]
             push_data.append({})
             disease_data.append({})
+
+        out_put = []
+        for i in push_data:
+            if i != {}:
+                out_put.append(i)
+        out_put = sorted(out_put, key=lambda e: e['Vaccine Name'], reverse=False)
+
+        out_put2 = []
+        for i in disease_data:
+            if i != {}:
+                out_put2.append(i)
+        out_put2 = sorted(out_put2, key=lambda e: e['Vaccine Name'], reverse=False)
+
     # print(push_data)
     # push_data.sort()
     return render(request, 'au_schedule.html',
-                  {'data': json.dumps(list(push_data)), 'disease': json.dumps(list(disease_data))})
+                  {'data': json.dumps(list(out_put)), 'disease': json.dumps(list(out_put2))})
 
 
 def find_GP(request):
     database = os.path.join(BASE_DIR, '6.db')
     conn = create_connection(database)
     cur = conn.cursor()
-    language = request.POST.get('language', False)
+    language = request.POST.get('language',"Select")
     sentence = "SELECT lat,lng from gp_data where language = '" + str(language) + "'"
     gp_data = cur.execute(sentence).fetchall()
 
