@@ -59,7 +59,7 @@
 
                                 </div>
                                 <div class="col-md-auto text-center">
-                                    <input class="btn btn-primary 123" type="submit" onclick="AjaxSubmit()"
+                                    <input class="btn btn-primary 123" formaction="#table_1" type="submit" onclick="AjaxSubmit()"
                                            href="#table_compare">
                                 </div>
 
@@ -73,21 +73,23 @@
     </div>
 
 
-    <div class="col-md-auto text-center">
-        <br>
-        <h4>{{ explanation }}</h4>
-        <table id="disease">
 
-        </table>
 
-    </div>
-
-    <div class="col-md-auto text-center">
+    <div class="col-md-auto text-center" id = "table_1">
         <br>
         <h4>{{ comparison }}</h4>
         <h5>{{ right }}</h5>
         <h5>{{ wrong }}</h5>
         <table id="table">
+
+        </table>
+
+    </div>
+	
+	<div class="col-md-auto text-center" id = "table_1">
+        <br>
+        <h4>{{ explanation }}</h4>
+        <table id="disease">
 
         </table>
 
@@ -249,7 +251,7 @@
         }
 
         th, td {
-            text-align: center;
+            text-align: left;
             padding: 0.2px;
         }
 

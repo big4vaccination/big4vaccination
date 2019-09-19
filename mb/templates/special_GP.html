@@ -2,23 +2,33 @@
 
 {% block content %}
 
-    <section class="page-section bg-dark text-white" id="about">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 text-center">
-                    <h2 class="text-white mt-0">We've got what you need!</h2>
-                    <hr class="divider light my-4">
+    <!-- <section class="page-section bg-dark text-white" id="about"> -->
+        <!-- <div class="container"> -->
+            <!-- <div class="row justify-content-center"> -->
+                <!-- <div class="col-lg-8 text-center"> -->
+                    <!-- <h2 class="text-white mt-0">We've got what you need!</h2> -->
+                    <!-- <hr class="divider light my-4"> -->
 
-                    <p class="h4">Find your special GPs in VIC</p>
+                    <!-- <p class="h4">Find your special GPs in VIC</p> -->
 
-                    <!-- <p class="mb-4"> Catch-up vaccinations</p> -->
-                </div>
-            </div>
-        </div>
-    </section>
-
-	<br>
-    <section>
+                    <!-- <!-- <p class="mb-4"> Catch-up vaccinations</p> --> 
+                <!-- </div> -->
+            <!-- </div> -->
+        <!-- </div> -->
+    <!-- </section> -->
+	<body>
+    <div id ="slides" class="carousel slide" data-ride="carousel">
+	<ul class = "carousel-indicators">
+		<!-- <li data-target="#slides" data-slide-to="0"></li> -->
+		<!-- <li data-target="#slides" data-slide-to="1" ></li>  -->
+		<li data-target="#slides" data-slide-to="2" class="active"></li> 
+	</ul>
+	<div class="carousel-inner">
+	<div class="carousel-item active">
+				
+				<img src="/static/img/15.jpg"> 
+				<div class="carousel-caption-3">
+				  <div class="container">
         <form method="POST" action="">
             {% csrf_token %}
             <div class="row justify-content-md-center">
@@ -30,55 +40,61 @@
                     <!-- <h6>Select one language</h6> -->
                     <select name="language" id="input" class="browser-default custom-select  mb-3">
                         <option value="{{ language }}">{{ language }}</option>
-                        <option value="Yiddish">Yiddish</option>
-                        <option value="Vietnamese">Vietnamese</option>
-                        <option value="Urdu">Urdu</option>
-                        <option value="Arabic">Arabic</option>
-                        <option value="Ukranian">Ukranian</option>
-                        <option value="Teochow">Teochow</option>
-                        <option value="Bosnian">Bosnian</option>
-                        <option value="Cantonese">Cantonese</option>
-                        <option value="Tamil">Tamil</option>
-                        <option value="Spanish">Spanish</option>
-                        <option value="Slovak">Slovak</option>
-                        <option value="Sinhalese">Sinhalese</option>
-                        <option value="Croatian">Croatian</option>
+						<option value="Arabic">Arabic</option>
+						<option value="Bosnian">Bosnian</option>
+						<option value="Cantonese">Cantonese</option>
+						<option value="Croatian">Croatian</option>
                         <option value="Czech">Czech</option>
-                        <option value="Serbian">Serbian</option>
-                        <option value="Filippino">Filippino</option>
+						<option value="Filippino">Filippino</option>
                         <option value="French">French</option>
-                        <option value="Russian">Russian</option>
-                        <option value="Portugese">Portugese</option>
-                        <option value="German">German</option>
+						<option value="German">German</option>
                         <option value="Greek">Greek</option>
-                        <option value="Polish">Polish</option>
-                        <option value="Marathi">Marathi</option>
-                        <option value="Mandarin">Mandarin</option>
-                        <option value="Gujarati">Gujarati</option>
-                        <option value="Hakka">Hakka</option>
-                        <option value="Malay">Malay</option>
-                        <option value="Macedonian">Macedonian</option>
-                        <option value="Hebrew">Hebrew</option>
-                        <option value="Hindi">Hindi</option>
-                        <option value="Khmer">Khmer</option>
-                        <option value="Kannada">Kannada</option>
-                        <option value="Hokkien">Hokkien</option>
+						<option value="Gujarati">Gujarati</option>
+						<option value="Hakka">Hakka</option>
+						<option value="Hebrew">Hebrew</option>
+						<option value="Hindi">Hindi</option>
+						<option value="Hokkien">Hokkien</option>
                         <option value="Hungarian">Hungarian</option>
-                        <option value="Italian">Italian</option>
+						<option value="Italian">Italian</option>
+						<option value="Khmer">Khmer</option>
+						<option value="Mandarin">Mandarin</option>
+						<option value="Macedonian">Macedonian</option>
+						 <option value="Malay">Malay</option>
+						<option value="Mandarin">Mandarin</option>
+						<option value="Marathi">Marathi</option>
+						 <option value="Polish">Polish</option>
+						 <option value="Portugese">Portugese</option>
+						 <option value="Russian">Russian</option>
+						<option value="Serbian">Serbian</option> 
+						  <option value="Sinhalese">Sinhalese</option>
+						<option value="Slovak">Slovak</option>  
+						<option value="Spanish">Spanish</option>
+						<option value="Tamil">Tamil</option>
+						<option value="Teochow">Teochow</option>
+                        <option value="Ukranian">Ukranian</option>
+						  <option value="Urdu">Urdu</option>
+						<option value="Vietnamese">Vietnamese</option>
+                        <option value="Yiddish">Yiddish</option>
                     </select>
                 </div>
 			<div class="col-md-auto text-center">
-				<input class="btn btn-primary 123" type = "submit" onclick="AjaxSubmit(); value="submit">
+				<input class="btn btn-primary 123" formaction="#table_1" type = "submit" onclick="AjaxSubmit(); value="submit">
 			</div>
                 <!-- <input type="submit" onclick="AjaxSubmit();" value="submit"> -->
             </div>
         </form>
-    </section>
+    </div>				
+				</div>
+		</div>
+		
+	</div>
+	</div>
 	<br>
-    <section>
+    <section id ="table_1">
         <div class="row justify-content-md-center" id="map"></div>
     </section>
-
+	</br>
+	</body>
     <script>
 
         function initMap() {

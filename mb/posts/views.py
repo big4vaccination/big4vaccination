@@ -126,7 +126,7 @@ def advanced_searched(request):
 
     ## Here is for adding the SQLite Query
     excute_sentence = "SELECT * from all_schedule_vs_aus_schedule where country_name = '" + str(country_name) + "' order by vaccine_name ASC"
-    vaccine_name = "SELECT vaccine_name from all_schedule_vs_aus_schedule where country_name = '" + str(country_name) + "' order by vaccine_name ASC"
+    vaccine_name = "SELECT DISTINCT vaccine_name from all_schedule_vs_aus_schedule where country_name = '" + str(country_name) + "' order by vaccine_name ASC"
     australia = "SELECT DISTINCT * from aus_schedule order by vaccine_name ASC"
     compared_data = cur.execute(excute_sentence).fetchall()
     australia_vaccine_list = cur.execute(australia).fetchall()
@@ -345,6 +345,7 @@ def advanced_searched(request):
                 else:
                     temp[">=60 yrs"] = ""
             push_data.append(temp)
+           # sorted (push_data.keys(vaccine_name))
 
     ## Generating Return value for frontend
     if country_name == False and push_data == [{}] and push_disease == [{}]:
@@ -359,9 +360,9 @@ def advanced_searched(request):
     elif country_name != False and push_data and push_disease:
         return render(request, 'compare_schedule.html',
                       {'data': json.dumps(list(push_data)), 'country_name': country_name,
-                       'disease': json.dumps(list(push_disease)), 'explanation': "Reported cases in 2018",
-                       "comparison": "Comparison of Vaccine Schedules","right":"✔ Means the vaccine might already be taken in your country.",
-                       "wrong":"Χ Means the vaccine has not been taken."})
+                       'disease': json.dumps(list(push_disease)), 'explanation': "Reported Cases in 2018",
+                       "comparison": "Comparison of Vaccine Schedules","right":" ✔ Vaccine is recommended in your home country.",
+                       "wrong":"Χ Vaccine is optional in your home country, but recommended in Australia."})
 
 
 def Australia_vaccine(request):

@@ -58,6 +58,21 @@
 	
 	 
 }
+.carousel-caption-5{
+position:absolute;
+right:15%;
+bottom:20px;
+left:15%;
+z-index:10;
+padding-top:20px;
+padding-bottom:20px;
+color:#f4623a;
+text-align:center}
+.carousel-caption-5{
+  position: absolute;
+  top:44%;
+  transform: translateY(-49%);}
+
 .carousel-caption-4{
 position:absolute;
 right:15%;
