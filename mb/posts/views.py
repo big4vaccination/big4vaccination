@@ -379,7 +379,7 @@ def advanced_searched(request):
         return render(request, 'compare_schedule.html',
                       {'data': json.dumps(list(out_put)), 'country_name': country_name,
                        'disease': json.dumps(list(out_put2)), 'explanation': "Reported Cases in 2018",
-                       "comparison": "Comparison of Vaccine Schedules","right":" ✔ Vaccine is recommended in your home country.",
+                       "comparison": "Comparison of Vaccine Schedules","right":" √ Vaccine is recommended in your home country.",
                        "wrong":"Χ Vaccine is optional in your home country, but recommended in Australia."})
 
 
