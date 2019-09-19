@@ -34,13 +34,11 @@
 <nav class="navbar navbar-expand-md navbar-white  fixed-top " id="mainNav">
     <div class="container">
         <a class="navbar-brand js-scroll-trigger" href="{% url 'home' %}">Vaccination</a>
-
-
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
                 data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
                 aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-        </button> 
+        </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto my-2 my-lg-0">
                 <li class="nav-item">
@@ -54,8 +52,8 @@
                         <a class="dropdown-item" href="{% url 'compare_schedule' %}">Compare schedules</a>
 
                         <a class="dropdown-item" href="{% url 'special_GP' %}">Find Special GP</a>
-						<a class="dropdown-item" href="{% url 'language' %}">Language services</a>
-						
+                        <a class="dropdown-item" href="{% url 'language' %}">Language services</a>
+
                     </div>
                 </li>
                 <li class="nav-item">
@@ -64,11 +62,26 @@
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="{% url 'about_us' %}">About us</a>
                 </li>
-				
-                <!-- <li class="nav-item">
-                  <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
-                </li> -->
-
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger">
+                        <div id="google_translate_element"></div>
+                        <script type="text/javascript">
+                            function googleTranslateElementInit() {
+                                new google.translate.TranslateElement(
+                                    {
+                                        pageLanguage: 'en',
+                                        includedLanguages: 'en,hr,cs,fr,de,iw,hu,ga,it,pt,ro,sr,es,th,vi,hi,ar,so,tl,uk,tg,id,ne,km,ny,ps,fa,bs,ur,am,ha,af',
+                                        autoDisplay: false,
+                                        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+                                    },
+                                    'google_translate_element'
+                                );
+                            }
+                        </script>
+                        <script type="text/javascript"
+                                src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
@@ -79,41 +92,20 @@
 {% endblock content %}
 
 <!-- Footer -->
-<section class="page section bg-white">
-	<div class="container">
-	<br>
-	<h4 class="text-center mt-0">Translate this page in 
-        your preferred language:</h4>
-      
-    <div class="col-md-auto text-center" id="google_translate_element" class="language"></div>  
-    
-	<script type="text/javascript">
-     function googleTranslateElementInit() {  
-            new google.translate.TranslateElement( 
-                {pageLanguage: 'en',
-				includedLanguages: 'en,hr,cs,fr,de,iw,hu,ga,it,ko,pt,ro,ru,sr,es,th,vi,hi,ar,so,tl,uk,tg,id,ne,km,ny,ps,fa,bs,ur,am,ha,af',},
-                'google_translate_element' 
-            );  
-        }  
-	</script>
-	</div>
-	</section>
-	<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
 <footer id="contact">
     <div class="container-fluid padding bg-white">
         <div class="row text-center">
             <div class="col">
                 <!-- <img src="img/w3newbie.png"> -->
                 <hr class="light">
-                <h4 class="font-weight-bold">We provide general information only.</h5>
+                <h4 class="font-weight-bold">We provide general information only.</h4>
                 <h4 class="font-weight-bold">Please see a healthcare professional for medical
                     advice.</h4>
             </div>
             <!-- <div class="col-md-4"> -->
-                <!-- <hr class="light"> -->
-                <!-- <h4 class="font-weight-bold">Let's Get In Touch</h4> -->
-                <!-- <h4 class="font-weight-bold">+777 777 777</h4> -->
+            <!-- <hr class="light"> -->
+            <!-- <h4 class="font-weight-bold">Let's Get In Touch</h4> -->
+            <!-- <h4 class="font-weight-bold">+777 777 777</h4> -->
             <!-- </div> -->
             <div class="col-12">
                 <hr class="light-100">
@@ -144,27 +136,50 @@
 <script src="/static/js/creative.min.js"></script>
 
 <!-- <script> -->
-    <!-- function googleTranslateElementInit() { -->
+<!-- function googleTranslateElementInit() { -->
 
-        <!-- new google.translate.TranslateElement( -->
-            <!-- { -->
-                <!-- //The starting language -->
-                <!-- pageLanguage: 'en', -->
-                <!-- //The pakages of languages -->
-                <!-- includedLanguages: 'en,zh-CN,hr,cs,da,nl,fr,de,el,iw,hu,ga,it,ja,ko,pt,ro,ru,sr,es,th,vi,hi', -->
-                <!-- //Select the style of languages -->
-                <!-- layout: google.translate.TranslateElement.InlineLayout.SIMPLE, -->
-                <!-- //autodisplay setting as true -->
-                <!-- autoDisplay: true, -->
-            <!-- }, -->
-            <!-- 'page-top'//The trigger of id -->
-        <!-- ); -->
+<!-- new google.translate.TranslateElement( -->
+<!-- { -->
+<!-- //The starting language -->
+<!-- pageLanguage: 'en', -->
+<!-- //The pakages of languages -->
+<!-- includedLanguages: 'en,zh-CN,hr,cs,da,nl,fr,de,el,iw,hu,ga,it,ja,ko,pt,ro,ru,sr,es,th,vi,hi', -->
+<!-- //Select the style of languages -->
+<!-- layout: google.translate.TranslateElement.InlineLayout.SIMPLE, -->
+<!-- //autodisplay setting as true -->
+<!-- autoDisplay: true, -->
+<!-- }, -->
+<!-- 'page-top'//The trigger of id -->
+<!-- ); -->
 
-    <!-- } -->
+<!-- } -->
 <!-- </script> -->
 <!-- <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> -->
-
 </body>
 
+<style>
+    #google_translate_element {
+        bottom: calc(53px + 16px);
+        right: 16px !important;
+        z-index: 99999;
+    }
 
+    .goog-te-gadget {
+        font-family: Roboto, 'Open Sans', sans-serif !important;
+        text-transform: uppercase;
+    }
+
+    .goog-te-gadget-simple {
+        background-color: rgba(255, 255, 255, 0.20) !important;
+        border: 1px solid rgba(255, 255, 255, 0.50) !important;
+        border-radius: 4px !important;
+        display: inline-block;
+        cursor: pointer;
+        zoom: 1;
+    }
+
+    .goog-te-banner-frame.skiptranslate {
+        display: none !important;
+    }
+</style>
 </html>
