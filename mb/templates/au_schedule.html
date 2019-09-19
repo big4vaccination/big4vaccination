@@ -80,6 +80,28 @@
 
       </table>
 	</div>
+	<br>
+	<section class="page-section-2">
+        <div class="container-fluid text-center">
+            <!-- <div class="row jumbotron"> -->
+            <div class="col-12">
+                <!-- <h2 class="display-5">It would be useful for you to see the comparison table of vaccine schedules between your home country and Australia.</h2> -->
+                <p class="lead">
+                    It would be useful for you to see the comparison table of vaccine schedules between your home country and Australia.
+                </p>
+                <a class="btn btn-primary btn-lg js-scroll-trigger" href="{% url 'compare_schedule' %}">Compare Schedules</a>
+                </a>
+            </div>
+        </div>
+
+    </section>
+	<!-- <div class="col-md-auto text-center"> -->
+	<!-- <h5><center>It would be useful for you to see the comparison table of vaccine schedules between your home country and Australia.</center></h5> -->
+	<!-- <!-- <h5><center>Click to button to view schedule</center></h5> --> 
+	<!-- <button type="button" class="btn btn-outline-primary btn-lg"><a href="{% url 'au_schedule' %}">View -->
+                            <!-- schedule</a></button> -->
+	<!-- </div> -->
+	
      <script>
         let table_data = {{ data|safe }}
             console.log(table_data)
@@ -192,7 +214,7 @@
 	  <!-- document.write(newstr); -->
 
 	  </script>
-	  <br>
+	  
 
       </body>
    <style>
