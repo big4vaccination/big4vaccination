@@ -36,6 +36,9 @@
  .nav-link[data-toggle].collapsed:after {
     content: "▾";
 }
+.comp{
+	padding-bottom:5px;
+}
 .btn-2{
 	position: absolute;
 	top:50%;
@@ -219,16 +222,16 @@ text-align:center}
   transform: translateY(-49%);}
  .carousel-caption-3 {
   position: absolute;
-  top:41%;
+  top:42%;
   transform: translateY(-49%);
 }
 .carousel-caption-3{
 	position:absolute;
 	right:15%;
-	bottom:5px;
+	bottom:6px;
 	left:15%;
 	z-index:10;
-	padding-top:15px;
+	padding-top:14px;
 	padding-bottom:15px;
 	color:#FF5722;
 	text-align:center}
@@ -275,7 +278,7 @@ text-align:center}
 
  .carousel-caption {
   position: absolute;
-  top:42%;
+  top:64.5%;
   transform: translateY(-48%);
 }
 .navbar {
@@ -326,7 +329,7 @@ font-size: 2rem !important;}
   padding-bottom: 1rem;
 }
 .carousel-caption h4 {
-  font-size: 150%;
+  font-size: 175%;
   font-weight: 400;
   text-shadow: 2px 2px 45px #000;
   padding-bottom: 1.5rem;
