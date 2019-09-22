@@ -405,62 +405,62 @@ def Australia_vaccine(request):
     # print(data1)
     if data1:
         for i in range(len(data1)):
-            push_data[i]["Vaccine Name"] = data1[i][0]
-            disease_data[i]["Vaccine Name"] = data1[i][0]
+            push_data[i]["Vaccine Name"] = data1[i][15]
+            disease_data[i]["Vaccine Name"] = data1[i][15]
             # push_data[i]["Vaccine code"] = data1[i][1]
             # print(type(data1[i][2]))
-            if data1[i][2] is None:
+            if data1[i][16] is None:
                 disease_data[i]["Diseases"] = "-"
             else:
-                disease_data[i]["Diseases"] = data1[i][2]
+                disease_data[i]["Diseases"] = data1[i][16]
             # if data1[i][4] is None:
             #     disease_data[i]["Description"] = "-"
             # else:
             #     disease_data[i]["Description"] = data1[i][4]
 
             # push_data[i]["Australian Schedule"] = data1[i][3]
-            if data1[i][5] is None:
+            if data1[i][2] is None:
                 push_data[i]["Birth"] = "-"
             else:
                 push_data[i]["Birth"] = "✔"
                 # push_data[i]["Birth"]=data1[i][5]
 
-            if data1[i][6] is None:
+            if data1[i][3] is None:
                 push_data[i]["2 mths"] = "-"
             else:
                 push_data[i]["2 mths"] = "✔"
                 # push_data[i]["2 mths"] = data1[i][6]
-            if data1[i][7] is None:
+            if data1[i][4] is None:
                 push_data[i]["4 mths"] = "-"
             else:
                 push_data[i]["4 mths"] = "✔"
                 # push_data[i]["4 mths"] = data1[i][7]
-            if data1[i][8] is None:
+            if data1[i][5] is None:
                 push_data[i]["6 mths"] = "-"
             else:
                 push_data[i]["6 mths"] = "✔"
                 # push_data[i]["6 mths"] = data1[i][8]
-            if data1[i][9] is None:
+            if data1[i][6] is None:
                 push_data[i]["12 mths"] = "-"
             else:
                 push_data[i]["12 mths"] = "✔"
                 # push_data[i]["12 mths"] = data1[i][9]
-            if data1[i][10] is None:
+            if data1[i][7] is None:
                 push_data[i]["18 mths"] = "-"
             else:
                 push_data[i]["18 mths"] = "✔"
                 # push_data[i]["18 mths"] = data1[i][10]
-            if data1[i][11] is None:
+            if data1[i][8] is None:
                 push_data[i]["2-4 yrs"] = "-"
             else:
                 push_data[i]["2-4 yrs"] = "✔"
                 # push_data[i]["2-4 yrs"] = data1[i][11]
-            if data1[i][12] is None:
+            if data1[i][9] is None:
                 push_data[i][">4 yrs"] = "-"
             else:
                 push_data[i][">4 yrs"] = "✔"
                 # push_data[i][">4 yrs"] = data1[i][12]
-            if data1[i][13] is None:
+            if data1[i][10] is None:
                 push_data[i]["12-18 yrs"] = "-"
             else:
                 push_data[i]["12-18 yrs"] = "✔"
@@ -473,20 +473,20 @@ def Australia_vaccine(request):
             #     push_data[i][">24 yrs"]="-"
             # else:
             #     push_data[i][">24 yrs"]=data1[i][15]
-            if data1[i][16] is None:
+            if data1[i][13] is None:
                 push_data[i]["pg_w"] = "-"
             else:
                 push_data[i]["pg_w"] = "✔"
                 # push_data[i]["pg_w"]=data1[i][16]
-            if data1[i][17] is None:
+            if data1[i][14] is None:
                 push_data[i][">=60 yrs"] = "-"
             else:
                 push_data[i][">=60 yrs"] = "✔"
                 # push_data[i][">=60 yrs"]=data1[i][17]
-            if data1[i][18] is None:
-                disease_data[i]["Link"] = "-"
+            if data1[i][17] is None:
+                 disease_data[i]["Link for vaccine name"] = "-"
             else:
-                disease_data[i]["Link"] = data1[i][18]
+                 disease_data[i]["Link for vaccine name"] = data1[i][17]
 
             # push_data[i]["Description"] = data1[i][3]
             push_data.append({})
