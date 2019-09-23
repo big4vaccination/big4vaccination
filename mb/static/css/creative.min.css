@@ -39,6 +39,12 @@
 .comp{
 	padding-bottom:5px;
 }
+.comp2{
+	padding-bottom:2px;
+	text-align:center;
+	font-size: 110%;
+	
+}
 .btn-2{
 	position: absolute;
 	top:50%;

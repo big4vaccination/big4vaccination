@@ -170,11 +170,11 @@ def advanced_searched(request):
         for i in range(len(data_disease)):
             if data_disease[i][2] != "0" and data_disease[i][2] is not None:
                 push_disease[i]["Disease Name"] = data_disease[i][1]
-                push_disease[i]["Reported cases in " + str(country_name) + ""] = data_disease[i][5]
+                push_disease[i]["% of Reported cases in " + str(country_name) + ""] = data_disease[i][5]
                 # push_disease[i]["Average immunisation coverage"]= data_disease[i][3]
                 # push_disease[i]["Percentage of reported cases in " + str(country_name) + ""] = data_disease[i][4]
                 # push_disease[i]["Average immunisation coverage in AU"]= data_disease[i][3]
-                push_disease[i]["Reported cases in Australia"] = data_disease[i][8]
+                push_disease[i]["% of Reported cases in Australia"] = data_disease[i][8]
             # push_disease[i]["Percentage of reported cases in Australia"] = data_disease[i][7]
 
             push_disease.append({})
@@ -378,9 +378,9 @@ def advanced_searched(request):
     elif country_name != False and out_put and out_put2:
         return render(request, 'compare_schedule.html',
                       {'data': json.dumps(list(out_put)), 'country_name': country_name,
-                       'disease': json.dumps(list(out_put2)), 'explanation': "Reported Cases in 2018 per 100,000",
-                       "comparison": "Comparison of Vaccine Schedules","right":" √ Vaccine is recommended in your home country.",
-                       "wrong":"Χ Vaccine is optional in your home country, but recommended in Australia."})
+                       'disease': json.dumps(list(out_put2)), 'explanation': "Percentage of Reported Cases in 2018 year per 100,000",
+                       "comparison": "Comparison of Vaccine Schedules","right":" √ Vaccine is recommended in "+ str(country_name) +"",
+                       "wrong":"Χ Vaccine is optional in "+ str(country_name) +", but recommended in Australia."})
 
 
 def Australia_vaccine(request):
