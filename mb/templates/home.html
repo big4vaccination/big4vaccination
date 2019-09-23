@@ -42,12 +42,13 @@
                     <div class="mt-5">
 					<br>
                         <i class="fas fa-4x fa-gem text-primary mb-4"></i>
-                        <h3 class="h5">Immunisation schedule in Australia</h3>
+                        <h3 class="h5">Immunisation Schedule in Australia</h3>
                         <br>
                         <!-- <p class="text-muted mb-0">The National Immunisation Program and Victorian immunisation programs</p> -->
                         <!-- <a href="#" class="btn btn-outline-secondary">Quick search</a> -->
-                        <button type="button" class="btn btn-outline-primary btn-lg"><a href="{% url 'au_schedule' %}">View
-                            schedule</a></button>
+                        <!-- <button type="button" class="btn btn-outline-primary btn-lg"> -->
+						<a class="btn btn-primary btn-lg js-scroll-trigger" href="{% url 'au_schedule' %}">View
+                            Schedule</a>
                         <!-- <button type="button" class="btn btn-primary btn-lg">Quick search</button> -->
                         <!-- <button type="button" class="btn btn-outline-light btn-lg">VIEW DEMO</button> -->
                     </div>
@@ -56,11 +57,11 @@
                     <div class="mt-5">
 					<br>
                         <i class="fas fa-4x fa-laptop-code text-primary mb-4"></i>
-                        <h4 class="h5">Comparison of Immunisation schedules</h4>
+                        <h4 class="h5">Comparison of Immunisation Schedules</h4>
                         <!-- <p class="text-muted mb-0">Compare national immunisation schedules</p> -->
                         <br>
-                        <button type="button" class="btn btn-outline-primary btn-lg"><a
-                                href="{% url 'compare_schedule' %}">Compare schedules</a></button>
+                        <a class="btn btn-primary btn-lg js-scroll-trigger"
+                                href="{% url 'compare_schedule' %}">Compare Schedules</a>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-2 text-center">
@@ -70,8 +71,8 @@
                         <h3 class="h5">Find the Special GP in VIC </h3>
                         <!-- <p class="text-muted mb-0">Compare national immunisation schedules</p> -->
                         <br>
-                        <button type="button" class="btn btn-outline-primary btn-lg"><a
-                                href="{% url 'special_GP' %}">Find locations</a></button>
+                        <a class="btn btn-primary btn-lg js-scroll-trigger"
+                                href="{% url 'special_GP' %}">Find Locations</a>
                     </div>
                 </div>
 				 <div class="col-lg-6 col-md-2 text-center">
@@ -81,8 +82,8 @@
                         <h3 class="h5">Language Services </h3>
                         <!-- <p class="text-muted mb-0">Compare national immunisation schedules</p> -->
                         <br>
-                        <button type="button" class="btn btn-outline-primary btn-lg"><a
-                                href="{% url 'language' %}">Language Service</a></button>
+                        <a class="btn btn-primary btn-lg js-scroll-trigger"
+                                href="{% url 'language' %}">Language Service</a>
                     </div>
                 </div>
             </div>
