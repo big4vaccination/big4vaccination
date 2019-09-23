@@ -125,7 +125,7 @@ def advanced_searched(request):
     # excute_sentence = "SELECT country_name, schedule, vaccine_code, comments from Vaccine_Info where country_name = '" + str(country_name) + "'"
 
     ## Here is for adding the SQLite Query
-    excute_sentence = "SELECT * from all_schedule_vs_aus_schedule where country_name = '" + str(country_name) + "' order by vaccine_name ASC"
+    excute_sentence = "SELECT DISTINCT * from all_schedule_vs_aus_schedule where country_name = '" + str(country_name) + "' order by vaccine_name ASC"
     vaccine_name = "SELECT DISTINCT vaccine_name from all_schedule_vs_aus_schedule where country_name = '" + str(country_name) + "' order by vaccine_name ASC"
     australia = "SELECT DISTINCT * from aus_schedule order by vaccine_name ASC"
     compared_data = cur.execute(excute_sentence).fetchall()
@@ -282,60 +282,59 @@ def advanced_searched(request):
         # for generating unmatched vaccine
         for i in range(len(australia_vaccine_list)):
             temp = {}
-            if (australia_vaccine_list[i][0] not in other) == True:
-
-                temp["Vaccine Name"] = australia_vaccine_list[i][0]
-                if australia_vaccine_list[i][5]:
+            if (australia_vaccine_list[i][15] not in other) == True:
+                temp["Vaccine Name"] = australia_vaccine_list[i][15]
+                if australia_vaccine_list[i][2]:
                     temp["Birth"] = "Χ"
                 else:
                     temp["Birth"] = ""
 
-                if australia_vaccine_list[i][6]:
+                if australia_vaccine_list[i][3]:
                     temp["2 mths"] = "Χ"
                 else:
                     temp["2 mths"] = ""
 
-                if australia_vaccine_list[i][7]:
+                if australia_vaccine_list[i][4]:
                     temp["4 mths"] = "Χ"
                 else:
                     temp["4 mths"] = ""
 
-                if australia_vaccine_list[i][8]:
+                if australia_vaccine_list[i][5]:
                     temp["6 mths"] = "Χ"
                 else:
                     temp["6 mths"] = ""
 
-                if australia_vaccine_list[i][9]:
+                if australia_vaccine_list[i][6]:
                     temp["12 mths"] = "Χ"
                 else:
                     temp["12 mths"] = ""
 
-                if australia_vaccine_list[i][10]:
+                if australia_vaccine_list[i][7]:
                     temp["18 mths"] = "Χ"
                 else:
                     temp["18 mths"] = ""
 
-                if australia_vaccine_list[i][11]:
+                if australia_vaccine_list[i][8]:
                     temp["2-4 yrs"] = "Χ"
                 else:
                     temp["2-4 yrs"] = ""
 
-                if australia_vaccine_list[i][12]:
+                if australia_vaccine_list[i][9]:
                     temp[">4 yrs"] = "Χ"
                 else:
                     temp[">4 yrs"] = ""
 
-                if australia_vaccine_list[i][13]:
+                if australia_vaccine_list[i][10]:
                     temp["12-18 yrs"] = "Χ"
                 else:
                     temp["12-18 yrs"] = ""
 
-                if australia_vaccine_list[i][14]:
+                if australia_vaccine_list[i][11]:
                     temp[">18 yrs"] = "Χ"
                 else:
                     temp[">18 yrs"] = ""
 
-                if australia_vaccine_list[i][15]:
+                if australia_vaccine_list[i][12]:
                     temp[">24 yrs"] = "Χ"
                 else:
                     temp[">24 yrs"] = ""
@@ -345,7 +344,7 @@ def advanced_searched(request):
                 # else:
                 #     temp["pg_w"] = ""
 
-                if australia_vaccine_list[i][17]:
+                if australia_vaccine_list[i][13]:
                     temp[">=60 yrs"] = "Χ"
                 else:
                     temp[">=60 yrs"] = ""
@@ -353,6 +352,7 @@ def advanced_searched(request):
                 push_data.append(temp)
            # sorted (push_data.keys(vaccine_name))
 
+        print(push_data)
         # for generating final output by A-Z order
         for i in push_data:
             if i != {}:
