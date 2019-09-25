@@ -3,103 +3,104 @@
 {% block content %}
 
     <!-- <section class="page-section bg-dark text-white" id="about"> -->
-        <!-- <div class="container"> -->
-            <!-- <div class="row justify-content-center"> -->
-                <!-- <div class="col-lg-8 text-center"> -->
-                    <!-- <h2 class="text-white mt-0">We've got what you need!</h2> -->
-                    <!-- <hr class="divider light my-4"> -->
+    <!-- <div class="container"> -->
+    <!-- <div class="row justify-content-center"> -->
+    <!-- <div class="col-lg-8 text-center"> -->
+    <!-- <h2 class="text-white mt-0">We've got what you need!</h2> -->
+    <!-- <hr class="divider light my-4"> -->
 
-                    <!-- <p class="h4">Find your special GPs in VIC</p> -->
+    <!-- <p class="h4">Find your special GPs in VIC</p> -->
 
-                    <!-- <!-- <p class="mb-4"> Catch-up vaccinations</p> --> 
-                <!-- </div> -->
-            <!-- </div> -->
-        <!-- </div> -->
+    <!-- <!-- <p class="mb-4"> Catch-up vaccinations</p> -->
+    <!-- </div> -->
+    <!-- </div> -->
+    <!-- </div> -->
     <!-- </section> -->
-	<body>
-    <div id ="slides" class="carousel slide" data-ride="carousel">
-	<ul class = "carousel-indicators">
-		<!-- <li data-target="#slides" data-slide-to="0"></li> -->
-		<!-- <li data-target="#slides" data-slide-to="1" ></li>  -->
-		<li data-target="#slides" data-slide-to="2" class="active"></li> 
-	</ul>
-	<div class="carousel-inner">
-	<div class="carousel-item active">
-				
-				<img src="/static/img/15.jpg"> 
-				<div class="carousel-caption-3">
-				  <div class="container">
-        <form method="POST" action="">
-            {% csrf_token %}
-            <div class="row justify-content-md-center">
-			<h4>We can help you to find a GP who speaks in your first language</h4>
-			<div class="col-md-auto text-center">
-			
-			<!-- <h4 class="h3 mb-2">Select one country</h4> -->
-			<h4>Select your first language</h4>
-			</div>
-                <div class="col-md-auto text-center">
-                    <!-- <h6>Select one language</h6> -->
-                    <select name="language" id="input" class="browser-default custom-select  mb-3">
-                        <option value="{{ language }}">{{ language }}</option>
-						<option value="Arabic">Arabic</option>
-						<option value="Bosnian">Bosnian</option>
-						<option value="Cantonese">Cantonese</option>
-						<option value="Croatian">Croatian</option>
-                        <option value="Czech">Czech</option>
-						<option value="Filippino">Filippino</option>
-                        <option value="French">French</option>
-						<option value="German">German</option>
-                        <option value="Greek">Greek</option>
-						<option value="Gujarati">Gujarati</option>
-						<option value="Hakka">Hakka</option>
-						<option value="Hebrew">Hebrew</option>
-						<option value="Hindi">Hindi</option>
-						<option value="Hokkien">Hokkien</option>
-                        <option value="Hungarian">Hungarian</option>
-						<option value="Italian">Italian</option>
-						<option value="Khmer">Khmer</option>
-						<option value="Mandarin">Mandarin</option>
-						<option value="Macedonian">Macedonian</option>
-						 <option value="Malay">Malay</option>
-						<option value="Mandarin">Mandarin</option>
-						<option value="Marathi">Marathi</option>
-						 <option value="Polish">Polish</option>
-						 <option value="Portugese">Portugese</option>
-						 <option value="Russian">Russian</option>
-						<option value="Serbian">Serbian</option> 
-						  <option value="Sinhalese">Sinhalese</option>
-						<option value="Slovak">Slovak</option>  
-						<option value="Spanish">Spanish</option>
-						<option value="Tamil">Tamil</option>
-						<option value="Teochow">Teochow</option>
-                        <option value="Ukranian">Ukranian</option>
-						  <option value="Urdu">Urdu</option>
-						<option value="Vietnamese">Vietnamese</option>
-                        <option value="Yiddish">Yiddish</option>
-                    </select>
+    <body>
+    <div id="slides" class="carousel slide" data-ride="carousel">
+        <ul class="carousel-indicators">
+            <!-- <li data-target="#slides" data-slide-to="0"></li> -->
+            <!-- <li data-target="#slides" data-slide-to="1" ></li>  -->
+            <li data-target="#slides" data-slide-to="2" class="active"></li>
+        </ul>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+
+                <img src="/static/img/15.jpg">
+                <div class="carousel-caption-3">
+                    <div class="container">
+                        <form method="POST" action="">
+                            {% csrf_token %}
+                            <div class="row justify-content-md-center">
+                                <h4>We can help you to find a GP who speaks in your first language</h4>
+                                <div class="col-md-auto text-center">
+
+                                    <!-- <h4 class="h3 mb-2">Select one country</h4> -->
+                                    <h4>Select your first language</h4>
+                                </div>
+                                <div class="col-md-auto text-center">
+                                    <!-- <h6>Select one language</h6> -->
+                                    <select name="language" id="input" class="browser-default custom-select  mb-3">
+                                        <option value="{{ language }}">{{ language }}</option>
+                                        <option value="Arabic">Arabic</option>
+                                        <option value="Bosnian">Bosnian</option>
+                                        <option value="Cantonese">Cantonese</option>
+                                        <option value="Croatian">Croatian</option>
+                                        <option value="Czech">Czech</option>
+                                        <option value="Filippino">Filippino</option>
+                                        <option value="French">French</option>
+                                        <option value="German">German</option>
+                                        <option value="Greek">Greek</option>
+                                        <option value="Gujarati">Gujarati</option>
+                                        <option value="Hakka">Hakka</option>
+                                        <option value="Hebrew">Hebrew</option>
+                                        <option value="Hindi">Hindi</option>
+                                        <option value="Hokkien">Hokkien</option>
+                                        <option value="Hungarian">Hungarian</option>
+                                        <option value="Italian">Italian</option>
+                                        <option value="Khmer">Khmer</option>
+                                        <option value="Mandarin">Mandarin</option>
+                                        <option value="Macedonian">Macedonian</option>
+                                        <option value="Malay">Malay</option>
+                                        <option value="Mandarin">Mandarin</option>
+                                        <option value="Marathi">Marathi</option>
+                                        <option value="Polish">Polish</option>
+                                        <option value="Portugese">Portugese</option>
+                                        <option value="Russian">Russian</option>
+                                        <option value="Serbian">Serbian</option>
+                                        <option value="Sinhalese">Sinhalese</option>
+                                        <option value="Slovak">Slovak</option>
+                                        <option value="Spanish">Spanish</option>
+                                        <option value="Tamil">Tamil</option>
+                                        <option value="Teochow">Teochow</option>
+                                        <option value="Ukranian">Ukranian</option>
+                                        <option value="Urdu">Urdu</option>
+                                        <option value="Vietnamese">Vietnamese</option>
+                                        <option value="Yiddish">Yiddish</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-auto text-center">
+                                    <input class="btn btn-primary 123" formaction="#table_1" type="submit"
+                                           onclick="AjaxSubmit(); value=" submit">
+                                </div>
+                                <!-- <input type="submit" onclick="AjaxSubmit();" value="submit"> -->
+                            </div>
+                        </form>
+                    </div>
                 </div>
-			<div class="col-md-auto text-center">
-				<input class="btn btn-primary 123" formaction="#table_1" type = "submit" onclick="AjaxSubmit(); value="submit">
-			</div>
-                <!-- <input type="submit" onclick="AjaxSubmit();" value="submit"> -->
             </div>
-        </form>
-			</div>				
-		</div>
-		</div>
-		
-	</div>
-	</div>
-	<br>
-	<section id ="table_1">
-	<h4 class="text-center mt-0">The map shows the location of GP who speaks in your first language</h4>
-	</section>
+
+        </div>
+    </div>
+    <br>
+    <section id="table_1">
+        <h4 class="text-center mt-0">The map shows the location of GP who speaks in your first language</h4>
+    </section>
     <section>
         <div class="row justify-content-md-center" id="map"></div>
     </section>
-	</br>
-	</body>
+    </br>
+    </body>
     <script>
 
         function initMap() {
@@ -117,9 +118,11 @@
             // create an array of markers based on a given "locations" array.
             // The map() method here has nothing to do with the Google Maps API.
             var markers = locations.map(function (location, i) {
+
                 return new google.maps.Marker({
                     position: location,
-                    label: labels[i % labels.length]
+                    label: labels[i % labels.length],
+                    title:'This is a test'
                 });
             });
 
@@ -130,6 +133,7 @@
 
         var locations =
         {{ data|safe }}
+
     </script>
     <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
     </script>
@@ -194,6 +198,7 @@
                 })
             }
         }
+
         // code end
     </script>
 
@@ -202,9 +207,9 @@
             width: 100%;
             height: 350px;
             background-color: grey;
-			
-			margin: 0;
-			padding: 0;
+
+            margin: 0;
+            padding: 0;
         }
     </style>
 
@@ -218,7 +223,7 @@
             float: left;
             width: 30%;
             padding-left: 20px;
-			padding-right: 20px;
+            padding-right: 20px;
             height: 80px; /* Should be removed. Only for demonstration */
         }
 
