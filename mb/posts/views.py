@@ -132,6 +132,7 @@ def advanced_searched(request):
     australia_vaccine_list = cur.execute(australia).fetchall()
     other_vaccine_list = cur.execute(vaccine_name).fetchall()
     other = []
+
     for i in other_vaccine_list:
         other.append(i[0])
     ## Variable -- push_data is for generating second table.
