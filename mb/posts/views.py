@@ -533,6 +533,8 @@ def find_GP(request):
     return render(request, 'special_GP.html', {'data': json.dumps(list(push_data)), 'language': language})
 
 def check_box(request):
+    list = request.POST.getlist('')
+    print(list)
     return render(request,"check_box.html")
 
 # def takeSecond(elem):
