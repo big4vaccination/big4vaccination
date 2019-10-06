@@ -537,6 +537,32 @@ def check_box(request):
     print(list)
     return render(request,"check_box.html")
 
+
+def free_au_vaccine(request):
+    database = os.path.join(BASE_DIR, '6.db')
+    conn = create_connection(database)
+    cur = conn.cursor()
+    free_vaccine= "select vaccine_name, Diseases, schedule, link from aus_free_vaccines"
+    country1 = cur.execute(free_vaccine)
+    data1 = country1.fetchall()
+    # data2=country1.fetchall()
+    push_data = [{}]
+    if data1:
+        for i in range(len(data1)):
+            push_data[i]["Vaccine Name"] = data1[i][0]
+            push_data[i]["Diseases"]=data1[i][1]
+            push_data[i]["Schedule"]=data1[i][2]
+            push_data[i]["Link"]=data1[i][3]
+            push_data.append({})
+        out_put = []
+        for i in push_data:
+            if i != {}:
+                out_put.append(i)
+        out_put = sorted(out_put, key=lambda e: e['Vaccine Name'], reverse=False)
+    return render(request, 'free_au_vaccine.html',
+                  {'data': json.dumps(list(out_put))})
+
+
 # def takeSecond(elem):
 #     return elem[2]
 

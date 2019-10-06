@@ -17,7 +17,7 @@ Including another URLconf
 from django.urls import path
 from django.conf.urls import handler404, handler500
 from .views import HomePageView, About_us, faq, handler404, error_404_view
-from .views import advanced_searched, Australia_vaccine,find_GP, language, first_intepreting,second_intepreting,third_intepreting,check_box
+from .views import advanced_searched, Australia_vaccine,find_GP, language, first_intepreting,second_intepreting,third_intepreting,check_box, free_au_vaccine
 
 
 
@@ -30,6 +30,7 @@ urlpatterns = [
     path('compare_schedule', advanced_searched,name= 'compare_schedule'),
 
     path('au_schedule', Australia_vaccine, name='au_schedule'),
+    path('free_au_vaccine',free_au_vaccine,name='free_au_vaccine'),
 
     path('check',check_box,name='check_box'),
 
