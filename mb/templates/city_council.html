@@ -34,10 +34,193 @@
             <h5 class="h5">Find a Council</h5>
 
             <br>
-            <form method="POST" action="">
+            <form method="POST" action="" autocomplete="off">
                 {% csrf_token %}
                 {{ form.as_p }}
-                <input type="text" name="textfield" id="textfield">
+
+                <input type="text" name="textfield" id="textfield" placeholder="Type of city" list="city_councils"/>
+                <datalist id="city_councils">
+                    <option value="Alpine Shire Council">Alpine Shire Council</option>
+
+                    <option value="Ararat Rural City Council">Ararat Rural City Council</option>
+
+                    <option value="Ballarat City Council">Ballarat City Council</option>
+
+                    <option value="Banyule City Council">Banyule City Council</option>
+
+                    <option value="Bass Coast Shire Council">Bass Coast Shire Council</option>
+
+                    <option value="Baw Baw Shire Council">Baw Baw Shire Council</option>
+
+                    <option value="Bayside City Council">Bayside City Council</option>
+
+                    <option value="Benalla Rural City Council">Benalla Rural City Council</option>
+
+                    <option value="Boroondara City Council">Boroondara City Council</option>
+
+                    <option value="Brimbank City Council">Brimbank City Council</option>
+
+                    <option value="Buloke Shire Council">Buloke Shire Council</option>
+
+                    <option value="Campaspe Shire Council">Campaspe Shire Council</option>
+
+                    <option value="Cardinia Shire Council">Cardinia Shire Council</option>
+
+                    <option value="Casey City Council">Casey City Council</option>
+
+                    <option value="Central Goldfields Shire Council">Central Goldfields Shire Council</option>
+
+                    <option value="Colac Otway Shire Council">Colac Otway Shire Council</option>
+
+                    <option value="Corangamite Shire Council">Corangamite Shire Council</option>
+
+                    <option value="Darebin City Council">Darebin City Council</option>
+
+                    <option value="East Gippsland Shire Council">East Gippsland Shire Council</option>
+
+                    <option value="Frankston City Council">Frankston City Council</option>
+
+                    <option value="Gannawarra Shire Council">Gannawarra Shire Council</option>
+
+                    <option value="Glen Eira City Council">Glen Eira City Council</option>
+
+                    <option value="Glenelg Shire Council">Glenelg Shire Council</option>
+
+                    <option value="Golden Plains Shire Council">Golden Plains Shire Council</option>
+
+                    <option value="Greater Bendigo City Council">Greater Bendigo City Council</option>
+
+                    <option value="Greater Dandenong City Council">Greater Dandenong City Council</option>
+
+                    <option value="Greater Geelong City Council">Greater Geelong City Council</option>
+
+                    <option value="Greater Shepparton City Council">Greater Shepparton City Council</option>
+
+                    <option value="Hepburn Shire Council">Hepburn Shire Council</option>
+
+                    <option value="Hindmarsh Shire Council">Hindmarsh Shire Council</option>
+
+                    <option value="Hobsons Bay City Council">Hobsons Bay City Council</option>
+
+                    <option value="Horsham Rural City Council">Horsham Rural City Council</option>
+
+                    <option value="Hume City Council">Hume City Council</option>
+
+                    <option value="Indigo Shire Council">Indigo Shire Council</option>
+
+                    <option value="Kingston City Council">Kingston City Council</option>
+
+                    <option value="Knox City Council">Knox City Council</option>
+
+                    <option value="Latrobe City Council">Latrobe City Council</option>
+
+                    <option value="Loddon Shire Council">Loddon Shire Council</option>
+
+                    <option value="Macedon Ranges Shire Council">Macedon Ranges Shire Council</option>
+
+                    <option value="Manningham City Council">Manningham City Council</option>
+
+                    <option value="Mansfield Shire Council">Mansfield Shire Council</option>
+
+                    <option value="Maribyrnong City Council">Maribyrnong City Council</option>
+
+                    <option value="Maroondah City Council">Maroondah City Council</option>
+
+                    <option value="Melbourne City Council">Melbourne City Council</option>
+
+                    <option value="Melton City Council">Melton City Council</option>
+
+                    <option value="Mildura Rural City Council">Mildura Rural City Council</option>
+
+                    <option value="Mitchell Shire Council">Mitchell Shire Council</option>
+
+                    <option value="Moira Shire Council">Moira Shire Council</option>
+
+                    <option value="Monash City Council">Monash City Council</option>
+
+                    <option value="Moonee Valley City Council">Moonee Valley City Council</option>
+
+                    <option value="Moorabool Shire Council">Moorabool Shire Council</option>
+
+                    <option value="Moreland City Council">Moreland City Council</option>
+
+                    <option value="Mornington Peninsula Shire Council">Mornington Peninsula Shire Council</option>
+
+                    <option value="Mount Alexander Shire Council">Mount Alexander Shire Council</option>
+
+
+                    <option value="Moyne Shire Council">Moyne Shire Council</option>
+
+
+                    <option value="Murrindindi Shire Council">Murrindindi Shire Council</option>
+
+
+                    <option value="Nillumbik Shire Council">Nillumbik Shire Council</option>
+
+
+                    <option value="Northern Grampians Shire Council">Northern Grampians Shire Council</option>
+
+
+                    <option value="Port Phillip City Council">Port Phillip City Council</option>
+
+
+                    <option value="Pyrenees Shire Council">Pyrenees Shire Council</option>
+
+
+                    <option value="South Gippsland Shire Council">South Gippsland Shire Council</option>
+
+
+                    <option value="Southern Grampians Shire Council">Southern Grampians Shire Council</option>
+
+
+                    <option value="Stonnington City Council">Stonnington City Council</option>
+
+
+                    <option value="Strathbogie Shire Council">Strathbogie Shire Council</option>
+
+
+                    <option value="Surf Coast Shire Council">Surf Coast Shire Council</option>
+
+
+                    <option value="Swan Hill Rural City Council">Swan Hill Rural City Council</option>
+
+
+                    <option value="Towong Shire Council">Towong Shire Council</option>
+
+
+                    <option value="Wangaratta Rural City Council">Wangaratta Rural City Council</option>
+
+
+                    <option value="Warrnambool City Council">Warrnambool City Council</option>
+
+
+                    <option value="Wellington Shire Council">Wellington Shire Council</option>
+
+
+                    <option value="West Wimmera Shire Council">West Wimmera Shire Council</option>
+
+
+                    <option value="Whitehorse City Council">Whitehorse City Council</option>
+
+
+                    <option value="Whittlesea City Council">Whittlesea City Council</option>
+
+
+                    <option value="Wodonga City Council">Wodonga City Council</option>
+
+
+                    <option value="Wyndham City Council">Wyndham City Council</option>
+
+
+                    <option value="Yarra City Council">Yarra City Council</option>
+
+
+                    <option value="Yarra Ranges Shire Council">Yarra Ranges Shire Council</option>
+
+
+                    <option value="Yarriambiack Shire Council">Yarriambiack Shire Council</option>
+
+                </datalist>
                 <button class="btn btn-primary 123" type="button" id="search">Search</button>
                 <p><span id='search-result'></span></p>
             </form>
@@ -63,121 +246,10 @@
     </section>
 
 
-    <script src="http://apps.bdimg.com/libs/jquery/1.11.1/jquery.min.js"></script>
-{#    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>#}
-
-    <script type="text/javascript">
-        var cityCouncil = [
-            'Alpine Shire Council', 'Ararat Rural City Council',
-            'Ballarat City Council', 'Banyule City Council',
-            'Bass Coast Shire Council', 'Baw Baw Shire Council',
-            'Bayside City Council', 'Benalla Rural City Council',
-            'Boroondara City Council', 'Brimbank City Council',
-            'Buloke Shire Council', 'Campaspe Shire Council',
-            'Cardinia Shire Council', 'Casey City Council',
-            'Central Goldfields Shire Council', 'Colac Otway Shire Council',
-            'Corangamite Shire Council', 'Darebin City Council',
-            'East Gippsland Shire Council', 'Frankston City Council',
-            'Gannawarra Shire Council', 'Glen Eira City Council',
-            'Glenelg Shire Council', 'Golden Plains Shire Council',
-            'Greater Bendigo City Council', 'Greater Dandenong City Council',
-            'Greater Geelong City Council', 'Greater Shepparton City Council',
-            'Hepburn Shire Council', 'Hindmarsh Shire Council',
-            'Hobsons Bay City Council', 'Horsham Rural City Council',
-            'Hume City Council', 'Indigo Shire Council',
-            'Kingston City Council', 'Knox City Council',
-            'Latrobe City Council', 'Loddon Shire Council',
-            'Macedon Ranges Shire Council', 'Manningham City Council',
-            'Mansfield Shire Council', 'Maribyrnong City Council',
-            'Maroondah City Council', 'Melbourne City Council',
-            'Melton City Council', 'Mildura Rural City Council',
-            'Mitchell Shire Council', 'Moira Shire Council',
-            'Monash City Council', 'Moonee Valley City Council',
-            'Moorabool Shire Council', 'Moreland City Council',
-            'Mornington Peninsula Shire Council',
-            'Mount Alexander Shire Council', 'Moyne Shire Council',
-            'Murrindindi Shire Council', 'Nillumbik Shire Council',
-            'Northern Grampians Shire Council', 'Port Phillip City Council',
-            'Pyrenees Shire Council', 'South Gippsland Shire Council',
-            'Southern Grampians Shire Council', 'Stonnington City Council',
-            'Strathbogie Shire Council', 'Surf Coast Shire Council',
-            'Swan Hill Rural City Council', 'Towong Shire Council',
-            'Wangaratta Rural City Council', 'Warrnambool City Council',
-            'Wellington Shire Council', 'West Wimmera Shire Council',
-            'Whitehorse City Council', 'Whittlesea City Council',
-            'Wodonga City Council', 'Wyndham City Council',
-            'Yarra City Council', 'Yarra Ranges Shire Council',
-            'Yarriambiack Shire Council'
-        ];
-
-
-        $(document).ready(function () {
-            $("#textfield").keyup(function () {
-                var city = $("#textfield").val().replace(/\s+/g, '');
-                var match = new RegExp(city.toLowerCase())
-                for (var i = 0; i < cityCouncil.length; i++) {
-                    city_lower = cityCouncil[i].toLowerCase().replace(/\s+/g, '')
-                    if (match.test(city_lower)) {
-                        console.log(cityCouncil[i])
-                        var suggestion = document.getElementById("search-result");
-                        suggestion.innerHTML = suggestion.innerText + cityCouncil[i];
-                    }
-                }
-            })
-
-            $('#textfield').keydown(function () {
-                $('#search-result').empty();
-            })
-            $('#textfield').blur(function () {
-                $('#search-result').empty();
-            })
-        })
-
-
-    </script>
-    <br>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 
     </body>
-    <style>
-        table {
-            border-collapse: collapse;
-            border-spacing: 0;
-            width: 98%;
-            #height: 100%;
-            border: 1px solid #ddd;
-            line-height: 1.3;
-        }
-
-        tr {
-            display: table-row;
-            vertical-align: left;
-            border-color: inherit;
-        }
-
-        th, td {
-            text-align: center;
-            padding: 0.05px;
-            border: 01px solid black;
-        }
-
-        th:first-child, td:first-child {
-            text-align: left;
-
-        }
-
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-
-        .fa-check {
-            color: green;
-        }
-
-        .fa-remove {
-            color: red;
-        }
-    </style>
     </html>
 
 {% endblock content %}
