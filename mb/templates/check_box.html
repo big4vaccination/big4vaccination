@@ -35,124 +35,335 @@
 
     <form class="form" method="POST">
         {% csrf_token %}
-        <div class="row" style="padding-left: 5%;margin-top: 20px">
-            <div class="form-check" style="width: 33%">
-                <input class="form-check-input" type="checkbox" value="" id="Boostrix®" name="Boostrix®">
-                <label class="form-check-label" for="defaultCheck1">
-                    Boostrix® (dTpa)
-                </label>
+
+        <div class="container" style="background-color: #fff;border-radius: 16px">
+            <div class="row" style="padding-left: 5%;margin-top: 20px; text-align:left">
+                <div class="form-check" style="width: 50%;font-size:20px;">
+                    <label class="form-check-label" for="defaultCheck1" style="font-family: Impact;letter-spacing: 2px">
+                        Vaccine Name
+                    </label>
+                </div>
+
+                <div class="form-check"
+                     style="width: 50%;font-size:20px;text-align: left;font-family: Impact;letter-spacing: 2px">
+                    <label class="form-check-label" for="defaultCheck1">
+                        Schedule Time
+                    </label>
+                </div>
             </div>
 
-            <div class="form-check" style="width: 33%">
-                <input class="form-check-input" type="checkbox" value="" id="Adacel®">
-                <label class="form-check-label" for="defaultCheck1">
-                    Boostrix® or Adacel® (dTpa)
-                </label>
+            <div class="row" style="padding-left: 5%;margin-top: 0px; padding-top: 40px">
+                <div class="form-check" style="width: 50%;text-align:left">
+                    <label class="form-check-label" for="defaultCheck1">
+                        Boostrix® (dTpa)
+                    </label>
+                </div>
+                <div class="form-check" style="width: 20%">
+                    <input class="form-check-input" type="checkbox" value="" id="Boostrix®" name="Boostrix®">
+                    <label class="form-check-label" for="defaultCheck1">
+                        12 months
+                    </label>
+                </div>
+                <div class="form-check" style="width: 20%">
+                    <input class="form-check-input" type="checkbox" value="" id="Boostrix®" name="Boostrix®">
+                    <label class="form-check-label" for="defaultCheck1">
+                        18 months
+                    </label>
+                </div>
             </div>
-            <div class="form-check" style="width: 33%">
-                <input class="form-check-input" type="checkbox" value="" id="Fluzone®High-Dose">
-                <label class="form-check-label" for="defaultCheck1">
-                    Fluzone®High-Dose adults
-                </label>
+
+            <div class="row" style="padding-left: 5%;margin-top: 20px">
+                <div class="form-check" style="width: 50%;text-align:left">
+                    <label class="form-check-label" for="defaultCheck1">
+                        Boostrix® or Adacel® (dTpa)
+                    </label>
+                </div>
+
+                <div class="form-check" style="width: 20%">
+                    <input class="form-check-input" type="checkbox" value="" id="Boostrix®" name="Boostrix®">
+                    <label class="form-check-label" for="defaultCheck1">
+                        12 - 18 months
+                    </label>
+                </div>
+
+                <div class="form-check" style="width: 20%">
+                    <input class="form-check-input" type="checkbox" value="" id="Boostrix®" name="Boostrix®">
+                    <label class="form-check-label" for="defaultCheck1">
+                        Pregnant Woman
+                    </label>
+                </div>
+            </div>
+
+            <div class="row" style="padding-left: 5%;margin-top: 20px">
+                <div class="form-check" style="width: 50%;text-align:left">
+                    <label class="form-check-label" for="defaultCheck1">
+                        Fluzone®High-Dose adults
+                    </label>
+                </div>
+                <div class="form-check" style="width: 20%">
+                    <input class="form-check-input" type="checkbox" value="" id="Boostrix®" name="Boostrix®">
+                    <label class="form-check-label" for="defaultCheck1">
+                        Pregnant Woman
+                    </label>
+                </div>
+                <div class="form-check" style="width: 20%">
+                    <input class="form-check-input" type="checkbox" value="" id="Boostrix®" name="Boostrix®">
+                    <label class="form-check-label" for="defaultCheck1">
+                        Over 60 years old
+                    </label>
+                </div>
+            </div>
+
+            <div class="row" style="padding-left: 5%;margin-top: 20px">
+                <div class="form-check" style="width: 50%;text-align:left">
+                    <label class="form-check-label" for="defaultCheck1">
+                        Gardasil®9 (HPV)
+                    </label>
+                </div>
+
+                <div class="form-check" style="width: 20%">
+                    <input class="form-check-input" type="checkbox" value="" id="Boostrix®" name="Boostrix®">
+                    <label class="form-check-label" for="defaultCheck1">
+                        12 - 18 years old
+                    </label>
+                </div>
+            </div>
+
+            <div class="row" style="padding-left: 5%;margin-top: 20px">
+                <div class="form-check" style="width: 50%;text-align:left">
+                    <label class="form-check-label" for="defaultCheck1">
+                        H-B-Vax® II Paediatric or Engerix® B – Paediatric (Hep B)
+                    </label>
+                </div>
+
+                <div class="form-check" style="width: 20%">
+                    <input class="form-check-input" type="checkbox" value="" id="Boostrix®" name="Boostrix®">
+                    <label class="form-check-label" for="defaultCheck1">
+                        Birth
+                    </label>
+                </div>
+            </div>
+
+
+            <div class="row" style="padding-left: 5%;margin-top: 20px">
+                <div class="form-check" style="width: 50%;text-align:left">
+                    <label class="form-check-label" for="defaultCheck1">
+                        Havrix(Hep A)
+                    </label>
+                </div>
+
+                <div class="form-check" style="width: 20%">
+                    <input class="form-check-input" type="checkbox" value="" id="Boostrix®" name="Boostrix®">
+                    <label class="form-check-label" for="defaultCheck1">
+                        12 months
+                    </label>
+                </div>
+
+                <div class="form-check" style="width: 20%">
+                    <input class="form-check-input" type="checkbox" value="" id="Boostrix®" name="Boostrix®">
+                    <label class="form-check-label" for="defaultCheck1">
+                        18 months
+                    </label>
+                </div>
+            </div>
+
+
+            <div class="row" style="padding-left: 5%;margin-top: 20px">
+                <div class="form-check" style="width: 50%;text-align:left">
+                    <label class="form-check-label" for="defaultCheck1">
+                        Infanrix® IPV or Quadracel® (DTPa, Polio)
+                    </label>
+                </div>
+                <div class="form-check" style="width: 20%">
+                    <input class="form-check-input" type="checkbox" value="" id="Boostrix®" name="Boostrix®">
+                    <label class="form-check-label" for="defaultCheck1">
+                        2 - 4 years old
+                    </label>
+                </div>
+                <div class="form-check" style="width: 20%">
+                    <input class="form-check-input" type="checkbox" value="" id="Boostrix®" name="Boostrix®">
+                    <label class="form-check-label" for="defaultCheck1">
+                        Over 4 years old
+                    </label>
+                </div>
+            </div>
+
+            <div class="row" style="padding-left: 5%;margin-top: 20px">
+                <div class="form-check" style="width: 50%;text-align:left">
+                    <label class="form-check-label" for="defaultCheck1">
+                        Infanrix® hexa (DTPa, Hep B, Polio, Hib)
+                    </label>
+                </div>
+
+                <div class="form-check" style="width: 10%">
+                    <input class="form-check-input" type="checkbox" value="" id="Boostrix®" name="Boostrix®">
+                    <label class="form-check-label" for="defaultCheck1">
+                        2 months
+                    </label>
+                </div>
+
+                <div class="form-check" style="width: 10%">
+                    <input class="form-check-input" type="checkbox" value="" id="Boostrix®" name="Boostrix®">
+                    <label class="form-check-label" for="defaultCheck1">
+                        4 months
+                    </label>
+                </div>
+
+                <div class="form-check" style="width: 10%">
+                    <input class="form-check-input" type="checkbox" value="" id="MMRII®">
+                    <label class="form-check-label" for="defaultCheck1">
+                        6 months
+                    </label>
+                </div>
+
+            </div>
+
+            <div class="row" style="padding-left: 5%;margin-top: 20px">
+                <div class="form-check" style="width: 50%;text-align:left">
+                    <label class="form-check-label" for="defaultCheck1">
+                        Nimenrix® (MenACWY)
+                    </label>
+                </div>
+
+                <div class="form-check" style="width: 20%">
+                    <input class="form-check-input" type="checkbox" value="" id="MMRII®">
+                    <label class="form-check-label" for="defaultCheck1">
+                        12 months
+                    </label>
+                </div>
+            </div>
+
+            <div class="row" style="padding-left: 5%;margin-top: 20px">
+                <div class="form-check" style="width: 50%;text-align:left">
+                    <label class="form-check-label" for="defaultCheck1">
+                        PedvaxHIB®
+                    </label>
+                </div>
+
+                <div class="form-check" style="width: 20%">
+                    <input class="form-check-input" type="checkbox" value="" id="MMRII®">
+                    <label class="form-check-label" for="defaultCheck1">
+                        12 months
+                    </label>
+                </div>
+
+                <div class="form-check" style="width: 20%">
+                    <input class="form-check-input" type="checkbox" value="" id="MMRII®">
+                    <label class="form-check-label" for="defaultCheck1">
+                        18 months
+                    </label>
+                </div>
+            </div>
+
+            <div class="row" style="padding-left: 5%;margin-top: 20px">
+                <div class="form-check" style="width: 50%;text-align:left">
+                    <label class="form-check-label" for="defaultCheck1">
+                        Pneumovax23® (Pneumococcal)
+                    </label>
+                </div>
+
+                <div class="form-check" style="width: 20%">
+                    <input class="form-check-input" type="checkbox" value="" id="MMRII®">
+                    <label class="form-check-label" for="defaultCheck1">
+                        Over 60 years old
+                    </label>
+                </div>
+            </div>
+
+            <div class="row" style="padding-left: 5%;margin-top: 20px">
+                <div class="form-check" style="width: 50%;text-align:left">
+                    <label class="form-check-label" for="defaultCheck1">
+                        Prevenar 13® (Pneumococcal)
+                    </label>
+                </div>
+
+                <div class="form-check" style="width: 10%">
+                    <input class="form-check-input" type="checkbox" value="" id="MMRII®">
+                    <label class="form-check-label" for="defaultCheck1">
+                        2 months
+                    </label>
+                </div>
+                <div class="form-check" style="width: 10%">
+                    <input class="form-check-input" type="checkbox" value="" id="MMRII®">
+                    <label class="form-check-label" for="defaultCheck1">
+                        4 months
+                    </label>
+                </div>
+                <div class="form-check" style="width: 10%">
+                    <input class="form-check-input" type="checkbox" value="" id="MMRII®">
+                    <label class="form-check-label" for="defaultCheck1">
+                        6 months
+                    </label>
+                </div>
+                <div class="form-check" style="width: 10%">
+                    <input class="form-check-input" type="checkbox" value="" id="MMRII®">
+                    <label class="form-check-label" for="defaultCheck1">
+                        12 months
+                    </label>
+                </div>
+            </div>
+
+            <div class="row" style="padding-left: 5%;margin-top: 20px">
+                <div class="form-check" style="width: 50%;text-align:left">
+                    <label class="form-check-label" for="defaultCheck1">
+                        Priorix-Tetra® or ProQuad® (MMRV)
+                    </label>
+                </div>
+
+                <div class="form-check" style="width: 20%">
+                    <input class="form-check-input" type="checkbox" value="" id="MMRII®">
+                    <label class="form-check-label" for="defaultCheck1">
+                        12 months
+                    </label>
+                </div>
+
+                <div class="form-check" style="width: 20%">
+                    <input class="form-check-input" type="checkbox" value="" id="MMRII®">
+                    <label class="form-check-label" for="defaultCheck1">
+                        18 months
+                    </label>
+                </div>
+            </div>
+
+            <div class="row" style="padding-left: 5%;margin-top: 20px">
+                <div class="form-check" style="width: 50%;text-align:left">
+                    <label class="form-check-label" for="defaultCheck1">
+                        Rotarix® (Rotavirus)
+                    </label>
+                </div>
+
+                <div class="form-check" style="width: 20%">
+                    <input class="form-check-input" type="checkbox" value="" id="MMRII®">
+                    <label class="form-check-label" for="defaultCheck1">
+                        2 months
+                    </label>
+                </div>
+
+                <div class="form-check" style="width: 20%">
+                    <input class="form-check-input" type="checkbox" value="" id="MMRII®">
+                    <label class="form-check-label" for="defaultCheck1">
+                        4 months
+                    </label>
+                </div>
+            </div>
+
+            <div class="row" style="padding-left: 5%;margin-top: 20px">
+                <div class="form-check" style="width: 50%;text-align:left">
+                    <label class="form-check-label" for="defaultCheck1">
+                        Zostavax® (Herpes zoster)
+                    </label>
+                </div>
+
+                <div class="form-check" style="width: 20%;padding-bottom: 40px">
+                    <input class="form-check-input" type="checkbox" value="" id="MMRII®">
+                    <label class="form-check-label" for="defaultCheck1">
+                        Over 60 years old
+                    </label>
+                </div>
             </div>
         </div>
 
-        <div class="row" style="padding-left: 5%;margin-top: 20px">
-            <div class="form-check" style="width: 33%">
-                <input class="form-check-input" type="checkbox" value="" id="Gardasil®9">
-                <label class="form-check-label" for="defaultCheck1">
-                    Gardasil®9 (HPV)
-                </label>
-            </div>
 
-            <div class="form-check" style="width: 33%">
-                <input class="form-check-input" type="checkbox" value="" id="H-B-Vax®">
-                <label class="form-check-label" for="defaultCheck1">
-                    H-B-Vax® II Paediatric or Engerix® B – Paediatric (Hep B)
-                </label>
-            </div>
-            <div class="form-check" style="width: 33%">
-                <input class="form-check-input" type="checkbox" value="" id="Havrix">
-                <label class="form-check-label" for="defaultCheck1">
-                    Havrix(Hep A)
-                </label>
-            </div>
-        </div>
-
-        <div class="row" style="padding-left: 5%;margin-top: 20px">
-            <div class="form-check" style="width: 33%">
-                <input class="form-check-input" type="checkbox" value="" id="IPV">
-                <label class="form-check-label" for="defaultCheck1">
-                    Infanrix® IPV or Quadracel® (DTPa, Polio)
-                </label>
-            </div>
-
-            <div class="form-check" style="width: 33%">
-                <input class="form-check-input" type="checkbox" value="" id="hexa">
-                <label class="form-check-label" for="defaultCheck1">
-                    Infanrix® hexa (DTPa, Hep B, Polio, Hib)
-                </label>
-            </div>
-            <div class="form-check" style="width: 33%">
-                <input class="form-check-input" type="checkbox" value="" id="MMRII®">
-                <label class="form-check-label" for="defaultCheck1">
-                    MMRII® or Priorix® (MMR)
-                </label>
-            </div>
-        </div>
-
-        <div class="row" style="padding-left: 5%;margin-top: 20px">
-            <div class="form-check" style="width: 33%">
-                <input class="form-check-input" type="checkbox" value="" id="Nimenrix®">
-                <label class="form-check-label" for="defaultCheck1">
-                    Nimenrix® (MenACWY)
-                </label>
-            </div>
-
-            <div class="form-check" style="width: 33%">
-                <input class="form-check-input" type="checkbox" value="" id="PedvaxHIB®">
-                <label class="form-check-label" for="defaultCheck1">
-                    PedvaxHIB®
-                </label>
-            </div>
-            <div class="form-check" style="width: 33%">
-                <input class="form-check-input" type="checkbox" value="" id="Pneumovax23®">
-                <label class="form-check-label" for="defaultCheck1">
-                    Pneumovax23® (Pneumococcal)
-                </label>
-            </div>
-        </div>
-
-        <div class="row" style="padding-left: 5%;margin-top: 20px">
-            <div class="form-check" style="width: 33%">
-                <input class="form-check-input" type="checkbox" value="" id="Prevenar">
-                <label class="form-check-label" for="defaultCheck1">
-                    Prevenar 13® (Pneumococcal)
-                </label>
-            </div>
-
-            <div class="form-check" style="width: 33%">
-                <input class="form-check-input" type="checkbox" value="" id="Priorix-Tetra®">
-                <label class="form-check-label" for="defaultCheck1">
-                    Priorix-Tetra® or ProQuad® (MMRV)
-                </label>
-            </div>
-            <div class="form-check" style="width: 33%">
-                <input class="form-check-input" type="checkbox" value="" id="Rotarix®">
-                <label class="form-check-label" for="defaultCheck1">
-                    Rotarix® (Rotavirus)
-                </label>
-            </div>
-        </div>
-
-        <div class="row" style="padding-left: 5%;margin-top: 20px">
-            <div class="form-check" style="width: 33%">
-                <input class="form-check-input" type="checkbox" value="" id="Zostavax®">
-                <label class="form-check-label" for="defaultCheck1">
-                    Zostavax® (Herpes zoster)
-                </label>
-            </div>
-        </div>
     </form>
 
 
@@ -226,11 +437,15 @@
 
             console.log(value)
 
+            var post_data = {
+                "checkbox": value
+            }
+
             $.ajax({
-                    url: 'check_box',
-                    type: 'POST',
-                    data: value,
-                })
+                url: 'check_box',
+                type: 'POST',
+                data: post_data,
+            })
         }
 
         // code end
