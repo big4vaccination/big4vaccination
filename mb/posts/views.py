@@ -514,6 +514,31 @@ def Australia_vaccine(request):
     return render(request, 'au_schedule.html',
                   {'data': json.dumps(list(out_put)), 'disease': json.dumps(list(out_put2))})
 
+def city_council(request):
+    database = os.path.join(BASE_DIR, '6.db')
+    conn = create_connection(database)
+    cur = conn.cursor()
+    #if request.method == "POST":
+    suburb = request.POST["textfield"]
+    #suburb = request.POST.get('suburb')
+    city_council= "select * from suburb_council where suburb = '" + str(suburb) + "'"
+    country1 = cur.execute(city_council)
+    data1 = country1.fetchall()
+    push_data = [{}]
+    if data1:
+        for i in range(len(data1)):
+            push_data[i]["City council"] = data1[i][3]
+            push_data[i]["Phone number"] = data1[i][5]
+            push_data[i]["Email address"] = data1[i][7]
+            push_data[i]["Website"] = data1[i][8]
+            push_data[i]["Address"] = data1[i][4]
+                #push_data[i]["lat"] = data1[i][9]
+                #push_data[i]["lng"] = data1[i][10]
+            push_data.append({})
+
+    return render(request, 'city_council.html', {'data': json.dumps(list(push_data))})
+
+    
 
 def find_GP(request):
     database = os.path.join(BASE_DIR, '6.db')
