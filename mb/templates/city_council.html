@@ -20,30 +20,30 @@
 				<h5 class="h5">Where to get free vaccinations for immigrants</h5>
 					<br>
                     <h5>City councils offers free vaccinations for infants and school children without charging any fees.</h5>
-					<h5>You can find your city council below by entering your suburb.</h5>
+					<h5>There are 79 city councils in Victoria State. You can find your city council below by entering your suburb.</h5>
                 </div>
             </div>
         </div>
     </section>
  
-   
-
     <!-- <center ><h4>Australian Vaccine Schedule</h4></center> -->
     <section id="services_">
         <div class="col-md-auto text-center">
-            <h5 class="h5">City Council</h5>
+            <h5 class="h5">Find a Council</h5>
+			
             <br>
 			<form method="POST" action="">
 			{% csrf_token %}
 			{{ form.as_p }}
 			<input type="text" name="textfield">
-			<button type="submit">Submit</button>
+			<button class="btn btn-primary 123" type="submit">Search</button>
+			
 			</form>
         </div>
     </section>
+	<br>
     <div class="col-md-auto text-center">
         <table id="table">
-
         </table>
         <br>
         <!-- <section> -->
@@ -53,11 +53,7 @@
             <!-- </div> -->
         <!-- </section> -->
     </div>
-    <!-- <div class="col-md-auto text-center"> -->
-        <!-- <table id="disease"> -->
-
-        <!-- </table> -->
-    <!-- </div> -->
+ 
     <br>
     <section class="page-section-2">
         <div class="container-fluid text-center">

@@ -344,9 +344,21 @@ font-size: 2rem !important;}
   padding-bottom: 2rem;
   margin-bottom:2rem!important
 }
+input[type=text] {
+    width: 23%;
+	padding: 5px 3px;
+    margin: 1px 10px;
+    box-sizing: border-box;  
+}
 .h5 {
   font-size: 140%;
   font-weight: 280;
+  text-shadow: 0.5px 0.5px 1px #000;
+  padding-bottom: 0.1rem;
+  margin-bottom:0.1rem;}
+.h6 {
+  font-size: 110%;
+  font-weight: 260;
   text-shadow: 0.5px 0.5px 1px #000;
   padding-bottom: 0.1rem;
   margin-bottom:0.1rem;}
