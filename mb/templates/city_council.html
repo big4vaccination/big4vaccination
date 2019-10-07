@@ -5,55 +5,45 @@
 
     <!-- <!doctype html> -->
     <html>
- 
+
 
     <body>
-	<!-- <div class="image-7"> -->
-	<!-- <img src="/static/img/au_free.jpg" alt="snow" style="width:100%;height:100%;"> -->
-	<!-- </div> -->
-	 <section class="page-section bg-white text-dark">
-         <div class="container">
+    <!-- <div class="image-7"> -->
+    <!-- <img src="/static/img/au_free.jpg" alt="snow" style="width:100%;height:100%;"> -->
+    <!-- </div> -->
+    <section class="page-section bg-white text-dark">
+        <div class="container">
             <div class="row justify-content-center">
-			 <div class="col-md-auto text-center">
-				<br>
-				<br>
-				<h5 class="h5">Where to get free vaccinations for immigrants</h5>
-					<br>
-                    <h5>City councils offers free vaccinations for infants and school children without charging any fees.</h5>
-					<h5>There are 79 city councils in Victoria State. You can find your city council below by entering your suburb.</h5>
+                <div class="col-md-auto text-center">
+                    <br>
+                    <br>
+                    <h5 class="h5">Where to get free vaccinations for immigrants</h5>
+                    <br>
+                    <h5>City councils offers free vaccinations for infants and school children without charging any
+                        fees.</h5>
+                    <h5>There are 79 city councils in Victoria State. You can find your city council below by entering
+                        your suburb.</h5>
                 </div>
             </div>
         </div>
     </section>
- 
+
     <!-- <center ><h4>Australian Vaccine Schedule</h4></center> -->
     <section id="services_">
         <div class="col-md-auto text-center">
             <h5 class="h5">Find a Council</h5>
-			
+
             <br>
-			<form method="POST" action="">
-			{% csrf_token %}
-			{{ form.as_p }}
-			<input type="text" name="textfield">
-			<button class="btn btn-primary 123" type="submit">Search</button>
-			
-			</form>
+            <form method="POST" action="">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="text" name="textfield" id="textfield">
+                <button class="btn btn-primary 123" type="button" id="search">Search</button>
+                <p><span id='search-result'></span></p>
+            </form>
         </div>
     </section>
-	<br>
-    <div class="col-md-auto text-center">
-        <table id="table">
-        </table>
-        <br>
-        <!-- <section> -->
-            <!-- <div class="col-md-auto text-center"> -->
-                <!-- <h5 class="h5">Vaccine and related diseases are shown below</h5> -->
-                <!-- <br> -->
-            <!-- </div> -->
-        <!-- </section> -->
-    </div>
- 
+
     <br>
     <section class="page-section-2">
         <div class="container-fluid text-center">
@@ -71,119 +61,81 @@
         </div>
 
     </section>
-    <!-- <div class="col-md-auto text-center"> -->
-    <!-- <h5><center>It would be useful for you to see the comparison table of vaccine schedules between your home country and Australia.</center></h5> -->
-    <!-- <!-- <h5><center>Click to button to view schedule</center></h5> -->
-    <!-- <button type="button" class="btn btn-outline-primary btn-lg"><a href="{% url 'au_schedule' %}">View -->
-    <!-- schedule</a></button> -->
-    <!-- </div> -->
-
-    <script>
-        let table_data = {{ data|safe }}
-            console.log(table_data)
-
-     
-
-        function generateTableHead(table, data) {
-            let thead = table.createTHead();
-            let row = thead.insertRow();
-            for (let key of data) {
-                let th = document.createElement("th")
-                let text = document.createTextNode(key)
-                th.appendChild(text)
-                row.appendChild(th)
-            }
-        }
 
 
-		function generateTable(table, data) {
-            for (let element of data) {
-                let index = 0;
-                let row = table.insertRow();
-                for (let key in element) {
-                    let cell = row.insertCell()
-                    let text = document.createTextNode(element[key])
-                    if (index % 4 == 3) {
-                        var a = document.createElement('a')
-                        a.appendChild(text)
-                        a.href = element[key]
-                        cell.appendChild(a)
-                    } else {
-                        cell.appendChild(text)
+    <script src="http://apps.bdimg.com/libs/jquery/1.11.1/jquery.min.js"></script>
+{#    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>#}
+
+    <script type="text/javascript">
+        var cityCouncil = [
+            'Alpine Shire Council', 'Ararat Rural City Council',
+            'Ballarat City Council', 'Banyule City Council',
+            'Bass Coast Shire Council', 'Baw Baw Shire Council',
+            'Bayside City Council', 'Benalla Rural City Council',
+            'Boroondara City Council', 'Brimbank City Council',
+            'Buloke Shire Council', 'Campaspe Shire Council',
+            'Cardinia Shire Council', 'Casey City Council',
+            'Central Goldfields Shire Council', 'Colac Otway Shire Council',
+            'Corangamite Shire Council', 'Darebin City Council',
+            'East Gippsland Shire Council', 'Frankston City Council',
+            'Gannawarra Shire Council', 'Glen Eira City Council',
+            'Glenelg Shire Council', 'Golden Plains Shire Council',
+            'Greater Bendigo City Council', 'Greater Dandenong City Council',
+            'Greater Geelong City Council', 'Greater Shepparton City Council',
+            'Hepburn Shire Council', 'Hindmarsh Shire Council',
+            'Hobsons Bay City Council', 'Horsham Rural City Council',
+            'Hume City Council', 'Indigo Shire Council',
+            'Kingston City Council', 'Knox City Council',
+            'Latrobe City Council', 'Loddon Shire Council',
+            'Macedon Ranges Shire Council', 'Manningham City Council',
+            'Mansfield Shire Council', 'Maribyrnong City Council',
+            'Maroondah City Council', 'Melbourne City Council',
+            'Melton City Council', 'Mildura Rural City Council',
+            'Mitchell Shire Council', 'Moira Shire Council',
+            'Monash City Council', 'Moonee Valley City Council',
+            'Moorabool Shire Council', 'Moreland City Council',
+            'Mornington Peninsula Shire Council',
+            'Mount Alexander Shire Council', 'Moyne Shire Council',
+            'Murrindindi Shire Council', 'Nillumbik Shire Council',
+            'Northern Grampians Shire Council', 'Port Phillip City Council',
+            'Pyrenees Shire Council', 'South Gippsland Shire Council',
+            'Southern Grampians Shire Council', 'Stonnington City Council',
+            'Strathbogie Shire Council', 'Surf Coast Shire Council',
+            'Swan Hill Rural City Council', 'Towong Shire Council',
+            'Wangaratta Rural City Council', 'Warrnambool City Council',
+            'Wellington Shire Council', 'West Wimmera Shire Council',
+            'Whitehorse City Council', 'Whittlesea City Council',
+            'Wodonga City Council', 'Wyndham City Council',
+            'Yarra City Council', 'Yarra Ranges Shire Council',
+            'Yarriambiack Shire Council'
+        ];
+
+
+        $(document).ready(function () {
+            $("#textfield").keyup(function () {
+                var city = $("#textfield").val().replace(/\s+/g, '');
+                var match = new RegExp(city.toLowerCase())
+                for (var i = 0; i < cityCouncil.length; i++) {
+                    city_lower = cityCouncil[i].toLowerCase().replace(/\s+/g, '')
+                    if (match.test(city_lower)) {
+                        console.log(cityCouncil[i])
+                        var suggestion = document.getElementById("search-result");
+                        suggestion.innerHTML = suggestion.innerText + cityCouncil[i];
                     }
-                    index++
                 }
-            }
-        }
-		
-        <!-- function generateTable(table, data) { -->
+            })
 
-            <!-- for (let element of data) { -->
-                <!-- let row = table.insertRow(); -->
-                <!-- for (let key in element) { -->
-                    <!-- let cell = row.insertCell() -->
-                    <!-- let text = document.createTextNode(element[key]) -->
-                    <!-- cell.appendChild(text) -->
+            $('#textfield').keydown(function () {
+                $('#search-result').empty();
+            })
+            $('#textfield').blur(function () {
+                $('#search-result').empty();
+            })
+        })
 
-                <!-- } -->
-            <!-- } -->
-        <!-- } -->
-
-        let table = document.querySelector("#table");
-        let data = Object.keys(table_data[0]);
-
-        generateTable(table, table_data)
-        generateTableHead(table, data)
-
-       
-
-
-    </script>
-    <script>
-        <!--
-        document.body.innerHTML.replace(/y/g, "$"); -->
-        <!--
-        var elmOperator = $("#" + elm.attr('table_au').replace('y', '$$')); -->
-        <!--
-        var temp = new String('y'); -->
-        <!--
-        document.write(temp + '<br/>'); -->
-        <!--
-        temp = temp.replace(/y/g, '$$'); -->
-        <!--
-        document.write(temp) -->
-        <!--
-        var mystr = 'y'; -->
-        <!--
-        var newstr = mystr.replace(/y/g, "&#x2714"); -->
-        <!--
-        document.getElementById("table_au").innerHTML = newstr; -->
-        <!-- document.write(newstr); -->
 
     </script>
     <br>
-    <script>
-        <!--
-        document.body.innerHTML.replace(/y/g, "$"); -->
-        <!--
-        var elmOperator = $("#" + elm.attr('table_au').replace('y', '$$')); -->
-        <!--
-        var temp = new String('y'); -->
-        <!--
-        document.write(temp + '<br/>'); -->
-        <!--
-        temp = temp.replace(/y/g, '$$'); -->
-        <!--
-        document.write(temp) -->
-        <!--
-        var mystr = 'y'; -->
-        <!--
-        var newstr = mystr.replace(/y/g, "&#x2714"); -->
-        <!--
-        document.getElementById("table_au").innerHTML = newstr; -->
-        <!-- document.write(newstr); -->
-
-    </script>
 
 
     </body>

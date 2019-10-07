@@ -521,6 +521,7 @@ def city_council(request):
     push_data = [{}]
     if request.method == "POST":
         suburb = request.POST["textfield"]
+        print(suburb)
     #suburb = request.POST.get('suburb')
         city_council= "select * from suburb_council where suburb = '" + str(suburb) + "'"
         country1 = cur.execute(city_council)
