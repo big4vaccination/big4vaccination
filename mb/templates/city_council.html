@@ -17,9 +17,10 @@
 			 <div class="col-md-auto text-center">
 				<br>
 				<br>
-				<h5 class="h5">Where to get free vaccines for immigrants</h5>
+				<h5 class="h5">Where to get free vaccinations for immigrants</h5>
 					<br>
-                    <h5>All city councils provide free vaccines for children</h5>
+                    <h5>City councils offers free vaccinations for infants and school children without charging any fees.</h5>
+					<h5>You can find your city council below by entering your suburb.</h5>
                 </div>
             </div>
         </div>
@@ -30,16 +31,16 @@
     <!-- <center ><h4>Australian Vaccine Schedule</h4></center> -->
     <section id="services_">
         <div class="col-md-auto text-center">
-            <h5 class="h5">City Councils</h5>
+            <h5 class="h5">City Council</h5>
             <br>
+			<form method="POST" action="">
+			{% csrf_token %}
+			{{ form.as_p }}
+			<input type="text" name="textfield">
+			<button type="submit">Submit</button>
+			</form>
         </div>
     </section>
-	<form method="POST" action="">
-	{% csrf_token %}
-	{{ form.as_p }}
-    <input type="text" name="textfield">
-    <button type="submit">Submit</button>
-	</form>
     <div class="col-md-auto text-center">
         <table id="table">
 
