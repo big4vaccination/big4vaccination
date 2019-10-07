@@ -36,9 +36,9 @@
     </section>
 	<form method="POST" action="">
 	{% csrf_token %}
+	{{ form.as_p }}
     <input type="text" name="textfield">
-    ...
-    <button type="submit">Upload text</button>
+    <button type="submit">Submit</button>
 	</form>
     <div class="col-md-auto text-center">
         <table id="table">
