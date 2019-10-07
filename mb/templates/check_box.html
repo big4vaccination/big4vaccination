@@ -28,12 +28,12 @@
     <br>
     <center><h4>Based on Australian Vaccine Schedule</h4></center>
     <div class="col-md-auto text-center">
-        <input class="btn btn-primary 123" type="submit" onclick="AjaxSubmit()"
+        <input class="btn btn-primary 123" type="submit" onclick="printProof()"
                value="Getting your own vaccine schedule"
                href="#table_compare">
     </div>
 
-    <form class="form" method="POST">
+    <form class="form" method="POST" id="forPrint">
         {% csrf_token %}
 
         <div class="container" style="background-color: #fff;border-radius: 16px">
@@ -415,6 +415,12 @@
 
 
         // ajax function to pass the country value to backend
+
+        function printProof() {
+            var printData = document.getElementById("forPrint").innerHTML; // 只打印 forPrint 这个div中的内容。
+            window.document.body.innerHTML = printData;   //把 html 里的数据 复制给 body 的 html 数据 ，相当于重置了整个页面的 内容
+            window.print();
+        }
 
         function AjaxSubmit() {
             var value = new Array()
