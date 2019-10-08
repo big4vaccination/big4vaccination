@@ -8,20 +8,22 @@
  
 
     <body>
-	<!-- <div class="image-7"> -->
+	<!-- <div class="image-6"> -->
 	<!-- <img src="/static/img/au_free.jpg" alt="snow" style="width:100%;height:100%;"> -->
 	<!-- </div> -->
+	
 	 <section class="page-section bg-white text-dark">
          <div class="container">
             <div class="row justify-content-center">
 			 <div class="col-md-auto text-center">
 				<br>
 				<br>
-				<h5 class="h5">Free vaccines for children</h5>
+				<h5 class="h5">Free vaccines for migrant children</h5>
 					<br>
                     <h5>From 1 January 2016, the Victorian State Government's new No Jab No Play legislation came into effect.
 This legislation requires all children to be fully vaccinated unless they have a medical exemption to be enrolled in childcare or kindergarten in Victoria.
 To find out more about it, go to <a href="https://www2.health.vic.gov.au/public-health/immunisation/vaccination-children/no-jab-no-play">No Jab No Play</a></h5>
+					<h5>Free vaccines are available for migrant children without any fees at <a href="{% url 'city_council' %}">city councils</a>.</h5>
                 </div>
             </div>
         </div>
@@ -60,11 +62,9 @@ To find out more about it, go to <a href="https://www2.health.vic.gov.au/public-
             <div class="col-12">
                 <!-- <h2 class="display-5">It would be useful for you to see the comparison table of vaccine schedules between your home country and Australia.</h2> -->
                 <p class="lead">
-                    It would be useful for you to see the comparison table of vaccine schedules between your home
-                    country and Australia.
+                    It would be useful for you to find your city council where you can get free vacccines for your children without any fees.
                 </p>
-                <a class="btn btn-primary btn-lg js-scroll-trigger" href="{% url 'compare_schedule' %}">Compare
-                    Schedules</a>
+                <a class="btn btn-primary btn-lg js-scroll-trigger" href="{% url 'city_council' %}">Search</a>
                 </a>
             </div>
         </div>
@@ -190,7 +190,9 @@ To find out more about it, go to <a href="https://www2.health.vic.gov.au/public-
         table {
             border-collapse: collapse;
             border-spacing: 0;
-            width: 98%;
+			margin-left: auto;
+			margin-right: auto;
+            width: 95%;
             #height: 100%;
             border: 1px solid #ddd;
             line-height: 1.3;
@@ -204,8 +206,8 @@ To find out more about it, go to <a href="https://www2.health.vic.gov.au/public-
 
         th, td {
             text-align: center;
-            padding: 0.05px;
-            border: 01px solid black;
+            padding: 2px;
+            border: 1px solid black;
         }
 
         th:first-child, td:first-child {
