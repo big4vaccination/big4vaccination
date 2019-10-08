@@ -37,668 +37,1940 @@
             <form method="POST" action="" autocomplete="off">
                 {% csrf_token %}
                 {{ form.as_p }}
-				
+
                 <input type="text" name="suburb" id="suburb" placeholder="Enter your suburb" list="city_councils"/>
                 <datalist id="city_councils">
-					<!-- <option value="{{ suburb }}">{{ suburb }}</option> -->
-                   <option value="Eurobin">Eurobin</option>
-					<option value="Ovens">Ovens</option>
-					<option value="Porepunkah">Porepunkah</option>
-					<option value="Rosewhite">Rosewhite</option>
-					<option value="Smoko">Smoko</option>
-					<option value="Tawonga">Tawonga</option>
-					<option value="Tawonga South">Tawonga South</option>
-					<option value="Upper Gundowring">Upper Gundowring</option>
-					<option value="Bayindeen">Bayindeen</option>
-					<option value="Narrapumelap South">Narrapumelap South</option>
-					<option value="Tatyoon">Tatyoon</option>
-					<option value="Westmere">Westmere</option>
-					<option value="Willaura North">Willaura North</option>
-					<option value="Sebastopol">Sebastopol</option>
-					<option value="Soldiers Hill">Soldiers Hill</option>
-					<option value="Wendouree">Wendouree</option>
-					<option value="Heidelberg West">Heidelberg West</option>
-					<option value="Ivanhoe East">Ivanhoe East</option>
-					<option value="Lower Plenty">Lower Plenty</option>
-					<option value="Montmorency">Montmorency</option>
-					<option value="St Helena">St Helena</option>
-					<option value="Viewbank">Viewbank</option>
-					<option value="Watsonia North">Watsonia North</option>
-					<option value="Bass">Bass</option>
-					<option value="Glen Forbes">Glen Forbes</option>
-					<option value="Kernot">Kernot</option>
-					<option value="San Remo">San Remo</option>
-					<option value="The Gurdies">The Gurdies</option>
-					<option value="Wattle Bank">Wattle Bank</option>
-					<option value="West Creek">West Creek</option>
-					<option value="Wimbledon Heights">Wimbledon Heights</option>
-					<option value="Allambee">Allambee</option>
-					<option value="Gainsborough">Gainsborough</option>
-					<option value="Jindivick">Jindivick</option>
-					<option value="Lillico">Lillico</option>
-					<option value="Narracan">Narracan</option>
-					<option value="Nayook">Nayook</option>
-					<option value="Neerim East">Neerim East</option>
-					<option value="Tetoora Road">Tetoora Road</option>
-					<option value="Vesper">Vesper</option>
-					<option value="Willow Grove">Willow Grove</option>
-					<option value="Black Rock">Black Rock</option>
-					<option value="Hampton East">Hampton East</option>
-					<option value="Sandringham">Sandringham</option>
-					<option value="Benalla">Benalla</option>
-					<option value="Devenish">Devenish</option>
-					<option value="Upper Ryans Creek">Upper Ryans Creek</option>
-					<option value="Camberwell">Camberwell</option>
-					<option value="Canterbury">Canterbury</option>
-					<option value="Deepdene">Deepdene</option>
-					<option value="Hawthorn">Hawthorn</option>
-					<option value="Hawthorn East">Hawthorn East</option>
-					<option value="Kew">Kew</option>
-					<option value="Kew East">Kew East</option>
-					<option value="Ardeer">Ardeer</option>
-					<option value="Keilor North">Keilor North</option>
-					<option value="Keilor Park">Keilor Park</option>
-					<option value="St Albans">St Albans</option>
-					<option value="Sunshine West">Sunshine West</option>
-					<option value="Taylors Lakes">Taylors Lakes</option>
-					<option value="Boigbeat">Boigbeat</option>
-					<option value="Massey">Massey</option>
-					<option value="Nullawil">Nullawil</option>
-					<option value="Sutton">Sutton</option>
-					<option value="Thalia">Thalia</option>
-					<option value="Tyrrell Downs">Tyrrell Downs</option>
-					<option value="Whirily">Whirily</option>
-					<option value="Willangie">Willangie</option>
-					<option value="Girgarre">Girgarre</option>
-					<option value="Gobarup">Gobarup</option>
-					<option value="Gunbower">Gunbower</option>
-					<option value="Kotta">Kotta</option>
-					<option value="Kyvalley">Kyvalley</option>
-					<option value="Lockington">Lockington</option>
-					<option value="Muskerry">Muskerry</option>
-					<option value="Rochester">Rochester</option>
-					<option value="Runnymede">Runnymede</option>
-					<option value="Strathallan">Strathallan</option>
-					<option value="Tennyson">Tennyson</option>
-					<option value="Terrick Terrick East">Terrick Terrick East</option>
-					<option value="Wharparilla">Wharparilla</option>
-					<option value="Dewhurst">Dewhurst</option>
-					<option value="Gembrook">Gembrook</option>
-					<option value="Guys Hill">Guys Hill</option>
-					<option value="Iona">Iona</option>
-					<option value="Koo Wee Rup North">Koo Wee Rup North</option>
-					<option value="Modella">Modella</option>
-					<option value="Nangana">Nangana</option>
-					<option value="Nar Nar Goon North">Nar Nar Goon North</option>
-					<option value="Officer South">Officer South</option>
-					<option value="Rythdale">Rythdale</option>
-					<option value="Tynong North">Tynong North</option>
-					<option value="Vervale">Vervale</option>
-					<option value="Blind Bight">Blind Bight</option>
-					<option value="Clyde North">Clyde North</option>
-					<option value="Endeavour Hills">Endeavour Hills</option>
-					<option value="Eumemmerring">Eumemmerring</option>
-					<option value="Hallam">Hallam</option>
-					<option value="Hampton Park">Hampton Park</option>
-					<option value="Harkaway">Harkaway</option>
-					<option value="Narre Warren North">Narre Warren North</option>
-					<option value="Narre Warren South">Narre Warren South</option>
-					<option value="Mount Hooghly">Mount Hooghly</option>
-					<option value="Simson">Simson</option>
-					<option value="Stony Creek">Stony Creek</option>
-					<option value="Cororooke">Cororooke</option>
-					<option value="Elliminyt">Elliminyt</option>
-					<option value="Forrest">Forrest</option>
-					<option value="Lavers Hill">Lavers Hill</option>
-					<option value="Skenes Creek North">Skenes Creek North</option>
-					<option value="Sugarloaf">Sugarloaf</option>
-					<option value="Swan Marsh">Swan Marsh</option>
-					<option value="Weeaproinah">Weeaproinah</option>
-					<option value="Weering">Weering</option>
-					<option value="Whoorel">Whoorel</option>
-					<option value="Foxhow">Foxhow</option>
-					<option value="Kennedys Creek">Kennedys Creek</option>
-					<option value="Larralea">Larralea</option>
-					<option value="Lismore">Lismore</option>
-					<option value="Princetown">Princetown</option>
-					<option value="Scotts Creek">Scotts Creek</option>
-					<option value="Simpson">Simpson</option>
-					<option value="Weerite">Weerite</option>
-					<option value="Kingsbury">Kingsbury</option>
-					<option value="Macleod">Macleod</option>
-					<option value="Northcote">Northcote</option>
-					<option value="Preston">Preston</option>
-					<option value="Benambra">Benambra</option>
-					<option value="Double Bridges">Double Bridges</option>
-					<option value="Eagle Point">Eagle Point</option>
-					<option value="Ensay North">Ensay North</option>
-					<option value="Glenaladale">Glenaladale</option>
-					<option value="Johnsonville">Johnsonville</option>
-					<option value="Lindenow">Lindenow</option>
-					<option value="Mallacoota">Mallacoota</option>
-					<option value="Manorina">Manorina</option>
-					<option value="Maramingo Creek">Maramingo Creek</option>
-					<option value="Noorinbee North">Noorinbee North</option>
-					<option value="Nowa Nowa">Nowa Nowa</option>
-					<option value="Nyerimilang">Nyerimilang</option>
-					<option value="Raymond Island">Raymond Island</option>
-					<option value="Shannonvale">Shannonvale</option>
-					<option value="Suggan Buggan">Suggan Buggan</option>
-					<option value="Swan Reach">Swan Reach</option>
-					<option value="Swifts Creek">Swifts Creek</option>
-					<option value="Waterholes">Waterholes</option>
-					<option value="Waygara">Waygara</option>
-					<option value="Carrum Downs">Carrum Downs</option>
-					<option value="Frankston North">Frankston North</option>
-					<option value="Frankston South">Frankston South</option>
-					<option value="Langwarrin">Langwarrin</option>
-					<option value="Langwarrin South">Langwarrin South</option>
-					<option value="Seaford">Seaford</option>
-					<option value="Skye">Skye</option>
-					<option value="Koondrook">Koondrook</option>
-					<option value="Lake Charm">Lake Charm</option>
-					<option value="Lalbert">Lalbert</option>
-					<option value="Quambatook">Quambatook</option>
-					<option value="Wee Wee Rup">Wee Wee Rup</option>
-					<option value="Westby">Westby</option>
-					<option value="Bentleigh East">Bentleigh East</option>
-					<option value="Caulfield North">Caulfield North</option>
-					<option value="Caulfield South">Caulfield South</option>
-					<option value="Gardenvale">Gardenvale</option>
-					<option value="Murrumbeena">Murrumbeena</option>
-					<option value="Ormond">Ormond</option>
-					<option value="Corndale">Corndale</option>
-					<option value="Digby">Digby</option>
-					<option value="Grassdale">Grassdale</option>
-					<option value="Lake Condah">Lake Condah</option>
-					<option value="Myamyn">Myamyn</option>
-					<option value="Portland West">Portland West</option>
-					<option value="Strathdownie">Strathdownie</option>
-					<option value="Tahara Bridge">Tahara Bridge</option>
-					<option value="Tahara West">Tahara West</option>
-					<option value="Cressy">Cressy</option>
-					<option value="Lethbridge">Lethbridge</option>
-					<option value="Rokewood">Rokewood</option>
-					<option value="Shelford">Shelford</option>
-					<option value="Stonehaven">Stonehaven</option>
-					<option value="Sutherlands Creek">Sutherlands Creek</option>
-					<option value="Teesdale">Teesdale</option>
-					<option value="Werneth">Werneth</option>
-					<option value="Willowvale">Willowvale</option>
-					<option value="Kangaroo Flat">Kangaroo Flat</option>
-					<option value="Ladys Pass">Ladys Pass</option>
-					<option value="Wellsford">Wellsford</option>
-					<option value="Whipstick">Whipstick</option>
-					<option value="White Hills">White Hills</option>
-					<option value="Wilsons Hill">Wilsons Hill</option>
-					<option value="Dandenong South">Dandenong South</option>
-					<option value="Keysborough">Keysborough</option>
-					<option value="Lyndhurst">Lyndhurst</option>
-					<option value="Noble Park North">Noble Park North</option>
-					<option value="Springvale">Springvale</option>
-					<option value="Springvale South">Springvale South</option>
-					<option value="Lara">Lara</option>
-					<option value="Lovely Banks">Lovely Banks</option>
-					<option value="Marcus Hill">Marcus Hill</option>
-					<option value="Moolap">Moolap</option>
-					<option value="North Geelong">North Geelong</option>
-					<option value="North Shore">North Shore</option>
-					<option value="South Geelong">South Geelong</option>
-					<option value="St Leonards">St Leonards</option>
-					<option value="Staughton Vale">Staughton Vale</option>
-					<option value="Swan Bay">Swan Bay</option>
-					<option value="Waurn Ponds">Waurn Ponds</option>
-					<option value="Whittington">Whittington</option>
-					<option value="Byrneside">Byrneside</option>
-					<option value="Congupna">Congupna</option>
-					<option value="Dookie College">Dookie College</option>
-					<option value="Murchison North">Murchison North</option>
-					<option value="Shepparton">Shepparton</option>
-					<option value="Shepparton North">Shepparton North</option>
-					<option value="St Germains">St Germains</option>
-					<option value="Stanhope South">Stanhope South</option>
-					<option value="Stewarton">Stewarton</option>
-					<option value="Tatura East">Tatura East</option>
-					<option value="Undera">Undera</option>
-					<option value="Daylesford">Daylesford</option>
-					<option value="Langdons Hill">Langdons Hill</option>
-					<option value="North Blackwood">North Blackwood</option>
-					<option value="Tylden South">Tylden South</option>
-					<option value="Ullina">Ullina</option>
-					<option value="Wheatsheaf">Wheatsheaf</option>
-					<option value="Jeparit">Jeparit</option>
-					<option value="Lorquon">Lorquon</option>
-					<option value="Altona North">Altona North</option>
-					<option value="Seabrook">Seabrook</option>
-					<option value="Seaholme">Seaholme</option>
-					<option value="Spotswood">Spotswood</option>
-					<option value="Williamstown North">Williamstown North</option>
-					<option value="Horsham">Horsham</option>
-					<option value="Noradjuha">Noradjuha</option>
-					<option value="Vectis">Vectis</option>
-					<option value="Bulla">Bulla</option>
-					<option value="Campbellfield">Campbellfield</option>
-					<option value="Greenvale">Greenvale</option>
-					<option value="Jacana">Jacana</option>
-					<option value="Meadow Heights">Meadow Heights</option>
-					<option value="Melbourne Airport">Melbourne Airport</option>
-					<option value="Oaklands Junction">Oaklands Junction</option>
-					<option value="Roxburgh Park">Roxburgh Park</option>
-					<option value="Somerton">Somerton</option>
-					<option value="Westmeadows">Westmeadows</option>
-					<option value="Wildwood">Wildwood</option>
-					<option value="Cornishtown">Cornishtown</option>
-					<option value="Indigo Valley">Indigo Valley</option>
-					<option value="Rutherglen">Rutherglen</option>
-					<option value="Sandy Creek">Sandy Creek</option>
-					<option value="Stanley">Stanley</option>
-					<option value="Cheltenham">Cheltenham</option>
-					<option value="Clayton South">Clayton South</option>
-					<option value="Edithvale">Edithvale</option>
-					<option value="Heatherton">Heatherton</option>
-					<option value="Highett">Highett</option>
-					<option value="Mentone">Mentone</option>
-					<option value="Patterson Lakes">Patterson Lakes</option>
-					<option value="Waterways">Waterways</option>
-					<option value="Boronia">Boronia</option>
-					<option value="Knoxfield">Knoxfield</option>
-					<option value="Rowville">Rowville</option>
-					<option value="Scoresby">Scoresby</option>
-					<option value="The Basin">The Basin</option>
-					<option value="Churchill">Churchill</option>
-					<option value="Glengarry West">Glengarry West</option>
-					<option value="Jumbuk">Jumbuk</option>
-					<option value="Maryvale">Maryvale</option>
-					<option value="Ocean Grove">Ocean Grove</option>
-					<option value="Tyers">Tyers</option>
-					<option value="Durham Ox">Durham Ox</option>
-					<option value="Korong Vale">Korong Vale</option>
-					<option value="Leaghur">Leaghur</option>
-					<option value="Leichardt">Leichardt</option>
-					<option value="Leitchville">Leitchville</option>
-					<option value="Pompapiel">Pompapiel</option>
-					<option value="Raywood">Raywood</option>
-					<option value="Serpentine">Serpentine</option>
-					<option value="Terrappee">Terrappee</option>
-					<option value="Terrick Terrick">Terrick Terrick</option>
-					<option value="Wehla">Wehla</option>
-					<option value="Bolinda">Bolinda</option>
-					<option value="Clarkefield">Clarkefield</option>
-					<option value="Gisborne South">Gisborne South</option>
-					<option value="Macedon">Macedon</option>
-					<option value="Monegeetta">Monegeetta</option>
-					<option value="Mount Macedon">Mount Macedon</option>
-					<option value="Rochford">Rochford</option>
-					<option value="Springfield">Springfield</option>
-					<option value="Bulleen">Bulleen</option>
-					<option value="Doncaster">Doncaster</option>
-					<option value="Doncaster East">Doncaster East</option>
-					<option value="Donvale">Donvale</option>
-					<option value="Templestowe">Templestowe</option>
-					<option value="Templestowe Lower">Templestowe Lower</option>
-					<option value="Ancona">Ancona</option>
-					<option value="Bonnie Doon">Bonnie Doon</option>
-					<option value="Mansfield">Mansfield</option>
-					<option value="Sawmill Settlement">Sawmill Settlement</option>
-					<option value="Braybrook">Braybrook</option>
-					<option value="Maribyrnong">Maribyrnong</option>
-					<option value="Seddon">Seddon</option>
-					<option value="West Footscray">West Footscray</option>
-					<option value="Bayswater North">Bayswater North</option>
-					<option value="Croydon South">Croydon South</option>
-					<option value="Heathmont">Heathmont</option>
-					<option value="Kilsyth South">Kilsyth South</option>
-					<option value="Park Orchards">Park Orchards</option>
-					<option value="Carlton">Carlton</option>
-					<option value="Docklands">Docklands</option>
-					<option value="East Melbourne">East Melbourne</option>
-					<option value="Melbourne">Melbourne</option>
-					<option value="North Melbourne">North Melbourne</option>
-					<option value="Parkville">Parkville</option>
-					<option value="West Melbourne">West Melbourne</option>
-					<option value="Diggers Rest">Diggers Rest</option>
-					<option value="Fraser Rise">Fraser Rise</option>
-					<option value="Melton West">Melton West</option>
-					<option value="Ravenhall">Ravenhall</option>
-					<option value="Rockbank">Rockbank</option>
-					<option value="Taylors Hill">Taylors Hill</option>
-					<option value="Weir Views">Weir Views</option>
-					<option value="Cowangie">Cowangie</option>
-					<option value="Irymple">Irymple</option>
-					<option value="Koorlong">Koorlong</option>
-					<option value="Merbein West">Merbein West</option>
-					<option value="Nangiloc">Nangiloc</option>
-					<option value="Ouyen">Ouyen</option>
-					<option value="Panitya">Panitya</option>
-					<option value="Underbool">Underbool</option>
-					<option value="Werrimull">Werrimull</option>
-					<option value="Bylands">Bylands</option>
-					<option value="Glenhope East">Glenhope East</option>
-					<option value="Heathcote Junction">Heathcote Junction</option>
-					<option value="Nulla Vale">Nulla Vale</option>
-					<option value="Puckapunyal">Puckapunyal</option>
-					<option value="Pyalong">Pyalong</option>
-					<option value="Upper Plenty">Upper Plenty</option>
-					<option value="Waterford Park">Waterford Park</option>
-					<option value="Whiteheads Creek">Whiteheads Creek</option>
-					<option value="Willowmavin">Willowmavin</option>
-					<option value="Katamatite East">Katamatite East</option>
-					<option value="Katunga">Katunga</option>
-					<option value="Marungi">Marungi</option>
-					<option value="Muckatah">Muckatah</option>
-					<option value="Mundoona">Mundoona</option>
-					<option value="Nathalia">Nathalia</option>
-					<option value="Numurkah">Numurkah</option>
-					<option value="Picola West">Picola West</option>
-					<option value="St James">St James</option>
-					<option value="Telford">Telford</option>
-					<option value="Ulupna">Ulupna</option>
-					<option value="Wilby">Wilby</option>
-					<option value="Ashwood">Ashwood</option>
-					<option value="Chadstone">Chadstone</option>
-					<option value="Mount Waverley">Mount Waverley</option>
-					<option value="Mulgrave">Mulgrave</option>
-					<option value="Notting Hill">Notting Hill</option>
-					<option value="Oakleigh East">Oakleigh East</option>
-					<option value="Oakleigh South">Oakleigh South</option>
-					<option value="Wheelers Hill">Wheelers Hill</option>
-					<option value="Avondale Heights">Avondale Heights</option>
-					<option value="Essendon West">Essendon West</option>
-					<option value="Keilor East">Keilor East</option>
-					<option value="Kensington">Kensington</option>
-					<option value="Moonee Ponds">Moonee Ponds</option>
-					<option value="Strathmore Heights">Strathmore Heights</option>
-					<option value="Buninyong">Buninyong</option>
-					<option value="Gordon">Gordon</option>
-					<option value="Meredith">Meredith</option>
-					<option value="Mount Doran">Mount Doran</option>
-					<option value="Mount Wallace">Mount Wallace</option>
-					<option value="Pentland Hills">Pentland Hills</option>
-					<option value="Coburg North">Coburg North</option>
-					<option value="Fawkner">Fawkner</option>
-					<option value="Gowanbrae">Gowanbrae</option>
-					<option value="Oak Park">Oak Park</option>
-					<option value="Pascoe Vale South">Pascoe Vale South</option>
-					<option value="Balnarring Beach">Balnarring Beach</option>
-					<option value="Bittern">Bittern</option>
-					<option value="Blairgowrie">Blairgowrie</option>
-					<option value="Capel Sound">Capel Sound</option>
-					<option value="Crib Point">Crib Point</option>
-					<option value="Flinders">Flinders</option>
-					<option value="Hastings">Hastings</option>
-					<option value="Hmas Cerberus">Hmas Cerberus</option>
-					<option value="Main Ridge">Main Ridge</option>
-					<option value="McCrae">McCrae</option>
-					<option value="Mount Eliza">Mount Eliza</option>
-					<option value="Mount Martha">Mount Martha</option>
-					<option value="Portsea">Portsea</option>
-					<option value="Rosebud">Rosebud</option>
-					<option value="Safety Beach">Safety Beach</option>
-					<option value="Shoreham">Shoreham</option>
-					<option value="Somers">Somers</option>
-					<option value="Somerville">Somerville</option>
-					<option value="Sorrento">Sorrento</option>
-					<option value="St Andrews Beach">St Andrews Beach</option>
-					<option value="Tyabb">Tyabb</option>
-					<option value="Carisbrook">Carisbrook</option>
-					<option value="Malmsbury">Malmsbury</option>
-					<option value="Moonlight Flat">Moonlight Flat</option>
-					<option value="Nuggetty">Nuggetty</option>
-					<option value="Ravenswood South">Ravenswood South</option>
-					<option value="Sutton Grange">Sutton Grange</option>
-					<option value="Vaughan">Vaughan</option>
-					<option value="Welshmans Reef">Welshmans Reef</option>
-					<option value="Werona">Werona</option>
-					<option value="Ballangeich">Ballangeich</option>
-					<option value="Grassmere">Grassmere</option>
-					<option value="Hawkesdale">Hawkesdale</option>
-					<option value="Hexham">Hexham</option>
-					<option value="Koroit">Koroit</option>
-					<option value="Macarthur">Macarthur</option>
-					<option value="Mailors Flat">Mailors Flat</option>
-					<option value="Naringal East">Naringal East</option>
-					<option value="Peterborough">Peterborough</option>
-					<option value="Port Fairy">Port Fairy</option>
-					<option value="Pura Pura">Pura Pura</option>
-					<option value="Purnim West">Purnim West</option>
-					<option value="Terang">Terang</option>
-					<option value="The Cove">The Cove</option>
-					<option value="The Sisters">The Sisters</option>
-					<option value="Tyrendarra East">Tyrendarra East</option>
-					<option value="Willatook">Willatook</option>
-					<option value="Buxton">Buxton</option>
-					<option value="Kinglake">Kinglake</option>
-					<option value="Marysville">Marysville</option>
-					<option value="Molesworth">Molesworth</option>
-					<option value="Murrindindi">Murrindindi</option>
-					<option value="Narbethong">Narbethong</option>
-					<option value="Rubicon">Rubicon</option>
-					<option value="Taylor Bay">Taylor Bay</option>
-					<option value="Terip Terip">Terip Terip</option>
-					<option value="Whanregarwen">Whanregarwen</option>
-					<option value="Diamond Creek">Diamond Creek</option>
-					<option value="Eltham North">Eltham North</option>
-					<option value="North Warrandyte">North Warrandyte</option>
-					<option value="Panton Hill">Panton Hill</option>
-					<option value="Plenty">Plenty</option>
-					<option value="Smiths Gully">Smiths Gully</option>
-					<option value="St Andrews">St Andrews</option>
-					<option value="Strathewen">Strathewen</option>
-					<option value="Watsons Creek">Watsons Creek</option>
-					<option value="Wattle Glen">Wattle Glen</option>
-					<option value="Great Western">Great Western</option>
-					<option value="Logan">Logan</option>
-					<option value="Marnoo West">Marnoo West</option>
-					<option value="Pomonal">Pomonal</option>
-					<option value="Roses Gap">Roses Gap</option>
-					<option value="St Arnaud">St Arnaud</option>
-					<option value="Stawell">Stawell</option>
-					<option value="Swanwater">Swanwater</option>
-					<option value="Swanwater West">Swanwater West</option>
-					<option value="Albert Park">Albert Park</option>
-					<option value="Elwood">Elwood</option>
-					<option value="Melbourne">Melbourne</option>
-					<option value="Port Melbourne">Port Melbourne</option>
-					<option value="South Melbourne">South Melbourne</option>
-					<option value="Southbank">Southbank</option>
-					<option value="St Kilda East">St Kilda East</option>
-					<option value="St Kilda West">St Kilda West</option>
-					<option value="Avoca">Avoca</option>
-					<option value="Mount Lonarch">Mount Lonarch</option>
-					<option value="Nowhere Creek">Nowhere Creek</option>
-					<option value="Shays Flat">Shays Flat</option>
-					<option value="Skipton">Skipton</option>
-					<option value="Waterloo">Waterloo</option>
-					<option value="Wattle Creek">Wattle Creek</option>
-					<option value="Agnes">Agnes</option>
-					<option value="Bena">Bena</option>
-					<option value="Buffalo">Buffalo</option>
-					<option value="Dollar">Dollar</option>
-					<option value="Koonwarra">Koonwarra</option>
-					<option value="Loch">Loch</option>
-					<option value="Nyora">Nyora</option>
-					<option value="Poowong North">Poowong North</option>
-					<option value="Port Franklin">Port Franklin</option>
-					<option value="Port Welshpool">Port Welshpool</option>
-					<option value="Pound Creek">Pound Creek</option>
-					<option value="Ranceby">Ranceby</option>
-					<option value="Sandy Point">Sandy Point</option>
-					<option value="Stony Creek">Stony Creek</option>
-					<option value="Venus Bay">Venus Bay</option>
-					<option value="Welshpool">Welshpool</option>
-					<option value="Whitelaw">Whitelaw</option>
-					<option value="Wild Dog Valley">Wild Dog Valley</option>
-					<option value="Wilsons Promontory">Wilsons Promontory</option>
-					<option value="Caramut">Caramut</option>
-					<option value="Glenisla">Glenisla</option>
-					<option value="Hamilton">Hamilton</option>
-					<option value="Tabor">Tabor</option>
-					<option value="Tahara">Tahara</option>
-					<option value="Vasey">Vasey</option>
-					<option value="Victoria Valley">Victoria Valley</option>
-					<option value="Armadale">Armadale</option>
-					<option value="Glen Iris">Glen Iris</option>
-					<option value="Malvern">Malvern</option>
-					<option value="Malvern East">Malvern East</option>
-					<option value="Prahran">Prahran</option>
-					<option value="South Yarra">South Yarra</option>
-					<option value="Baddaginnie">Baddaginnie</option>
-					<option value="Longwood">Longwood</option>
-					<option value="Mangalore">Mangalore</option>
-					<option value="Nagambie">Nagambie</option>
-					<option value="Nalinga">Nalinga</option>
-					<option value="Strathbogie">Strathbogie</option>
-					<option value="Tabilk">Tabilk</option>
-					<option value="Upotipotpon">Upotipotpon</option>
-					<option value="Upton Hill">Upton Hill</option>
-					<option value="Whroo">Whroo</option>
-					<option value="Anglesea">Anglesea</option>
-					<option value="Birregurra">Birregurra</option>
-					<option value="Connewarre">Connewarre</option>
-					<option value="Gnarwarre">Gnarwarre</option>
-					<option value="Inverleigh">Inverleigh</option>
-					<option value="Jan Juc">Jan Juc</option>
-					<option value="Lorne">Lorne</option>
-					<option value="Moggs Creek">Moggs Creek</option>
-					<option value="Mount Duneed">Mount Duneed</option>
-					<option value="Paraparap">Paraparap</option>
-					<option value="Pennyroyal">Pennyroyal</option>
-					<option value="Winchelsea South">Winchelsea South</option>
-					<option value="Beverford">Beverford</option>
-					<option value="Boundary Bend">Boundary Bend</option>
-					<option value="Lake Boga">Lake Boga</option>
-					<option value="Manangatang">Manangatang</option>
-					<option value="Nyah">Nyah</option>
-					<option value="Nyah West">Nyah West</option>
-					<option value="Piangil">Piangil</option>
-					<option value="Swan Hill West">Swan Hill West</option>
-					<option value="Tyntynder South">Tyntynder South</option>
-					<option value="Ultima East">Ultima East</option>
-					<option value="Vinifera">Vinifera</option>
-					<option value="Wemen">Wemen</option>
-					<option value="Cudgewa">Cudgewa</option>
-					<option value="Jarvis Creek">Jarvis Creek</option>
-					<option value="Koetong">Koetong</option>
-					<option value="Nariel Valley">Nariel Valley</option>
-					<option value="Pine Mountain">Pine Mountain</option>
-					<option value="Shelley">Shelley</option>
-					<option value="Eldorado">Eldorado</option>
-					<option value="Hansonville">Hansonville</option>
-					<option value="Myrrhee">Myrrhee</option>
-					<option value="Springhurst">Springhurst</option>
-					<option value="Whitfield">Whitfield</option>
-					<option value="Whitlands">Whitlands</option>
-					<option value="Whorouly South">Whorouly South</option>
-					<option value="Dennington">Dennington</option>
-					<option value="Cowwarr">Cowwarr</option>
-					<option value="East Sale">East Sale</option>
-					<option value="Gormandale">Gormandale</option>
-					<option value="Grand Ridge">Grand Ridge</option>
-					<option value="Hedley">Hedley</option>
-					<option value="Maffra West Upper">Maffra West Upper</option>
-					<option value="McLoughlins Beach">McLoughlins Beach</option>
-					<option value="Sale">Sale</option>
-					<option value="Seaton">Seaton</option>
-					<option value="Staceys Bridge">Staceys Bridge</option>
-					<option value="Stratford">Stratford</option>
-					<option value="The Honeysuckles">The Honeysuckles</option>
-					<option value="Valencia Creek">Valencia Creek</option>
-					<option value="Willung South">Willung South</option>
-					<option value="Benayeo">Benayeo</option>
-					<option value="Goroke">Goroke</option>
-					<option value="Harrow">Harrow</option>
-					<option value="Kaniva">Kaniva</option>
-					<option value="Peronne">Peronne</option>
-					<option value="Telopea Downs">Telopea Downs</option>
-					<option value="Ullswater">Ullswater</option>
-					<option value="Balwyn North">Balwyn North</option>
-					<option value="Blackburn South">Blackburn South</option>
-					<option value="Box Hill South">Box Hill South</option>
-					<option value="Burwood">Burwood</option>
-					<option value="Burwood East">Burwood East</option>
-					<option value="Mont Albert North">Mont Albert North</option>
-					<option value="Nunawading">Nunawading</option>
-					<option value="Surrey Hills">Surrey Hills</option>
-					<option value="Vermont South">Vermont South</option>
-					<option value="Beveridge">Beveridge</option>
-					<option value="Epping">Epping</option>
-					<option value="Lalor">Lalor</option>
-					<option value="Mernda">Mernda</option>
-					<option value="South Morang">South Morang</option>
-					<option value="Thomastown">Thomastown</option>
-					<option value="Whittlesea">Whittlesea</option>
-					<option value="West Wodonga">West Wodonga</option>
-					<option value="Hoppers Crossing">Hoppers Crossing</option>
-					<option value="Laverton North">Laverton North</option>
-					<option value="Little River">Little River</option>
-					<option value="Mount Cottrell">Mount Cottrell</option>
-					<option value="Werribee South">Werribee South</option>
-					<option value="Williams Landing">Williams Landing</option>
-					<option value="Abbotsford">Abbotsford</option>
-					<option value="Collingwood">Collingwood</option>
-					<option value="Cremorne">Cremorne</option>
-					<option value="Fairfield">Fairfield</option>
-					<option value="Fitzroy">Fitzroy</option>
-					<option value="Fitzroy North">Fitzroy North</option>
-					<option value="Princes Hill">Princes Hill</option>
-					<option value="Chirnside Park">Chirnside Park</option>
-					<option value="Ferny Creek">Ferny Creek</option>
-					<option value="Gruyere">Gruyere</option>
-					<option value="Kallista">Kallista</option>
-					<option value="Kalorama">Kalorama</option>
-					<option value="Lilydale">Lilydale</option>
-					<option value="Macclesfield">Macclesfield</option>
-					<option value="Monbulk">Monbulk</option>
-					<option value="Montrose">Montrose</option>
-					<option value="Mount Dandenong">Mount Dandenong</option>
-					<option value="Mount Evelyn">Mount Evelyn</option>
-					<option value="Mount Toolebewong">Mount Toolebewong</option>
-					<option value="Olinda">Olinda</option>
-					<option value="Powelltown">Powelltown</option>
-					<option value="Sassafras">Sassafras</option>
-					<option value="Selby">Selby</option>
-					<option value="Seville East">Seville East</option>
-					<option value="Sherbrooke">Sherbrooke</option>
-					<option value="Silvan">Silvan</option>
-					<option value="Steels Creek">Steels Creek</option>
-					<option value="Tecoma">Tecoma</option>
-					<option value="The Patch">The Patch</option>
-					<option value="Upper Ferntree Gully">Upper Ferntree Gully</option>
-					<option value="Upwey">Upwey</option>
-					<option value="Wesburn">Wesburn</option>
-					<option value="Dimboola">Dimboola</option>
-					<option value="Hopetoun">Hopetoun</option>
-					<option value="Lascelles">Lascelles</option>
-					<option value="Murtoa">Murtoa</option>
-					<option value="Patchewollock">Patchewollock</option>
-					<option value="Rainbow">Rainbow</option>
-					<option value="Rosebery">Rosebery</option>
-					<option value="Rupanyup">Rupanyup</option>
-					<option value="Sheep Hills">Sheep Hills</option>
-					<option value="Speed">Speed</option>
-					<option value="Tempy">Tempy</option>
-					<option value="Willenabrina">Willenabrina</option>
-
+                    <!-- <option value="{{ suburb }}">{{ suburb }}</option> -->
+                    '
+                    <option value="Abbotsford">Abbotsford</option>
+                    ',
+                    '
+                    <option value="Agnes">Agnes</option>
+                    ',
+                    '
+                    <option value="Albert Park">Albert Park</option>
+                    ',
+                    '
+                    <option value="Allambee">Allambee</option>
+                    ',
+                    '
+                    <option value="Altona North">Altona North</option>
+                    ',
+                    '
+                    <option value="Ancona">Ancona</option>
+                    ',
+                    '
+                    <option value="Anglesea">Anglesea</option>
+                    ',
+                    '
+                    <option value="Ardeer">Ardeer</option>
+                    ',
+                    '
+                    <option value="Armadale">Armadale</option>
+                    ',
+                    '
+                    <option value="Ashwood">Ashwood</option>
+                    ',
+                    '
+                    <option value="Avoca">Avoca</option>
+                    ',
+                    '
+                    <option value="Avondale Heights">Avondale Heights</option>
+                    ',
+                    '
+                    <option value="Baddaginnie">Baddaginnie</option>
+                    ',
+                    '
+                    <option value="Ballangeich">Ballangeich</option>
+                    ',
+                    '
+                    <option value="Balnarring Beach">Balnarring Beach</option>
+                    ',
+                    '
+                    <option value="Balwyn North">Balwyn North</option>
+                    ',
+                    '
+                    <option value="Bass">Bass</option>
+                    ',
+                    '
+                    <option value="Bayindeen">Bayindeen</option>
+                    ',
+                    '
+                    <option value="Bayswater North">Bayswater North</option>
+                    ',
+                    '
+                    <option value="Bena">Bena</option>
+                    ',
+                    '
+                    <option value="Benalla">Benalla</option>
+                    ',
+                    '
+                    <option value="Benambra">Benambra</option>
+                    ',
+                    '
+                    <option value="Benayeo">Benayeo</option>
+                    ',
+                    '
+                    <option value="Bentleigh East">Bentleigh East</option>
+                    ',
+                    '
+                    <option value="Beverford">Beverford</option>
+                    ',
+                    '
+                    <option value="Beveridge">Beveridge</option>
+                    ',
+                    '
+                    <option value="Birregurra">Birregurra</option>
+                    ',
+                    '
+                    <option value="Bittern">Bittern</option>
+                    ',
+                    '
+                    <option value="Black Rock">Black Rock</option>
+                    ',
+                    '
+                    <option value="Blackburn South">Blackburn South</option>
+                    ',
+                    '
+                    <option value="Blairgowrie">Blairgowrie</option>
+                    ',
+                    '
+                    <option value="Blind Bight">Blind Bight</option>
+                    ',
+                    '
+                    <option value="Boigbeat">Boigbeat</option>
+                    ',
+                    '
+                    <option value="Bolinda">Bolinda</option>
+                    ',
+                    '
+                    <option value="Bonnie Doon">Bonnie Doon</option>
+                    ',
+                    '
+                    <option value="Boronia">Boronia</option>
+                    ',
+                    '
+                    <option value="Boundary Bend">Boundary Bend</option>
+                    ',
+                    '
+                    <option value="Box Hill South">Box Hill South</option>
+                    ',
+                    '
+                    <option value="Braybrook">Braybrook</option>
+                    ',
+                    '
+                    <option value="Buffalo">Buffalo</option>
+                    ',
+                    '
+                    <option value="Bulla">Bulla</option>
+                    ',
+                    '
+                    <option value="Bulleen">Bulleen</option>
+                    ',
+                    '
+                    <option value="Buninyong">Buninyong</option>
+                    ',
+                    '
+                    <option value="Burwood">Burwood</option>
+                    ',
+                    '
+                    <option value="Burwood East">Burwood East</option>
+                    ',
+                    '
+                    <option value="Buxton">Buxton</option>
+                    ',
+                    '
+                    <option value="Bylands">Bylands</option>
+                    ',
+                    '
+                    <option value="Byrneside">Byrneside</option>
+                    ',
+                    '
+                    <option value="Camberwell">Camberwell</option>
+                    ',
+                    '
+                    <option value="Campbellfield">Campbellfield</option>
+                    ',
+                    '
+                    <option value="Canterbury">Canterbury</option>
+                    ',
+                    '
+                    <option value="Capel Sound">Capel Sound</option>
+                    ',
+                    '
+                    <option value="Caramut">Caramut</option>
+                    ',
+                    '
+                    <option value="Carisbrook">Carisbrook</option>
+                    ',
+                    '
+                    <option value="Carlton">Carlton</option>
+                    ',
+                    '
+                    <option value="Carrum Downs">Carrum Downs</option>
+                    ',
+                    '
+                    <option value="Caulfield North">Caulfield North</option>
+                    ',
+                    '
+                    <option value="Caulfield South">Caulfield South</option>
+                    ',
+                    '
+                    <option value="Chadstone">Chadstone</option>
+                    ',
+                    '
+                    <option value="Cheltenham">Cheltenham</option>
+                    ',
+                    '
+                    <option value="Chirnside Park">Chirnside Park</option>
+                    ',
+                    '
+                    <option value="Churchill">Churchill</option>
+                    ',
+                    '
+                    <option value="Clarkefield">Clarkefield</option>
+                    ',
+                    '
+                    <option value="Clayton South">Clayton South</option>
+                    ',
+                    '
+                    <option value="Clyde North">Clyde North</option>
+                    ',
+                    '
+                    <option value="Coburg North">Coburg North</option>
+                    ',
+                    '
+                    <option value="Collingwood">Collingwood</option>
+                    ',
+                    '
+                    <option value="Congupna">Congupna</option>
+                    ',
+                    '
+                    <option value="Connewarre">Connewarre</option>
+                    ',
+                    '
+                    <option value="Corndale">Corndale</option>
+                    ',
+                    '
+                    <option value="Cornishtown">Cornishtown</option>
+                    ',
+                    '
+                    <option value="Cororooke">Cororooke</option>
+                    ',
+                    '
+                    <option value="Cowangie">Cowangie</option>
+                    ',
+                    '
+                    <option value="Cowwarr">Cowwarr</option>
+                    ',
+                    '
+                    <option value="Cremorne">Cremorne</option>
+                    ',
+                    '
+                    <option value="Cressy">Cressy</option>
+                    ',
+                    '
+                    <option value="Crib Point">Crib Point</option>
+                    ',
+                    '
+                    <option value="Croydon South">Croydon South</option>
+                    ',
+                    '
+                    <option value="Cudgewa">Cudgewa</option>
+                    ',
+                    '
+                    <option value="Dandenong South">Dandenong South</option>
+                    ',
+                    '
+                    <option value="Daylesford">Daylesford</option>
+                    ',
+                    '
+                    <option value="Deepdene">Deepdene</option>
+                    ',
+                    '
+                    <option value="Dennington">Dennington</option>
+                    ',
+                    '
+                    <option value="Devenish">Devenish</option>
+                    ',
+                    '
+                    <option value="Dewhurst">Dewhurst</option>
+                    ',
+                    '
+                    <option value="Diamond Creek">Diamond Creek</option>
+                    ',
+                    '
+                    <option value="Digby">Digby</option>
+                    ',
+                    '
+                    <option value="Diggers Rest">Diggers Rest</option>
+                    ',
+                    '
+                    <option value="Dimboola">Dimboola</option>
+                    ',
+                    '
+                    <option value="Docklands">Docklands</option>
+                    ',
+                    '
+                    <option value="Dollar">Dollar</option>
+                    ',
+                    '
+                    <option value="Doncaster">Doncaster</option>
+                    ',
+                    '
+                    <option value="Doncaster East">Doncaster East</option>
+                    ',
+                    '
+                    <option value="Donvale">Donvale</option>
+                    ',
+                    '
+                    <option value="Dookie College">Dookie College</option>
+                    ',
+                    '
+                    <option value="Double Bridges">Double Bridges</option>
+                    ',
+                    '
+                    <option value="Durham Ox">Durham Ox</option>
+                    ',
+                    '
+                    <option value="Eagle Point">Eagle Point</option>
+                    ',
+                    '
+                    <option value="East Melbourne">East Melbourne</option>
+                    ',
+                    '
+                    <option value="East Sale">East Sale</option>
+                    ',
+                    '
+                    <option value="Edithvale">Edithvale</option>
+                    ',
+                    '
+                    <option value="Eldorado">Eldorado</option>
+                    ',
+                    '
+                    <option value="Elliminyt">Elliminyt</option>
+                    ',
+                    '
+                    <option value="Eltham North">Eltham North</option>
+                    ',
+                    '
+                    <option value="Elwood">Elwood</option>
+                    ',
+                    '
+                    <option value="Endeavour Hills">Endeavour Hills</option>
+                    ',
+                    '
+                    <option value="Ensay North">Ensay North</option>
+                    ',
+                    '
+                    <option value="Epping">Epping</option>
+                    ',
+                    '
+                    <option value="Essendon West">Essendon West</option>
+                    ',
+                    '
+                    <option value="Eumemmerring">Eumemmerring</option>
+                    ',
+                    '
+                    <option value="Eurobin">Eurobin</option>
+                    ',
+                    '
+                    <option value="Fairfield">Fairfield</option>
+                    ',
+                    '
+                    <option value="Fawkner">Fawkner</option>
+                    ',
+                    '
+                    <option value="Ferny Creek">Ferny Creek</option>
+                    ',
+                    '
+                    <option value="Fitzroy">Fitzroy</option>
+                    ',
+                    '
+                    <option value="Fitzroy North">Fitzroy North</option>
+                    ',
+                    '
+                    <option value="Flinders">Flinders</option>
+                    ',
+                    '
+                    <option value="Forrest">Forrest</option>
+                    ',
+                    '
+                    <option value="Foxhow">Foxhow</option>
+                    ',
+                    '
+                    <option value="Frankston North">Frankston North</option>
+                    ',
+                    '
+                    <option value="Frankston South">Frankston South</option>
+                    ',
+                    '
+                    <option value="Fraser Rise">Fraser Rise</option>
+                    ',
+                    '
+                    <option value="Gainsborough">Gainsborough</option>
+                    ',
+                    '
+                    <option value="Gardenvale">Gardenvale</option>
+                    ',
+                    '
+                    <option value="Gembrook">Gembrook</option>
+                    ',
+                    '
+                    <option value="Girgarre">Girgarre</option>
+                    ',
+                    '
+                    <option value="Gisborne South">Gisborne South</option>
+                    ',
+                    '
+                    <option value="Glen Forbes">Glen Forbes</option>
+                    ',
+                    '
+                    <option value="Glen Iris">Glen Iris</option>
+                    ',
+                    '
+                    <option value="Glenaladale">Glenaladale</option>
+                    ',
+                    '
+                    <option value="Glengarry West">Glengarry West</option>
+                    ',
+                    '
+                    <option value="Glenhope East">Glenhope East</option>
+                    ',
+                    '
+                    <option value="Glenisla">Glenisla</option>
+                    ',
+                    '
+                    <option value="Gnarwarre">Gnarwarre</option>
+                    ',
+                    '
+                    <option value="Gobarup">Gobarup</option>
+                    ',
+                    '
+                    <option value="Gordon">Gordon</option>
+                    ',
+                    '
+                    <option value="Gormandale">Gormandale</option>
+                    ',
+                    '
+                    <option value="Goroke">Goroke</option>
+                    ',
+                    '
+                    <option value="Gowanbrae">Gowanbrae</option>
+                    ',
+                    '
+                    <option value="Grand Ridge">Grand Ridge</option>
+                    ',
+                    '
+                    <option value="Grassdale">Grassdale</option>
+                    ',
+                    '
+                    <option value="Grassmere">Grassmere</option>
+                    ',
+                    '
+                    <option value="Great Western">Great Western</option>
+                    ',
+                    '
+                    <option value="Greenvale">Greenvale</option>
+                    ',
+                    '
+                    <option value="Gruyere">Gruyere</option>
+                    ',
+                    '
+                    <option value="Gunbower">Gunbower</option>
+                    ',
+                    '
+                    <option value="Guys Hill">Guys Hill</option>
+                    ',
+                    '
+                    <option value="Hallam">Hallam</option>
+                    ',
+                    '
+                    <option value="Hamilton">Hamilton</option>
+                    ',
+                    '
+                    <option value="Hampton East">Hampton East</option>
+                    ',
+                    '
+                    <option value="Hampton Park">Hampton Park</option>
+                    ',
+                    '
+                    <option value="Hansonville">Hansonville</option>
+                    ',
+                    '
+                    <option value="Harkaway">Harkaway</option>
+                    ',
+                    '
+                    <option value="Harrow">Harrow</option>
+                    ',
+                    '
+                    <option value="Hastings">Hastings</option>
+                    ',
+                    '
+                    <option value="Hawkesdale">Hawkesdale</option>
+                    ',
+                    '
+                    <option value="Hawthorn">Hawthorn</option>
+                    ',
+                    '
+                    <option value="Hawthorn East">Hawthorn East</option>
+                    ',
+                    '
+                    <option value="Heathcote Junction">Heathcote Junction</option>
+                    ',
+                    '
+                    <option value="Heatherton">Heatherton</option>
+                    ',
+                    '
+                    <option value="Heathmont">Heathmont</option>
+                    ',
+                    '
+                    <option value="Hedley">Hedley</option>
+                    ',
+                    '
+                    <option value="Heidelberg West">Heidelberg West</option>
+                    ',
+                    '
+                    <option value="Hexham">Hexham</option>
+                    ',
+                    '
+                    <option value="Highett">Highett</option>
+                    ',
+                    '
+                    <option value="Hmas Cerberus">Hmas Cerberus</option>
+                    ',
+                    '
+                    <option value="Hopetoun">Hopetoun</option>
+                    ',
+                    '
+                    <option value="Hoppers Crossing">Hoppers Crossing</option>
+                    ',
+                    '
+                    <option value="Horsham">Horsham</option>
+                    ',
+                    '
+                    <option value="Indigo Valley">Indigo Valley</option>
+                    ',
+                    '
+                    <option value="Inverleigh">Inverleigh</option>
+                    ',
+                    '
+                    <option value="Iona">Iona</option>
+                    ',
+                    '
+                    <option value="Irymple">Irymple</option>
+                    ',
+                    '
+                    <option value="Ivanhoe East">Ivanhoe East</option>
+                    ',
+                    '
+                    <option value="Jacana">Jacana</option>
+                    ',
+                    '
+                    <option value="Jan Juc">Jan Juc</option>
+                    ',
+                    '
+                    <option value="Jarvis Creek">Jarvis Creek</option>
+                    ',
+                    '
+                    <option value="Jeparit">Jeparit</option>
+                    ',
+                    '
+                    <option value="Jindivick">Jindivick</option>
+                    ',
+                    '
+                    <option value="Johnsonville">Johnsonville</option>
+                    ',
+                    '
+                    <option value="Jumbuk">Jumbuk</option>
+                    ',
+                    '
+                    <option value="Kallista">Kallista</option>
+                    ',
+                    '
+                    <option value="Kalorama">Kalorama</option>
+                    ',
+                    '
+                    <option value="Kangaroo Flat">Kangaroo Flat</option>
+                    ',
+                    '
+                    <option value="Kaniva">Kaniva</option>
+                    ',
+                    '
+                    <option value="Katamatite East">Katamatite East</option>
+                    ',
+                    '
+                    <option value="Katunga">Katunga</option>
+                    ',
+                    '
+                    <option value="Keilor East">Keilor East</option>
+                    ',
+                    '
+                    <option value="Keilor North">Keilor North</option>
+                    ',
+                    '
+                    <option value="Keilor Park">Keilor Park</option>
+                    ',
+                    '
+                    <option value="Kennedys Creek">Kennedys Creek</option>
+                    ',
+                    '
+                    <option value="Kensington">Kensington</option>
+                    ',
+                    '
+                    <option value="Kernot">Kernot</option>
+                    ',
+                    '
+                    <option value="Kew">Kew</option>
+                    ',
+                    '
+                    <option value="Kew East">Kew East</option>
+                    ',
+                    '
+                    <option value="Keysborough">Keysborough</option>
+                    ',
+                    '
+                    <option value="Kilsyth South">Kilsyth South</option>
+                    ',
+                    '
+                    <option value="Kinglake">Kinglake</option>
+                    ',
+                    '
+                    <option value="Kingsbury">Kingsbury</option>
+                    ',
+                    '
+                    <option value="Knoxfield">Knoxfield</option>
+                    ',
+                    '
+                    <option value="Koetong">Koetong</option>
+                    ',
+                    '
+                    <option value="Koo Wee Rup North">Koo Wee Rup North</option>
+                    ',
+                    '
+                    <option value="Koondrook">Koondrook</option>
+                    ',
+                    '
+                    <option value="Koonwarra">Koonwarra</option>
+                    ',
+                    '
+                    <option value="Koorlong">Koorlong</option>
+                    ',
+                    '
+                    <option value="Koroit">Koroit</option>
+                    ',
+                    '
+                    <option value="Korong Vale">Korong Vale</option>
+                    ',
+                    '
+                    <option value="Kotta">Kotta</option>
+                    ',
+                    '
+                    <option value="Kyvalley">Kyvalley</option>
+                    ',
+                    '
+                    <option value="Ladys Pass">Ladys Pass</option>
+                    ',
+                    '
+                    <option value="Lake Boga">Lake Boga</option>
+                    ',
+                    '
+                    <option value="Lake Charm">Lake Charm</option>
+                    ',
+                    '
+                    <option value="Lake Condah">Lake Condah</option>
+                    ',
+                    '
+                    <option value="Lalbert">Lalbert</option>
+                    ',
+                    '
+                    <option value="Lalor">Lalor</option>
+                    ',
+                    '
+                    <option value="Langdons Hill">Langdons Hill</option>
+                    ',
+                    '
+                    <option value="Langwarrin">Langwarrin</option>
+                    ',
+                    '
+                    <option value="Langwarrin South">Langwarrin South</option>
+                    ',
+                    '
+                    <option value="Lara">Lara</option>
+                    ',
+                    '
+                    <option value="Larralea">Larralea</option>
+                    ',
+                    '
+                    <option value="Lascelles">Lascelles</option>
+                    ',
+                    '
+                    <option value="Lavers Hill">Lavers Hill</option>
+                    ',
+                    '
+                    <option value="Laverton North">Laverton North</option>
+                    ',
+                    '
+                    <option value="Leaghur">Leaghur</option>
+                    ',
+                    '
+                    <option value="Leichardt">Leichardt</option>
+                    ',
+                    '
+                    <option value="Leitchville">Leitchville</option>
+                    ',
+                    '
+                    <option value="Lethbridge">Lethbridge</option>
+                    ',
+                    '
+                    <option value="Lillico">Lillico</option>
+                    ',
+                    '
+                    <option value="Lilydale">Lilydale</option>
+                    ',
+                    '
+                    <option value="Lindenow">Lindenow</option>
+                    ',
+                    '
+                    <option value="Lismore">Lismore</option>
+                    ',
+                    '
+                    <option value="Little River">Little River</option>
+                    ',
+                    '
+                    <option value="Loch">Loch</option>
+                    ',
+                    '
+                    <option value="Lockington">Lockington</option>
+                    ',
+                    '
+                    <option value="Logan">Logan</option>
+                    ',
+                    '
+                    <option value="Longwood">Longwood</option>
+                    ',
+                    '
+                    <option value="Lorne">Lorne</option>
+                    ',
+                    '
+                    <option value="Lorquon">Lorquon</option>
+                    ',
+                    '
+                    <option value="Lovely Banks">Lovely Banks</option>
+                    ',
+                    '
+                    <option value="Lower Plenty">Lower Plenty</option>
+                    ',
+                    '
+                    <option value="Lyndhurst">Lyndhurst</option>
+                    ',
+                    '
+                    <option value="Macarthur">Macarthur</option>
+                    ',
+                    '
+                    <option value="Macclesfield">Macclesfield</option>
+                    ',
+                    '
+                    <option value="Macedon">Macedon</option>
+                    ',
+                    '
+                    <option value="Macleod">Macleod</option>
+                    ',
+                    '
+                    <option value="Maffra West Upper">Maffra West Upper</option>
+                    ',
+                    '
+                    <option value="Mailors Flat">Mailors Flat</option>
+                    ',
+                    '
+                    <option value="Main Ridge">Main Ridge</option>
+                    ',
+                    '
+                    <option value="Mallacoota">Mallacoota</option>
+                    ',
+                    '
+                    <option value="Malmsbury">Malmsbury</option>
+                    ',
+                    '
+                    <option value="Malvern">Malvern</option>
+                    ',
+                    '
+                    <option value="Malvern East">Malvern East</option>
+                    ',
+                    '
+                    <option value="Manangatang">Manangatang</option>
+                    ',
+                    '
+                    <option value="Mangalore">Mangalore</option>
+                    ',
+                    '
+                    <option value="Manorina">Manorina</option>
+                    ',
+                    '
+                    <option value="Mansfield">Mansfield</option>
+                    ',
+                    '
+                    <option value="Maramingo Creek">Maramingo Creek</option>
+                    ',
+                    '
+                    <option value="Marcus Hill">Marcus Hill</option>
+                    ',
+                    '
+                    <option value="Maribyrnong">Maribyrnong</option>
+                    ',
+                    '
+                    <option value="Marnoo West">Marnoo West</option>
+                    ',
+                    '
+                    <option value="Marungi">Marungi</option>
+                    ',
+                    '
+                    <option value="Marysville">Marysville</option>
+                    ',
+                    '
+                    <option value="Maryvale">Maryvale</option>
+                    ',
+                    '
+                    <option value="Massey">Massey</option>
+                    ',
+                    '
+                    <option value="McCrae">McCrae</option>
+                    ',
+                    '
+                    <option value="McLoughlins Beach">McLoughlins Beach</option>
+                    ',
+                    '
+                    <option value="Meadow Heights">Meadow Heights</option>
+                    ',
+                    '
+                    <option value="Melbourne">Melbourne</option>
+                    ',
+                    '
+                    <option value="Melbourne Airport">Melbourne Airport</option>
+                    ',
+                    '
+                    <option value="Melton West">Melton West</option>
+                    ',
+                    '
+                    <option value="Mentone">Mentone</option>
+                    ',
+                    '
+                    <option value="Merbein West">Merbein West</option>
+                    ',
+                    '
+                    <option value="Meredith">Meredith</option>
+                    ',
+                    '
+                    <option value="Mernda">Mernda</option>
+                    ',
+                    '
+                    <option value="Modella">Modella</option>
+                    ',
+                    '
+                    <option value="Moggs Creek">Moggs Creek</option>
+                    ',
+                    '
+                    <option value="Molesworth">Molesworth</option>
+                    ',
+                    '
+                    <option value="Monbulk">Monbulk</option>
+                    ',
+                    '
+                    <option value="Monegeetta">Monegeetta</option>
+                    ',
+                    '
+                    <option value="Mont Albert North">Mont Albert North</option>
+                    ',
+                    '
+                    <option value="Montmorency">Montmorency</option>
+                    ',
+                    '
+                    <option value="Montrose">Montrose</option>
+                    ',
+                    '
+                    <option value="Moolap">Moolap</option>
+                    ',
+                    '
+                    <option value="Moonee Ponds">Moonee Ponds</option>
+                    ',
+                    '
+                    <option value="Moonlight Flat">Moonlight Flat</option>
+                    ',
+                    '
+                    <option value="Mount Cottrell">Mount Cottrell</option>
+                    ',
+                    '
+                    <option value="Mount Dandenong">Mount Dandenong</option>
+                    ',
+                    '
+                    <option value="Mount Doran">Mount Doran</option>
+                    ',
+                    '
+                    <option value="Mount Duneed">Mount Duneed</option>
+                    ',
+                    '
+                    <option value="Mount Eliza">Mount Eliza</option>
+                    ',
+                    '
+                    <option value="Mount Evelyn">Mount Evelyn</option>
+                    ',
+                    '
+                    <option value="Mount Hooghly">Mount Hooghly</option>
+                    ',
+                    '
+                    <option value="Mount Lonarch">Mount Lonarch</option>
+                    ',
+                    '
+                    <option value="Mount Macedon">Mount Macedon</option>
+                    ',
+                    '
+                    <option value="Mount Martha">Mount Martha</option>
+                    ',
+                    '
+                    <option value="Mount Toolebewong">Mount Toolebewong</option>
+                    ',
+                    '
+                    <option value="Mount Wallace">Mount Wallace</option>
+                    ',
+                    '
+                    <option value="Mount Waverley">Mount Waverley</option>
+                    ',
+                    '
+                    <option value="Muckatah">Muckatah</option>
+                    ',
+                    '
+                    <option value="Mulgrave">Mulgrave</option>
+                    ',
+                    '
+                    <option value="Mundoona">Mundoona</option>
+                    ',
+                    '
+                    <option value="Murchison North">Murchison North</option>
+                    ',
+                    '
+                    <option value="Murrindindi">Murrindindi</option>
+                    ',
+                    '
+                    <option value="Murrumbeena">Murrumbeena</option>
+                    ',
+                    '
+                    <option value="Murtoa">Murtoa</option>
+                    ',
+                    '
+                    <option value="Muskerry">Muskerry</option>
+                    ',
+                    '
+                    <option value="Myamyn">Myamyn</option>
+                    ',
+                    '
+                    <option value="Myrrhee">Myrrhee</option>
+                    ',
+                    '
+                    <option value="Nagambie">Nagambie</option>
+                    ',
+                    '
+                    <option value="Nalinga">Nalinga</option>
+                    ',
+                    '
+                    <option value="Nangana">Nangana</option>
+                    ',
+                    '
+                    <option value="Nangiloc">Nangiloc</option>
+                    ',
+                    '
+                    <option value="Nar Nar Goon North">Nar Nar Goon North</option>
+                    ',
+                    '
+                    <option value="Narbethong">Narbethong</option>
+                    ',
+                    '
+                    <option value="Nariel Valley">Nariel Valley</option>
+                    ',
+                    '
+                    <option value="Naringal East">Naringal East</option>
+                    ',
+                    '
+                    <option value="Narracan">Narracan</option>
+                    ',
+                    '
+                    <option value="Narrapumelap South">Narrapumelap South</option>
+                    ',
+                    '
+                    <option value="Narre Warren North">Narre Warren North</option>
+                    ',
+                    '
+                    <option value="Narre Warren South">Narre Warren South</option>
+                    ',
+                    '
+                    <option value="Nathalia">Nathalia</option>
+                    ',
+                    '
+                    <option value="Nayook">Nayook</option>
+                    ',
+                    '
+                    <option value="Neerim East">Neerim East</option>
+                    ',
+                    '
+                    <option value="Noble Park North">Noble Park North</option>
+                    ',
+                    '
+                    <option value="Noorinbee North">Noorinbee North</option>
+                    ',
+                    '
+                    <option value="Noradjuha">Noradjuha</option>
+                    ',
+                    '
+                    <option value="North Blackwood">North Blackwood</option>
+                    ',
+                    '
+                    <option value="North Geelong">North Geelong</option>
+                    ',
+                    '
+                    <option value="North Melbourne">North Melbourne</option>
+                    ',
+                    '
+                    <option value="North Shore">North Shore</option>
+                    ',
+                    '
+                    <option value="North Warrandyte">North Warrandyte</option>
+                    ',
+                    '
+                    <option value="Northcote">Northcote</option>
+                    ',
+                    '
+                    <option value="Notting Hill">Notting Hill</option>
+                    ',
+                    '
+                    <option value="Nowa Nowa">Nowa Nowa</option>
+                    ',
+                    '
+                    <option value="Nowhere Creek">Nowhere Creek</option>
+                    ',
+                    '
+                    <option value="Nuggetty">Nuggetty</option>
+                    ',
+                    '
+                    <option value="Nulla Vale">Nulla Vale</option>
+                    ',
+                    '
+                    <option value="Nullawil">Nullawil</option>
+                    ',
+                    '
+                    <option value="Numurkah">Numurkah</option>
+                    ',
+                    '
+                    <option value="Nunawading">Nunawading</option>
+                    ',
+                    '
+                    <option value="Nyah">Nyah</option>
+                    ',
+                    '
+                    <option value="Nyah West">Nyah West</option>
+                    ',
+                    '
+                    <option value="Nyerimilang">Nyerimilang</option>
+                    ',
+                    '
+                    <option value="Nyora">Nyora</option>
+                    ',
+                    '
+                    <option value="Oak Park">Oak Park</option>
+                    ',
+                    '
+                    <option value="Oaklands Junction">Oaklands Junction</option>
+                    ',
+                    '
+                    <option value="Oakleigh East">Oakleigh East</option>
+                    ',
+                    '
+                    <option value="Oakleigh South">Oakleigh South</option>
+                    ',
+                    '
+                    <option value="Ocean Grove">Ocean Grove</option>
+                    ',
+                    '
+                    <option value="Officer South">Officer South</option>
+                    ',
+                    '
+                    <option value="Olinda">Olinda</option>
+                    ',
+                    '
+                    <option value="Ormond">Ormond</option>
+                    ',
+                    '
+                    <option value="Ouyen">Ouyen</option>
+                    ',
+                    '
+                    <option value="Ovens">Ovens</option>
+                    ',
+                    '
+                    <option value="Panitya">Panitya</option>
+                    ',
+                    '
+                    <option value="Panton Hill">Panton Hill</option>
+                    ',
+                    '
+                    <option value="Paraparap">Paraparap</option>
+                    ',
+                    '
+                    <option value="Park Orchards">Park Orchards</option>
+                    ',
+                    '
+                    <option value="Parkville">Parkville</option>
+                    ',
+                    '
+                    <option value="Pascoe Vale South">Pascoe Vale South</option>
+                    ',
+                    '
+                    <option value="Patchewollock">Patchewollock</option>
+                    ',
+                    '
+                    <option value="Patterson Lakes">Patterson Lakes</option>
+                    ',
+                    '
+                    <option value="Pennyroyal">Pennyroyal</option>
+                    ',
+                    '
+                    <option value="Pentland Hills">Pentland Hills</option>
+                    ',
+                    '
+                    <option value="Peronne">Peronne</option>
+                    ',
+                    '
+                    <option value="Peterborough">Peterborough</option>
+                    ',
+                    '
+                    <option value="Piangil">Piangil</option>
+                    ',
+                    '
+                    <option value="Picola West">Picola West</option>
+                    ',
+                    '
+                    <option value="Pine Mountain">Pine Mountain</option>
+                    ',
+                    '
+                    <option value="Plenty">Plenty</option>
+                    ',
+                    '
+                    <option value="Pomonal">Pomonal</option>
+                    ',
+                    '
+                    <option value="Pompapiel">Pompapiel</option>
+                    ',
+                    '
+                    <option value="Poowong North">Poowong North</option>
+                    ',
+                    '
+                    <option value="Porepunkah">Porepunkah</option>
+                    ',
+                    '
+                    <option value="Port Fairy">Port Fairy</option>
+                    ',
+                    '
+                    <option value="Port Franklin">Port Franklin</option>
+                    ',
+                    '
+                    <option value="Port Melbourne">Port Melbourne</option>
+                    ',
+                    '
+                    <option value="Port Welshpool">Port Welshpool</option>
+                    ',
+                    '
+                    <option value="Portland West">Portland West</option>
+                    ',
+                    '
+                    <option value="Portsea">Portsea</option>
+                    ',
+                    '
+                    <option value="Pound Creek">Pound Creek</option>
+                    ',
+                    '
+                    <option value="Powelltown">Powelltown</option>
+                    ',
+                    '
+                    <option value="Prahran">Prahran</option>
+                    ',
+                    '
+                    <option value="Preston">Preston</option>
+                    ',
+                    '
+                    <option value="Princes Hill">Princes Hill</option>
+                    ',
+                    '
+                    <option value="Princetown">Princetown</option>
+                    ',
+                    '
+                    <option value="Puckapunyal">Puckapunyal</option>
+                    ',
+                    '
+                    <option value="Pura Pura">Pura Pura</option>
+                    ',
+                    '
+                    <option value="Purnim West">Purnim West</option>
+                    ',
+                    '
+                    <option value="Pyalong">Pyalong</option>
+                    ',
+                    '
+                    <option value="Quambatook">Quambatook</option>
+                    ',
+                    '
+                    <option value="Rainbow">Rainbow</option>
+                    ',
+                    '
+                    <option value="Ranceby">Ranceby</option>
+                    ',
+                    '
+                    <option value="Ravenhall">Ravenhall</option>
+                    ',
+                    '
+                    <option value="Ravenswood South">Ravenswood South</option>
+                    ',
+                    '
+                    <option value="Raymond Island">Raymond Island</option>
+                    ',
+                    '
+                    <option value="Raywood">Raywood</option>
+                    ',
+                    '
+                    <option value="Rochester">Rochester</option>
+                    ',
+                    '
+                    <option value="Rochford">Rochford</option>
+                    ',
+                    '
+                    <option value="Rockbank">Rockbank</option>
+                    ',
+                    '
+                    <option value="Rokewood">Rokewood</option>
+                    ',
+                    '
+                    <option value="Rosebery">Rosebery</option>
+                    ',
+                    '
+                    <option value="Rosebud">Rosebud</option>
+                    ',
+                    '
+                    <option value="Roses Gap">Roses Gap</option>
+                    ',
+                    '
+                    <option value="Rosewhite">Rosewhite</option>
+                    ',
+                    '
+                    <option value="Rowville">Rowville</option>
+                    ',
+                    '
+                    <option value="Roxburgh Park">Roxburgh Park</option>
+                    ',
+                    '
+                    <option value="Rubicon">Rubicon</option>
+                    ',
+                    '
+                    <option value="Runnymede">Runnymede</option>
+                    ',
+                    '
+                    <option value="Rupanyup">Rupanyup</option>
+                    ',
+                    '
+                    <option value="Rutherglen">Rutherglen</option>
+                    ',
+                    '
+                    <option value="Rythdale">Rythdale</option>
+                    ',
+                    '
+                    <option value="Safety Beach">Safety Beach</option>
+                    ',
+                    '
+                    <option value="Sale">Sale</option>
+                    ',
+                    '
+                    <option value="San Remo">San Remo</option>
+                    ',
+                    '
+                    <option value="Sandringham">Sandringham</option>
+                    ',
+                    '
+                    <option value="Sandy Creek">Sandy Creek</option>
+                    ',
+                    '
+                    <option value="Sandy Point">Sandy Point</option>
+                    ',
+                    '
+                    <option value="Sassafras">Sassafras</option>
+                    ',
+                    '
+                    <option value="Sawmill Settlement">Sawmill Settlement</option>
+                    ',
+                    '
+                    <option value="Scoresby">Scoresby</option>
+                    ',
+                    '
+                    <option value="Scotts Creek">Scotts Creek</option>
+                    ',
+                    '
+                    <option value="Seabrook">Seabrook</option>
+                    ',
+                    '
+                    <option value="Seaford">Seaford</option>
+                    ',
+                    '
+                    <option value="Seaholme">Seaholme</option>
+                    ',
+                    '
+                    <option value="Seaton">Seaton</option>
+                    ',
+                    '
+                    <option value="Sebastopol">Sebastopol</option>
+                    ',
+                    '
+                    <option value="Seddon">Seddon</option>
+                    ',
+                    '
+                    <option value="Selby">Selby</option>
+                    ',
+                    '
+                    <option value="Serpentine">Serpentine</option>
+                    ',
+                    '
+                    <option value="Seville East">Seville East</option>
+                    ',
+                    '
+                    <option value="Shannonvale">Shannonvale</option>
+                    ',
+                    '
+                    <option value="Shays Flat">Shays Flat</option>
+                    ',
+                    '
+                    <option value="Sheep Hills">Sheep Hills</option>
+                    ',
+                    '
+                    <option value="Shelford">Shelford</option>
+                    ',
+                    '
+                    <option value="Shelley">Shelley</option>
+                    ',
+                    '
+                    <option value="Shepparton">Shepparton</option>
+                    ',
+                    '
+                    <option value="Shepparton North">Shepparton North</option>
+                    ',
+                    '
+                    <option value="Sherbrooke">Sherbrooke</option>
+                    ',
+                    '
+                    <option value="Shoreham">Shoreham</option>
+                    ',
+                    '
+                    <option value="Silvan">Silvan</option>
+                    ',
+                    '
+                    <option value="Simpson">Simpson</option>
+                    ',
+                    '
+                    <option value="Simson">Simson</option>
+                    ',
+                    '
+                    <option value="Skenes Creek North">Skenes Creek North</option>
+                    ',
+                    '
+                    <option value="Skipton">Skipton</option>
+                    ',
+                    '
+                    <option value="Skye">Skye</option>
+                    ',
+                    '
+                    <option value="Smiths Gully">Smiths Gully</option>
+                    ',
+                    '
+                    <option value="Smoko">Smoko</option>
+                    ',
+                    '
+                    <option value="Soldiers Hill">Soldiers Hill</option>
+                    ',
+                    '
+                    <option value="Somers">Somers</option>
+                    ',
+                    '
+                    <option value="Somerton">Somerton</option>
+                    ',
+                    '
+                    <option value="Somerville">Somerville</option>
+                    ',
+                    '
+                    <option value="Sorrento">Sorrento</option>
+                    ',
+                    '
+                    <option value="South Geelong">South Geelong</option>
+                    ',
+                    '
+                    <option value="South Melbourne">South Melbourne</option>
+                    ',
+                    '
+                    <option value="South Morang">South Morang</option>
+                    ',
+                    '
+                    <option value="South Yarra">South Yarra</option>
+                    ',
+                    '
+                    <option value="Southbank">Southbank</option>
+                    ',
+                    '
+                    <option value="Speed">Speed</option>
+                    ',
+                    '
+                    <option value="Spotswood">Spotswood</option>
+                    ',
+                    '
+                    <option value="Springfield">Springfield</option>
+                    ',
+                    '
+                    <option value="Springhurst">Springhurst</option>
+                    ',
+                    '
+                    <option value="Springvale">Springvale</option>
+                    ',
+                    '
+                    <option value="Springvale South">Springvale South</option>
+                    ',
+                    '
+                    <option value="St Albans">St Albans</option>
+                    ',
+                    '
+                    <option value="St Andrews">St Andrews</option>
+                    ',
+                    '
+                    <option value="St Andrews Beach">St Andrews Beach</option>
+                    ',
+                    '
+                    <option value="St Arnaud">St Arnaud</option>
+                    ',
+                    '
+                    <option value="St Germains">St Germains</option>
+                    ',
+                    '
+                    <option value="St Helena">St Helena</option>
+                    ',
+                    '
+                    <option value="St James">St James</option>
+                    ',
+                    '
+                    <option value="St Kilda East">St Kilda East</option>
+                    ',
+                    '
+                    <option value="St Kilda West">St Kilda West</option>
+                    ',
+                    '
+                    <option value="St Leonards">St Leonards</option>
+                    ',
+                    '
+                    <option value="Staceys Bridge">Staceys Bridge</option>
+                    ',
+                    '
+                    <option value="Stanhope South">Stanhope South</option>
+                    ',
+                    '
+                    <option value="Stanley">Stanley</option>
+                    ',
+                    '
+                    <option value="Staughton Vale">Staughton Vale</option>
+                    ',
+                    '
+                    <option value="Stawell">Stawell</option>
+                    ',
+                    '
+                    <option value="Steels Creek">Steels Creek</option>
+                    ',
+                    '
+                    <option value="Stewarton">Stewarton</option>
+                    ',
+                    '
+                    <option value="Stonehaven">Stonehaven</option>
+                    ',
+                    '
+                    <option value="Stony Creek">Stony Creek</option>
+                    ',
+                    '
+                    <option value="Stratford">Stratford</option>
+                    ',
+                    '
+                    <option value="Strathallan">Strathallan</option>
+                    ',
+                    '
+                    <option value="Strathbogie">Strathbogie</option>
+                    ',
+                    '
+                    <option value="Strathdownie">Strathdownie</option>
+                    ',
+                    '
+                    <option value="Strathewen">Strathewen</option>
+                    ',
+                    '
+                    <option value="Strathmore Heights">Strathmore Heights</option>
+                    ',
+                    '
+                    <option value="Sugarloaf">Sugarloaf</option>
+                    ',
+                    '
+                    <option value="Suggan Buggan">Suggan Buggan</option>
+                    ',
+                    '
+                    <option value="Sunshine West">Sunshine West</option>
+                    ',
+                    '
+                    <option value="Surrey Hills">Surrey Hills</option>
+                    ',
+                    '
+                    <option value="Sutherlands Creek">Sutherlands Creek</option>
+                    ',
+                    '
+                    <option value="Sutton">Sutton</option>
+                    ',
+                    '
+                    <option value="Sutton Grange">Sutton Grange</option>
+                    ',
+                    '
+                    <option value="Swan Bay">Swan Bay</option>
+                    ',
+                    '
+                    <option value="Swan Hill West">Swan Hill West</option>
+                    ',
+                    '
+                    <option value="Swan Marsh">Swan Marsh</option>
+                    ',
+                    '
+                    <option value="Swan Reach">Swan Reach</option>
+                    ',
+                    '
+                    <option value="Swanwater">Swanwater</option>
+                    ',
+                    '
+                    <option value="Swanwater West">Swanwater West</option>
+                    ',
+                    '
+                    <option value="Swifts Creek">Swifts Creek</option>
+                    ',
+                    '
+                    <option value="Tabilk">Tabilk</option>
+                    ',
+                    '
+                    <option value="Tabor">Tabor</option>
+                    ',
+                    '
+                    <option value="Tahara">Tahara</option>
+                    ',
+                    '
+                    <option value="Tahara Bridge">Tahara Bridge</option>
+                    ',
+                    '
+                    <option value="Tahara West">Tahara West</option>
+                    ',
+                    '
+                    <option value="Tatura East">Tatura East</option>
+                    ',
+                    '
+                    <option value="Tatyoon">Tatyoon</option>
+                    ',
+                    '
+                    <option value="Tawonga">Tawonga</option>
+                    ',
+                    '
+                    <option value="Tawonga South">Tawonga South</option>
+                    ',
+                    '
+                    <option value="Taylor Bay">Taylor Bay</option>
+                    ',
+                    '
+                    <option value="Taylors Hill">Taylors Hill</option>
+                    ',
+                    '
+                    <option value="Taylors Lakes">Taylors Lakes</option>
+                    ',
+                    '
+                    <option value="Tecoma">Tecoma</option>
+                    ',
+                    '
+                    <option value="Teesdale">Teesdale</option>
+                    ',
+                    '
+                    <option value="Telford">Telford</option>
+                    ',
+                    '
+                    <option value="Telopea Downs">Telopea Downs</option>
+                    ',
+                    '
+                    <option value="Templestowe">Templestowe</option>
+                    ',
+                    '
+                    <option value="Templestowe Lower">Templestowe Lower</option>
+                    ',
+                    '
+                    <option value="Tempy">Tempy</option>
+                    ',
+                    '
+                    <option value="Tennyson">Tennyson</option>
+                    ',
+                    '
+                    <option value="Terang">Terang</option>
+                    ',
+                    '
+                    <option value="Terip Terip">Terip Terip</option>
+                    ',
+                    '
+                    <option value="Terrappee">Terrappee</option>
+                    ',
+                    '
+                    <option value="Terrick Terrick">Terrick Terrick</option>
+                    ',
+                    '
+                    <option value="Terrick Terrick East">Terrick Terrick East</option>
+                    ',
+                    '
+                    <option value="Tetoora Road">Tetoora Road</option>
+                    ',
+                    '
+                    <option value="Thalia">Thalia</option>
+                    ',
+                    '
+                    <option value="The Basin">The Basin</option>
+                    ',
+                    '
+                    <option value="The Cove">The Cove</option>
+                    ',
+                    '
+                    <option value="The Gurdies">The Gurdies</option>
+                    ',
+                    '
+                    <option value="The Honeysuckles">The Honeysuckles</option>
+                    ',
+                    '
+                    <option value="The Patch">The Patch</option>
+                    ',
+                    '
+                    <option value="The Sisters">The Sisters</option>
+                    ',
+                    '
+                    <option value="Thomastown">Thomastown</option>
+                    ',
+                    '
+                    <option value="Tyabb">Tyabb</option>
+                    ',
+                    '
+                    <option value="Tyers">Tyers</option>
+                    ',
+                    '
+                    <option value="Tylden South">Tylden South</option>
+                    ',
+                    '
+                    <option value="Tynong North">Tynong North</option>
+                    ',
+                    '
+                    <option value="Tyntynder South">Tyntynder South</option>
+                    ',
+                    '
+                    <option value="Tyrendarra East">Tyrendarra East</option>
+                    ',
+                    '
+                    <option value="Tyrrell Downs">Tyrrell Downs</option>
+                    ',
+                    '
+                    <option value="Ullina">Ullina</option>
+                    ',
+                    '
+                    <option value="Ullswater">Ullswater</option>
+                    ',
+                    '
+                    <option value="Ultima East">Ultima East</option>
+                    ',
+                    '
+                    <option value="Ulupna">Ulupna</option>
+                    ',
+                    '
+                    <option value="Undera">Undera</option>
+                    ',
+                    '
+                    <option value="Underbool">Underbool</option>
+                    ',
+                    '
+                    <option value="Upotipotpon">Upotipotpon</option>
+                    ',
+                    '
+                    <option value="Upper Ferntree Gully">Upper Ferntree Gully</option>
+                    ',
+                    '
+                    <option value="Upper Gundowring">Upper Gundowring</option>
+                    ',
+                    '
+                    <option value="Upper Plenty">Upper Plenty</option>
+                    ',
+                    '
+                    <option value="Upper Ryans Creek">Upper Ryans Creek</option>
+                    ',
+                    '
+                    <option value="Upton Hill">Upton Hill</option>
+                    ',
+                    '
+                    <option value="Upwey">Upwey</option>
+                    ',
+                    '
+                    <option value="Valencia Creek">Valencia Creek</option>
+                    ',
+                    '
+                    <option value="Vasey">Vasey</option>
+                    ',
+                    '
+                    <option value="Vaughan">Vaughan</option>
+                    ',
+                    '
+                    <option value="Vectis">Vectis</option>
+                    ',
+                    '
+                    <option value="Venus Bay">Venus Bay</option>
+                    ',
+                    '
+                    <option value="Vermont South">Vermont South</option>
+                    ',
+                    '
+                    <option value="Vervale">Vervale</option>
+                    ',
+                    '
+                    <option value="Vesper">Vesper</option>
+                    ',
+                    '
+                    <option value="Victoria Valley">Victoria Valley</option>
+                    ',
+                    '
+                    <option value="Viewbank">Viewbank</option>
+                    ',
+                    '
+                    <option value="Vinifera">Vinifera</option>
+                    ',
+                    '
+                    <option value="Waterford Park">Waterford Park</option>
+                    ',
+                    '
+                    <option value="Waterholes">Waterholes</option>
+                    ',
+                    '
+                    <option value="Waterloo">Waterloo</option>
+                    ',
+                    '
+                    <option value="Waterways">Waterways</option>
+                    ',
+                    '
+                    <option value="Watsonia North">Watsonia North</option>
+                    ',
+                    '
+                    <option value="Watsons Creek">Watsons Creek</option>
+                    ',
+                    '
+                    <option value="Wattle Bank">Wattle Bank</option>
+                    ',
+                    '
+                    <option value="Wattle Creek">Wattle Creek</option>
+                    ',
+                    '
+                    <option value="Wattle Glen">Wattle Glen</option>
+                    ',
+                    '
+                    <option value="Waurn Ponds">Waurn Ponds</option>
+                    ',
+                    '
+                    <option value="Waygara">Waygara</option>
+                    ',
+                    '
+                    <option value="Wee Wee Rup">Wee Wee Rup</option>
+                    ',
+                    '
+                    <option value="Weeaproinah">Weeaproinah</option>
+                    ',
+                    '
+                    <option value="Weering">Weering</option>
+                    ',
+                    '
+                    <option value="Weerite">Weerite</option>
+                    ',
+                    '
+                    <option value="Wehla">Wehla</option>
+                    ',
+                    '
+                    <option value="Weir Views">Weir Views</option>
+                    ',
+                    '
+                    <option value="Wellsford">Wellsford</option>
+                    ',
+                    '
+                    <option value="Welshmans Reef">Welshmans Reef</option>
+                    ',
+                    '
+                    <option value="Welshpool">Welshpool</option>
+                    ',
+                    '
+                    <option value="Wemen">Wemen</option>
+                    ',
+                    '
+                    <option value="Wendouree">Wendouree</option>
+                    ',
+                    '
+                    <option value="Werneth">Werneth</option>
+                    ',
+                    '
+                    <option value="Werona">Werona</option>
+                    ',
+                    '
+                    <option value="Werribee South">Werribee South</option>
+                    ',
+                    '
+                    <option value="Werrimull">Werrimull</option>
+                    ',
+                    '
+                    <option value="Wesburn">Wesburn</option>
+                    ',
+                    '
+                    <option value="West Creek">West Creek</option>
+                    ',
+                    '
+                    <option value="West Footscray">West Footscray</option>
+                    ',
+                    '
+                    <option value="West Melbourne">West Melbourne</option>
+                    ',
+                    '
+                    <option value="West Wodonga">West Wodonga</option>
+                    ',
+                    '
+                    <option value="Westby">Westby</option>
+                    ',
+                    '
+                    <option value="Westmeadows">Westmeadows</option>
+                    ',
+                    '
+                    <option value="Westmere">Westmere</option>
+                    ',
+                    '
+                    <option value="Whanregarwen">Whanregarwen</option>
+                    ',
+                    '
+                    <option value="Wharparilla">Wharparilla</option>
+                    ',
+                    '
+                    <option value="Wheatsheaf">Wheatsheaf</option>
+                    ',
+                    '
+                    <option value="Wheelers Hill">Wheelers Hill</option>
+                    ',
+                    '
+                    <option value="Whipstick">Whipstick</option>
+                    ',
+                    '
+                    <option value="Whirily">Whirily</option>
+                    ',
+                    '
+                    <option value="White Hills">White Hills</option>
+                    ',
+                    '
+                    <option value="Whiteheads Creek">Whiteheads Creek</option>
+                    ',
+                    '
+                    <option value="Whitelaw">Whitelaw</option>
+                    ',
+                    '
+                    <option value="Whitfield">Whitfield</option>
+                    ',
+                    '
+                    <option value="Whitlands">Whitlands</option>
+                    ',
+                    '
+                    <option value="Whittington">Whittington</option>
+                    ',
+                    '
+                    <option value="Whittlesea">Whittlesea</option>
+                    ',
+                    '
+                    <option value="Whoorel">Whoorel</option>
+                    ',
+                    '
+                    <option value="Whorouly South">Whorouly South</option>
+                    ',
+                    '
+                    <option value="Whroo">Whroo</option>
+                    ',
+                    '
+                    <option value="Wilby">Wilby</option>
+                    ',
+                    '
+                    <option value="Wild Dog Valley">Wild Dog Valley</option>
+                    ',
+                    '
+                    <option value="Wildwood">Wildwood</option>
+                    ',
+                    '
+                    <option value="Willangie">Willangie</option>
+                    ',
+                    '
+                    <option value="Willatook">Willatook</option>
+                    ',
+                    '
+                    <option value="Willaura North">Willaura North</option>
+                    ',
+                    '
+                    <option value="Willenabrina">Willenabrina</option>
+                    ',
+                    '
+                    <option value="Williams Landing">Williams Landing</option>
+                    ',
+                    '
+                    <option value="Williamstown North">Williamstown North</option>
+                    ',
+                    '
+                    <option value="Willow Grove">Willow Grove</option>
+                    ',
+                    '
+                    <option value="Willowmavin">Willowmavin</option>
+                    ',
+                    '
+                    <option value="Willowvale">Willowvale</option>
+                    ',
+                    '
+                    <option value="Willung South">Willung South</option>
+                    ',
+                    '
+                    <option value="Wilsons Hill">Wilsons Hill</option>
+                    ',
+                    '
+                    <option value="Wilsons Promontory">Wilsons Promontory</option>
+                    ',
+                    '
+                    <option value="Wimbledon Heights">Wimbledon Heights</option>
+                    ',
+                    '
+                    <option value="Winchelsea South">Winchelsea South</option>
+                    '
 
 
                 </datalist>
                 <!-- <button class="btn btn-primary 123" type="button" id="search">Search</button> -->
-				<input class="btn btn-primary 123"  type="submit" id="search"
-                                           onclick="AjaxSubmit(); value="Submit">
+                <input class="btn btn-primary 123" type="submit" id="search"
+                       onclick="AjaxSubmit(); value=" Submit">
                 <p><span id='search-result'></span></p>
             </form>
         </div>
     </section>
-	<br>
-	<div class="col-md-auto text-center">
-		<h4>{{ explanation}}</h4>
-		<br>
+    <br>
+    <div class="col-md-auto text-center">
+        <h4>{{ explanation }}</h4>
+        <br>
         <table id="table">
 
         </table>
-        
-        
+
+
     </div>
+    <section>
+        <div class="row justify-content-md-center" id="map">
+            {{ explanation }}
+        </div>
+    </section>
     <br>
     <section class="page-section-2">
         <div class="container-fluid text-center">
@@ -718,9 +1990,48 @@
     </section>
 
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
 
-	<script>
+        function initMap() {
+
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 8,
+                center: {lat: -37.8136, lng: 144.9631}
+            });
+
+            // Create an array of alphabetical characters used to label the markers.
+            var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+            // Add some markers to the map.
+            // Note: The code uses the JavaScript Array.prototype.map() method to
+            // create an array of markers based on a given "locations" array.
+            // The map() method here has nothing to do with the Google Maps API.
+            var markers = locations.map(function (location, i) {
+
+                return new google.maps.Marker({
+                    position: location,
+                    label: labels[i % labels.length],
+                });
+            });
+
+            // Add a marker clusterer to manage the markers.
+            var markerCluster = new MarkerClusterer(map, markers,
+                {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+        }
+
+        var locations =
+            {{ location|safe }}
+            console.log(locations)
+
+    </script>
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+    </script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAeiQyrCKTbUfD6wEk9yKJxS-ZSqlxFqLQ&callback=initMap"
+            type="text/javascript"></script>
+
+    <script>
         let table_data = {{ data|safe }}
             console.log(table_data)
 
@@ -735,8 +2046,8 @@
             }
         }
 
-        
-		function generateTable(table, data) {
+
+        function generateTable(table, data) {
             for (let element of data) {
                 let index = 0;
                 let row = table.insertRow();
@@ -755,47 +2066,22 @@
                 }
             }
         }
-      
-        
+
 
         let table = document.querySelector("#table");
         let data = Object.keys(table_data[0]);
         generateTable(table, table_data)
         generateTableHead(table, data)
 
-        
-
-
-    </script>
-	<script>
-        <!--
-        document.body.innerHTML.replace(/y/g, "$"); -->
-        <!--
-        var elmOperator = $("#" + elm.attr('table_au').replace('y', '$$')); -->
-        <!--
-        var temp = new String('y'); -->
-        <!--
-        document.write(temp + '<br/>'); -->
-        <!--
-        temp = temp.replace(/y/g, '$$'); -->
-        <!--
-        document.write(temp) -->
-        <!--
-        var mystr = 'y'; -->
-        <!--
-        var newstr = mystr.replace(/y/g, "&#x2714"); -->
-        <!--
-        document.getElementById("table_au").innerHTML = newstr; -->
-        <!-- document.write(newstr); -->
 
     </script>
     </body>
-	<style>
+    <style>
         table {
             border-collapse: collapse;
             border-spacing: 0;
-			margin-left: auto;
-			margin-right: auto;
+            margin-left: auto;
+            margin-right: auto;
             width: 80%;
             #height: 100%;
             border: 1px solid #ddd;
