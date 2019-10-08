@@ -11,28 +11,24 @@
     <!-- </head> -->
 
     <body>
-    <section class="page-section bg-dark text-white" id="about">
+    <section class="page-section bg-white text-dark" id="about">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8 text-center">
-                    <h2 class="text-white mt-0">Vaccine Check Box</h2>
-                    <hr class="divider light my-4">
-                    <p class="mb-4">Tips: Click the box to select which vaccine you have taken, then submit the choices
-                        to get your own vaccine schedule.
-                        The schedule will give you a basic guidence of immunization, which including timeline,vaccine
-                        etc.</p>
+				<br>
+				<br>
+				<h5 class="h5">Vaccine Check Box</h5>               
+                    <br>
+                    <h5>Click the box to select which vaccines you already have taken, then submit
+                        to get your own vaccine schedule.</h5>
+					<h5>You can print the page in order to be up to date with vaccines.</h5>
                 </div>
             </div>
         </div>
     </section>
     <br>
-    <center><h4>Based on Australian Vaccine Schedule</h4></center>
-    <div class="col-md-auto text-center">
-        <input class="btn btn-primary 123" type="submit" onclick="printProof()"
-               value="Getting your own vaccine schedule"
-               href="#table_compare">
-    </div>
-
+    <center><h4>It is based on Australian Vaccine Schedule</h4></center>
+   
     <form class="form" method="POST" id="forPrint">
         {% csrf_token %}
 
@@ -362,8 +358,12 @@
                 </div>
             </div>
         </div>
-
-
+	<br>
+	<div class="col-md-auto text-center">
+        <input class="btn btn-primary 123" type="submit" onclick="printProof()"
+               value="Submit"
+               href="#table_compare">
+    </div>
     </form>
 
 
