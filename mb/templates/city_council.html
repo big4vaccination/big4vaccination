@@ -1950,9 +1950,7 @@
 
                 </datalist>
                 <!-- <button class="btn btn-primary 123" type="button" id="search">Search</button> -->
-                <input class="btn btn-primary 123" type="submit" id="search"
-                       onclick="AjaxSubmit(); value=" Submit">
-                <p><span id='search-result'></span></p>
+                <input class="btn btn-primary 123" type="submit" id="search">
             </form>
         </div>
     </section>
@@ -1966,12 +1964,10 @@
 
 
     </div>
-    <section>
-        <div class="row justify-content-md-center" id="map">
-            {{ explanation }}
-        </div>
-    </section>
     <br>
+
+    <div id="map"></div>
+
     <section class="page-section-2">
         <div class="container-fluid text-center">
             <!-- <div class="row jumbotron"> -->
@@ -1991,6 +1987,8 @@
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+    </script>
     <script>
 
         function initMap() {
@@ -2008,10 +2006,9 @@
             // create an array of markers based on a given "locations" array.
             // The map() method here has nothing to do with the Google Maps API.
             var markers = locations.map(function (location, i) {
-
                 return new google.maps.Marker({
                     position: location,
-                    label: labels[i % labels.length],
+                    label: labels[i % labels.length]
                 });
             });
 
@@ -2020,10 +2017,7 @@
                 {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
         }
 
-        var locations =
-            {{ location|safe }}
-            console.log(locations)
-
+        var locations = {{ location|safe }}
     </script>
     <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
     </script>
@@ -2115,6 +2109,16 @@
 
         .fa-remove {
             color: red;
+        }
+    </style>
+    <style>
+        #map {
+            width: 100%;
+            height: 350px;
+            background-color: grey;
+
+            margin: 0;
+            padding: 0;
         }
     </style>
     </html>
