@@ -519,26 +519,27 @@ def city_council(request):
     conn = create_connection(database)
     cur = conn.cursor()
     push_data = [{}]
-    if request.method == "POST":
-        suburb = request.POST["textfield"]
-        print(suburb)
+    #if request.method == "POST":
+    suburb = request.POST.get("suburb")
+    #print(suburb)
     #suburb = request.POST.get('suburb')
-        city_council= "select * from suburb_council where suburb = '" + str(suburb) + "'"
-        country1 = cur.execute(city_council)
-        data1 = country1.fetchall()
+    city_council= "select * from suburb_council where suburb = '" + str(suburb) + "'"
+    country1 = cur.execute(city_council)
+    data1 = country1.fetchall()
         
-        if data1:
-            for i in range(len(data1)):
-                push_data[i]["City council"] = data1[i][3]
-                push_data[i]["Phone number"] = data1[i][5]
-                push_data[i]["Email address"] = data1[i][7]
-                push_data[i]["Website"] = data1[i][8]
-                push_data[i]["Address"] = data1[i][4]
+    if data1:
+        for i in range(len(data1)):
+            push_data[i]["City council"] = data1[i][3]
+            push_data[i]["Phone number"] = data1[i][5]
+            push_data[i]["Email address"] = data1[i][7]
+            push_data[i]["Website"] = data1[i][8]
+            push_data[i]["Address"] = data1[i][4]
                     #push_data[i]["lat"] = data1[i][9]
                     #push_data[i]["lng"] = data1[i][10]
-                push_data.append({})
-
-    return render(request, 'city_council.html', {'data': json.dumps(list(push_data))})
+            push_data.append({})
+    #print(push_data)
+    return render(request, 'city_council.html', {'data': json.dumps(list(push_data)), 
+    'explanation': "Please contact your city council to get more information about free vaccinations."})
 
     
 
