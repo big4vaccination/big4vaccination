@@ -18,7 +18,7 @@ from django.urls import path
 from django.conf.urls import handler404, handler500
 from .views import HomePageView, About_us, faq, handler404, error_404_view
 from .views import advanced_searched, Australia_vaccine,find_GP, language, first_intepreting,second_intepreting,third_intepreting,check_box, free_au_vaccine
-from .views import city_council
+from .views import city_council, free_others
 
 
 urlpatterns = [
@@ -32,7 +32,7 @@ urlpatterns = [
     path('au_schedule', Australia_vaccine, name='au_schedule'),
     path('free_au_vaccine',free_au_vaccine,name='free_au_vaccine'),
     path('city_council', city_council, name="city_council"),
-
+    path('free_others', free_others.as_view(), name = 'free_others'),
     path('check',check_box,name='check_box'),
 
     path('special_GP',find_GP,name='special_GP'),
