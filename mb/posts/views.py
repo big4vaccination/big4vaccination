@@ -526,15 +526,24 @@ def city_council(request):
     city_council= "select * from suburb_council where suburb = '" + str(suburb) + "'"
     country1 = cur.execute(city_council)
     data1 = country1.fetchall()
-
+    city = ""
+    phone_number = ""
+    email_address = ""
+    website = ""
+    address = ""
         
     if data1:
         for i in range(len(data1)):
             push_data[i]["City council"] = data1[i][3]
+            city = data1[i][3]
             push_data[i]["Phone number"] = data1[i][5]
+            phone_number = data1[i][5]
             push_data[i]["Email address"] = data1[i][7]
+            email_address = data1[i][7]
             push_data[i]["Website"] = data1[i][8]
+            website = data1[i][8]
             push_data[i]["Address"] = data1[i][4]
+            address = data1[i][4]
             # push_data[i]["lat"] = data1[i][9]
             # push_data[i]["lng"] = data1[i][10]
             push_data.append({})
@@ -545,7 +554,8 @@ def city_council(request):
             push_loaction.append({})
     #print(push_data)
     return render(request, 'city_council.html', {'data': json.dumps(list(push_data)), 'location':json.dumps(list(push_loaction)),
-    'explanation': "Please contact your city council to get more information about free vaccinations."})
+    'explanation': "Please contact your city council to get more information about free vaccinations.","city":city,"phone_number":phone_number,
+                                                 "email_address":email_address,"website":website,"address":address})
 
     
 
