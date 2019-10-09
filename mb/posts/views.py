@@ -28,6 +28,9 @@ class About_us(ListView):
     model = Post
     template_name = 'about_us.html'
 
+class free_others(ListView):
+    model = Post
+    template_name = 'free_others.html'
 
 class faq(ListView):
     model = Post
