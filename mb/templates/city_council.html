@@ -2037,9 +2037,14 @@
         function initMap() {
 
             var map = new google.maps.Map(document.getElementById('map_canvas'), {
-                zoom: 8,
+                zoom: 10,
                 center: {lat: -37.8136, lng: 144.9631}
             });
+
+            if(locations){
+                map.setCenter(new google.maps.LatLng(locations[0]["lat"],locations[0]["lng"]))
+            }
+
 
             // Create an array of alphabetical characters used to label the markers.
             var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
