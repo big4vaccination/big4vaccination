@@ -1958,27 +1958,30 @@
 
     <div class="slide" id="slide5" data-slide="5" data-stellar-background-ratio="0.5">
         <div class="container clearfix">
-            <div class="content grid_2 contactype active" id="contact-mapClick">
-                <div class="icon-map"></div>
-                <p>Map</p>
-            </div>
+            <!-- <div class="content grid_2 contactype active" id="contact-mapClick"> -->
+                <!-- <div class="icon-map"></div> -->
+                <!-- <p>Map</p> -->
+            <!-- </div> -->
 
-            <div class="content grid_2 contactype" id="contact-phoneClick">
-                <div class="icon-phone"></div>
-                <p>Telephone</p>
-            </div>
-            <div class="content grid_2 contactype omega" id="contact-mailClick">
-                <div class="icon-mail"></div>
-                <p>E-Mail</p>
-            </div>
+            <!-- <div class="content grid_2 contactype" id="contact-phoneClick"> -->
+                <!-- <div class="icon-phone"></div> -->
+                <!-- <p>Telephone</p> -->
+            <!-- </div> -->
+            <!-- <div class="content grid_2 contactype omega" id="contact-mailClick"> -->
+                <!-- <div class="icon-mail"></div> -->
+                <!-- <p>E-Mail</p> -->
+            <!-- </div> -->
 
             <div class="content grid_12 contactmap" id="contact-map">
                 <div class="grid_4">
-                    <h2>CONTACT</h2>
-                    <p class="information"><span class="icon-location"> ADRESS: </span>{{ address }}</p>
-                    <p class="information"><span class="icon-phone-2"> TELEPHONE: </span>{{ phone_number }}</p>
-                    <a href="{{ website }}" target="_blank"><p class="information"><span class="icon-phone-2"> WEBSITE: </span>{{ website }}</p></a>
-                    <a class="btn" href="https://www.google.com/maps/@-37.9725665,145.0531353,9z" target="_blank">Get Direction</a>
+                    <h2>Contact details</h2>
+					<br>
+					<p class="information"><span class="icon-location"> City Council: </span>{{ city }}</p>
+					<p class="information"><span class="icon-phone-2"> Call to phone number: </span>{{ phone_number }}</p>
+					<p class="information"><span class="icon-phone-2"> Write to email: </span>{{ email_address }}</p>
+                    <p class="information"><span class="icon-location"> Address: </span>{{ address }}</p>
+                    <a href="{{ website }}" target="_blank"><p class="information"> Visit website: <span class="icon-phone-2"></span> {{ website }}</p></a>
+                    <!-- <a class="btn" href="https://www.google.com/maps/@-37.9725665,145.0531353,9z" target="_blank">Get Direction</a> -->
                     <div class="clear"></div>
                 </div>
                 <div class="grid_8 omega">
@@ -1986,26 +1989,26 @@
                 </div>
             </div>
 
-            <div class="content grid_12 contactmap dn" id="contact-phone">
-                <div class="grid_4">
-                    <h2>TELEPHONE</h2>
-                    <p class="information"><span class="icon-location"> ADRESS: </span>{{ city }}</p>
-                </div>
-                <div class="grid_8 omega">
-                    <a href="tel:{{ phone_number }}"><div class="grid_6 omega">{{ phone_number }}</div></a>
-                </div>
-            </div>
+            <!-- <div class="content grid_12 contactmap dn" id="contact-phone"> -->
+                <!-- <div class="grid_4"> -->
+                    <!-- <h2>TELEPHONE</h2> -->
+                    <!-- <p class="information"><span class="icon-location"> ADRESS: </span>{{ city }}</p> -->
+                <!-- </div> -->
+                <!-- <div class="grid_8 omega"> -->
+                    <!-- <a href="tel:{{ phone_number }}"><div class="grid_6 omega">{{ phone_number }}</div></a> -->
+                <!-- </div> -->
+            <!-- </div> -->
 
-            <div class="content grid_12 contactmap dn" id="contact-mail">
-                <div class="grid_4">
-                    <h2>E-MAIL</h2>
-                    <p class="information"><span class="icon-location"> ADRESS: </span>{{ email_address }}</p>
-                </div>
-                <div class="grid_8 omega">
-                    <div class="grid_6 omega"><a href="mailto:{{ email_address }}?Subject=Hello" class="btn">{{ email_address }}</a>
-                    </div>
-                </div>
-            </div>
+            <!-- <div class="content grid_12 contactmap dn" id="contact-mail"> -->
+                <!-- <div class="grid_4"> -->
+                    <!-- <h2>E-MAIL</h2> -->
+                    <!-- <p class="information"><span class="icon-location"> ADRESS: </span>{{ email_address }}</p> -->
+                <!-- </div> -->
+                <!-- <div class="grid_8 omega"> -->
+                    <!-- <div class="grid_6 omega"><a href="mailto:{{ email_address }}?Subject=Hello" class="btn">{{ email_address }}</a> -->
+                    <!-- </div> -->
+                <!-- </div> -->
+            <!-- </div> -->
         </div>
     </div>
     <section class="page-section-2">
@@ -2244,20 +2247,20 @@
             display: none;
         }
 
-        a:link {
-            color: #61bb46;
-            text-decoration: none;
-        }
+        <!-- a:link { -->
+            <!-- color: #61bb46; -->
+            <!-- text-decoration: none; -->
+        <!-- } -->
 
-        a:hover {
-            color: #61bb46;
-            text-decoration: none;
-        }
+        <!-- a:hover { -->
+            <!-- color: #61bb46; -->
+            <!-- text-decoration: none; -->
+        <!-- } -->
 
-        a:visited {
-            color: #61bb46;
-            text-decoration: none;
-        }
+        <!-- a:visited { -->
+            <!-- color: #61bb46; -->
+            <!-- text-decoration: none; -->
+        <!-- } -->
 
         /* Computer */
         .grid_1 {
@@ -2320,9 +2323,10 @@
         .grid_10,
         .grid_11,
         .grid_12 {
-            margin: 0 2% 1% 0;
+            margin: 0 2% 8% 0;
             float: left;
-            display: block;
+            display: table;
+			
         }
 
         .alpha {
@@ -2395,6 +2399,7 @@
         .contactmap {
             background: #f48022;
             border-radius: 4px;
+			box-sizing: content-box;
         }
 
         #slide5 h2 {
@@ -2482,11 +2487,11 @@
         .btn {
             display: inline-block;
             padding-left: 56px;
-            color: #626263;
+            color: #f8f9fa;
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-            background-color: #fff;
-            padding: 16px 24px 17px 24px;
-            font-size: 13px;
+            #background-color: #fff;
+            padding: 12px 12px 12px 12px;
+            font-size: 12px;
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 0.2em;
@@ -2537,8 +2542,8 @@
         }
 
         .contactmap {
-            height: 300px;
-            margin-bottom: 10%;
+            height: 400px;
+            margin-bottom: 5%;
         }
 
         .contactmap .grid_8.omega {
@@ -2565,10 +2570,10 @@
             display: none;
             margin: 0 auto;
             width: auto;
-            font-size: 16px;
-            font-weight: 400;
+            font-size: 12px;
+            font-weight: 100;
             color: #fff;
-            padding: 15px 21px;
+            padding: 12px 19px;
             border: 1px solid rgba(255, 255, 255, 0.4);
             background: transparent;
             border-radius: 9px;
@@ -2577,10 +2582,10 @@
             transition: border-color .4s;
         }
 
-        .submit:hover {
-            color: #fff;
-            border-color: #fff;
-        }
+        <!-- .submit:hover { -->
+            <!-- color: #fff; -->
+            <!-- border-color: #fff; -->
+        <!-- } -->
 
         .callus {
             position: absolute;

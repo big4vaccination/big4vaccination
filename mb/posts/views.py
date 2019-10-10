@@ -601,13 +601,13 @@ def free_au_vaccine(request):
             push_data[i]["Schedule"]=data1[i][2]
             push_data[i]["Link"]=data1[i][3]
             push_data.append({})
-        out_put = []
-        for i in push_data:
-            if i != {}:
-                out_put.append(i)
-        out_put = sorted(out_put, key=lambda e: e['Vaccine Name'], reverse=False)
+        # out_put = []
+        # for i in push_data:
+        #     if i != {}:
+        #         out_put.append(i)
+        # out_put = sorted(out_put, key=lambda e: e['Vaccine Name'], reverse=False)
     return render(request, 'free_au_vaccine.html',
-                  {'data': json.dumps(list(out_put))})
+                  {'data': json.dumps(list(push_data))})
 
 
 # def takeSecond(elem):
