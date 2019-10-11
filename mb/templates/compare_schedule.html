@@ -87,10 +87,17 @@
         <h4>{{ comparison }}</h4>
         <h5>{{ right }}</h5>
         <h5>{{ wrong }}</h5>
+        <h5>The checkbox is used for you to manually check whether if the vaccine has already injected before.</h5>
         <table id="table">
 
         </table>
 
+    </div>
+
+    <div class="col-md-auto text-center" style="margin-top: 2%">
+
+        <input class="btn btn-primary 123" formaction="#table_1" type="submit" onclick="printProof()" value="Print this table for you"
+               href="#table_compare">
     </div>
 	
 	<div class="col-md-auto text-center" id = "table_1">
@@ -220,7 +227,18 @@
                 for (let key in element) {
                     let cell = row.insertCell()
                     let text = document.createTextNode(element[key])
-                    cell.appendChild(text)
+                    let check_box = document.createElement("input")
+                    if (element[key] == "✔") {
+                        check_box.setAttribute("type", "checkbox")
+                        cell.appendChild(text)
+                        cell.appendChild(check_box)
+                    } else if (element[key] == "Χ") {
+                        check_box.setAttribute("type", "checkbox")
+                        cell.appendChild(text)
+                        cell.appendChild(check_box)
+                    } else {
+                        cell.appendChild(text)
+                    }
                 }
             }
         }
@@ -237,6 +255,13 @@
         generateTableHead(table, data)
 
 
+    </script>
+
+    <script>
+    function printProof() {
+            var printData = document.getElementById("table_1").innerHTML; // 只打印 forPrint 这个div中的内容。
+            window.print();
+        }
     </script>
 
 
