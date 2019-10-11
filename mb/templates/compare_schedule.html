@@ -69,7 +69,7 @@
                                     <input class="btn btn-primary 123" formaction="#table_1" type="submit" onclick="AjaxSubmit()" value="Compare"
                                            href="#table_compare">
                                 </div>
-								<h4 class="comp2">We provide a list of countries that have been under-vaccinated and based on a high number of immigrants in Australia</h4>
+								<h4 class="comp2">We provide a list of countries that have been under-vaccinated and based on a high number of immigrants in Australia.</h4>
                             </div>
                         </form>
                     </div>
@@ -95,9 +95,9 @@
     </div>
 
     <div class="col-md-auto text-center" style="margin-top: 2%">
-
-        <input class="btn btn-primary 123" formaction="#table_1" type="submit" onclick="printProof()" value="Print this table for you"
-               href="#table_compare">
+        <input class="btn btn-primary 123" type='text' name='name' value="Enter your name for printing the page" onkeydown='if(event.keyCode==13){printProof();}' onclick="if (value='Enter your name for printing the page'){value=''}"; focus(); onmouseleave="value='Enter your name for printing the page'"/>
+{#        <input class="btn btn-primary 123" formaction="#table_1" type="text" onclick="printProof()" value="Print this table for you"#}
+{#               href="#table_compare">#}
     </div>
 	
 	<div class="col-md-auto text-center" id = "table_1">
