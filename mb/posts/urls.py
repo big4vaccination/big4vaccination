@@ -18,7 +18,7 @@ from django.urls import path
 from django.conf.urls import handler404, handler500
 from .views import HomePageView, About_us, faq, handler404, error_404_view
 from .views import advanced_searched, Australia_vaccine,find_GP, language, first_intepreting,second_intepreting,third_intepreting,check_box, free_au_vaccine
-from .views import city_council, free_others
+from .views import city_council, free_others, Loader_test
 
 
 urlpatterns = [
@@ -34,7 +34,7 @@ urlpatterns = [
     path('city_council', city_council, name="city_council"),
     path('free_others', free_others.as_view(), name = 'free_others'),
     path('check',check_box,name='check_box'),
-
+    path('loaderio-db8ab70bb65ddb856a7e72e9a16717af', Loader_test.as_view(), name='loaderio-db8ab70bb65ddb856a7e72e9a16717af'),
     path('special_GP',find_GP,name='special_GP'),
     path('first_intepreting', first_intepreting.as_view(), name = 'first_intepreting'),
     path('second_intepreting', second_intepreting.as_view(), name = 'second_intepreting'),

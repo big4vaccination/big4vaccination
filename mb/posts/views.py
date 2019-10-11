@@ -8,6 +8,7 @@ from sqlite3 import Error
 import os
 import json
 from django.http import Http404
+from django.db import connection
 
 # import pandas as pd 
 # import dash 
@@ -23,6 +24,9 @@ class HomePageView(ListView):
     template_name = 'home.html'
     context_object_name = 'all_posts_list'
 
+class Loader_test(ListView):
+    model = Post
+    template_name="loaderio-db8ab70bb65ddb856a7e72e9a16717af.html"
 
 class About_us(ListView):
     model = Post
@@ -120,8 +124,9 @@ def advanced_searched(request):
     database = os.path.join(BASE_DIR, '6.db')
     conn = create_connection(database)
     cur = conn.cursor()
+    cursor = connection.cursor()
     country_name = request.POST.get('country',"Select")
-
+    
     # age = request.POST.get('age', False)
     # australia_data = "SELECT schedule, vaccine_code, vaccine_desc, comments from Vaccine_Info where country_name = 'Australia' and tag = '" + str(age) +"'"
     # australia_data = "SELECT schedule, vaccine_name,Diseases,vaccine_desc, comments, Rating from all_schedule_30 where country_name = 'Australia' order by Rating"
@@ -521,14 +526,24 @@ def city_council(request):
     database = os.path.join(BASE_DIR, '6.db')
     conn = create_connection(database)
     cur = conn.cursor()
+    cursor = connection.cursor()
     push_data = [{}]
     push_loaction = [{}]
     #if request.method == "POST":
     suburb = request.POST.get("suburb")
+    city_council1 = cursor.execute("select * from suburb_council where suburb = %s", [suburb])
+    #print(city_council1)
+    row = city_council1.fetchall()
+    #print(row)
+    
     #suburb = request.POST.get('suburb')
-    city_council= "select * from suburb_council where suburb = '" + str(suburb) + "'"
-    country1 = cur.execute(city_council)
-    data1 = country1.fetchall()
+    #city_council= "select * from suburb_council where suburb = '" + str(suburb) + "'"
+    #print(city_council)
+    #country1 = cur.execute(city_council)
+    
+    #data1 = country1.fetchall()
+    data1=row
+    #print(data1)
     city = ""
     phone_number = ""
     email_address = ""
@@ -566,10 +581,17 @@ def find_GP(request):
     database = os.path.join(BASE_DIR, '6.db')
     conn = create_connection(database)
     cur = conn.cursor()
+    cursor = connection.cursor()
+    
+    
+    #print(city_council1)
+   
     language = request.POST.get('language',"Select")
-    sentence = "SELECT lat,lng from gp_data where language = '" + str(language) + "'"
-    gp_data = cur.execute(sentence).fetchall()
-
+    city_council1 = cursor.execute("SELECT lat,lng from gp_data where language = %s", [language])
+    row = city_council1.fetchall()
+    #sentence = "SELECT lat,lng from gp_data where language = '" + str(language) + "'"
+    #gp_data = cur.execute(sentence).fetchall()
+    gp_data = row
     push_data = [{}]
     if gp_data:
         for i in range(len(gp_data)):
