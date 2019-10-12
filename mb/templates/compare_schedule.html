@@ -18,15 +18,16 @@
                             {% csrf_token %}
 
                             <div class="row justify-content-md-center">
-								<h4 class="comp">We can help you to compare the vaccine schedule of your home country with Australian schedule</h4>
-								
-								<!-- <br> -->
-								<!-- <br> -->
+                                <h4 class="comp">We can help you to compare the vaccine schedule of your home country
+                                    with Australian schedule</h4>
+
+                                <!-- <br> -->
+                                <!-- <br> -->
                                 <div class="col-md-auto text-center">
 
                                     <!-- <h4 class="h3 mb-2">Select one country</h4> -->
                                     <h4>Select your home country</h4>
-									
+
                                 </div>
 
                                 <div class="col-md-auto text-center">
@@ -57,7 +58,7 @@
                                         <option value="Somalia">Somalia</option>
                                         <option value="South Africa">South Africa</option>
                                         <option value="South Sudan">South Sudan</option>
-{#                                        <option value="Tonga">Tonga</option>#}
+                                        {#                                        <option value="Tonga">Tonga</option>#}
                                         <option value="Timor-Leste">Timor-Leste</option>
                                         <option value="Zambia">Zambia</option>
                                         <option value="Zimbabwe">Zimbabwe</option>
@@ -66,11 +67,13 @@
                                 </div>
                                 <div class="col-md-auto text-center">
 
-                                    <input class="btn btn-primary 123" formaction="#table_1" type="submit" onclick="AjaxSubmit()" value="Compare"
+                                    <input class="btn btn-primary 123" formaction="#table_1" type="submit"
+                                           onclick="AjaxSubmit()" value="Compare"
                                            href="#table_compare">
                                 </div>
-								<h4 class="comp2">Can't find your country? This list is based on countries with a high number of immigrants coming to Australia and 
-								these countries are also under-vaccined.</h4>
+                                <h4 class="comp2">Can't find your country? This list is based on countries with a high
+                                    number of immigrants coming to Australia and
+                                    these countries are also under-vaccined.</h4>
                             </div>
                         </form>
                     </div>
@@ -81,9 +84,7 @@
     </div>
 
 
-
-
-    <div class="col-md-auto text-center" id = "table_1">
+    <div class="col-md-auto text-center" id="table_1">
         <br>
         <h4>{{ comparison }}</h4>
         <h5>{{ right }}</h5>
@@ -96,12 +97,22 @@
     </div>
 
     <div class="col-md-auto text-center" style="margin-top: 2%">
-        <input class="btn btn-primary 123" type='text' name='name' value="Enter your name for printing the page" onkeydown='if(event.keyCode==13){printProof();}' onclick="if (value='Enter your name for printing the page'){value=''}"; focus(); onmouseleave="value='Enter your name for printing the page'"/>
-{#        <input class="btn btn-primary 123" formaction="#table_1" type="text" onclick="printProof()" value="Print this table for you"#}
-{#               href="#table_compare">#}
+        <input type='text' name='name' value="Enter your name for printing the page"
+               onkeydown='if(event.keyCode==13){printProof();}'
+               onclick="if (value='Enter your name for printing the page'){value=''}" ; focus();
+               onmouseleave="value='Enter your name for printing the page'"/>
+        <input class="btn btn-primary 123" formaction="#table_1" type="text" onclick="printProof()" value="Submit"
+               style="width: 5%">
+        <div name="date" style="margin-left: 0px">
+            Table updated at:
+            <script type="text/javascript">
+                var myDate = new Date();
+                document.write(myDate.toLocaleString())
+            </script>
+        </div>
     </div>
-	
-	<div class="col-md-auto text-center" id = "table_1">
+
+    <div class="col-md-auto text-center" id="table_1">
         <br>
         <h4>{{ explanation }}</h4>
         <table id="disease">
@@ -109,7 +120,7 @@
         </table>
 
     </div>
-	
+
 
     </body>
 
@@ -259,12 +270,11 @@
     </script>
 
     <script>
-    function printProof() {
+        function printProof() {
             var printData = document.getElementById("table_1").innerHTML; // 只打印 forPrint 这个div中的内容。
             window.print();
         }
     </script>
-
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">

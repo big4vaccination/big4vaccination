@@ -1959,29 +1959,31 @@
     <div class="slide" id="slide5" data-slide="5" data-stellar-background-ratio="0.5">
         <div class="container clearfix">
             <!-- <div class="content grid_2 contactype active" id="contact-mapClick"> -->
-                <!-- <div class="icon-map"></div> -->
-                <!-- <p>Map</p> -->
+            <!-- <div class="icon-map"></div> -->
+            <!-- <p>Map</p> -->
             <!-- </div> -->
 
             <!-- <div class="content grid_2 contactype" id="contact-phoneClick"> -->
-                <!-- <div class="icon-phone"></div> -->
-                <!-- <p>Telephone</p> -->
+            <!-- <div class="icon-phone"></div> -->
+            <!-- <p>Telephone</p> -->
             <!-- </div> -->
             <!-- <div class="content grid_2 contactype omega" id="contact-mailClick"> -->
-                <!-- <div class="icon-mail"></div> -->
-                <!-- <p>E-Mail</p> -->
+            <!-- <div class="icon-mail"></div> -->
+            <!-- <p>E-Mail</p> -->
             <!-- </div> -->
 
             <div class="content grid_12 contactmap" id="contact-map">
                 <div class="grid_4">
                     <h2>Contact details</h2>
-					<br>
-					<p class="information"><span class="icon-location"> City Council: </span>{{ city }}</p>
-					<p class="information"><span class="icon-phone-2"> Call to phone number: </span>{{ phone_number }}</p>
-					<p class="information"><span class="icon-phone-2"> Write to email: </span>{{ email_address }}</p>
+                    <br>
+                    <p class="information"><span class="icon-location"> City Council: </span>{{ city }}</p>
+                    <p class="information"><span class="icon-phone-2"> Call to phone number: </span>{{ phone_number }}
+                    </p>
+                    <p class="information"><span class="icon-phone-2"> Write to email: </span>{{ email_address }}</p>
                     <p class="information"><span class="icon-location"> Address: </span>{{ address }}</p>
-                    <a href="{{ website }}" target="_blank"><p class="information"> Visit website: <span class="icon-phone-2"></span> {{ website }}</p></a>
-{#                    <a class="btn" href="https://www.google.com/maps/@-37.9725665,145.0531353,9z" target="_blank">Get Direction</a>#}
+                    <a href="{{ website }}" target="_blank"><p class="information"> Visit website: <span
+                            class="icon-phone-2"></span> {{ website }}</p></a>
+                    {#                    <a class="btn" href="https://www.google.com/maps/@-37.9725665,145.0531353,9z" target="_blank">Get Direction</a>#}
                     <div class="clear"></div>
                 </div>
                 <div class="grid_8 omega">
@@ -1990,24 +1992,24 @@
             </div>
 
             <!-- <div class="content grid_12 contactmap dn" id="contact-phone"> -->
-                <!-- <div class="grid_4"> -->
-                    <!-- <h2>TELEPHONE</h2> -->
-                    <!-- <p class="information"><span class="icon-location"> ADRESS: </span>{{ city }}</p> -->
-                <!-- </div> -->
-                <!-- <div class="grid_8 omega"> -->
-                    <!-- <a href="tel:{{ phone_number }}"><div class="grid_6 omega">{{ phone_number }}</div></a> -->
-                <!-- </div> -->
+            <!-- <div class="grid_4"> -->
+            <!-- <h2>TELEPHONE</h2> -->
+            <!-- <p class="information"><span class="icon-location"> ADRESS: </span>{{ city }}</p> -->
+            <!-- </div> -->
+            <!-- <div class="grid_8 omega"> -->
+            <!-- <a href="tel:{{ phone_number }}"><div class="grid_6 omega">{{ phone_number }}</div></a> -->
+            <!-- </div> -->
             <!-- </div> -->
 
             <!-- <div class="content grid_12 contactmap dn" id="contact-mail"> -->
-                <!-- <div class="grid_4"> -->
-                    <!-- <h2>E-MAIL</h2> -->
-                    <!-- <p class="information"><span class="icon-location"> ADRESS: </span>{{ email_address }}</p> -->
-                <!-- </div> -->
-                <!-- <div class="grid_8 omega"> -->
-                    <!-- <div class="grid_6 omega"><a href="mailto:{{ email_address }}?Subject=Hello" class="btn">{{ email_address }}</a> -->
-                    <!-- </div> -->
-                <!-- </div> -->
+            <!-- <div class="grid_4"> -->
+            <!-- <h2>E-MAIL</h2> -->
+            <!-- <p class="information"><span class="icon-location"> ADRESS: </span>{{ email_address }}</p> -->
+            <!-- </div> -->
+            <!-- <div class="grid_8 omega"> -->
+            <!-- <div class="grid_6 omega"><a href="mailto:{{ email_address }}?Subject=Hello" class="btn">{{ email_address }}</a> -->
+            <!-- </div> -->
+            <!-- </div> -->
             <!-- </div> -->
         </div>
     </div>
@@ -2026,7 +2028,7 @@
         </div>
 
     </section>
-	<br>
+    <br>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
@@ -2044,8 +2046,8 @@
                 center: {lat: -37.8136, lng: 144.9631}
             });
 
-            if(locations){
-                map.setCenter(new google.maps.LatLng(locations[0]["lat"],locations[0]["lng"]))
+            if (locations) {
+                map.setCenter(new google.maps.LatLng(locations[0]["lat"], locations[0]["lng"]))
             }
 
 
@@ -2059,7 +2061,7 @@
             var markers = locations.map(function (location, i) {
                 return new google.maps.Marker({
                     position: location,
-                    label: labels[i % labels.length]
+                    label: labels[i % labels.length],
                 });
             });
 
@@ -2069,7 +2071,8 @@
         }
 
         var locations =
-        {{ location|safe }}
+            {{ location|safe }};
+
     </script>
 
     <script>
@@ -2205,20 +2208,32 @@
             display: none;
         }
 
-        <!-- a:link { -->
-            <!-- color: #61bb46; -->
-            <!-- text-decoration: none; -->
-        <!-- } -->
+        <!--
+        a:link {
+        --> <!-- color: #61bb46;
+        --> <!-- text-decoration: none;
+        --> <!--
+        }
 
-        <!-- a:hover { -->
-            <!-- color: #61bb46; -->
-            <!-- text-decoration: none; -->
-        <!-- } -->
+        -->
 
-        <!-- a:visited { -->
-            <!-- color: #61bb46; -->
-            <!-- text-decoration: none; -->
-        <!-- } -->
+        <!--
+        a:hover {
+        --> <!-- color: #61bb46;
+        --> <!-- text-decoration: none;
+        --> <!--
+        }
+
+        -->
+
+        <!--
+        a:visited {
+        --> <!-- color: #61bb46;
+        --> <!-- text-decoration: none;
+        --> <!--
+        }
+
+        -->
 
         /* Computer */
         .grid_1 {
@@ -2250,7 +2265,7 @@
         }
 
         .grid_8 {
-            width: 64%;
+            width: 60%;
         }
 
         .grid_9 {
@@ -2284,7 +2299,7 @@
             margin: 0 4% 9% 0;
             float: left;
             display: table;
-			
+
         }
 
         .alpha {
@@ -2357,7 +2372,7 @@
         .contactmap {
             background: #f48022;
             border-radius: 4px;
-			box-sizing: content-box;
+            box-sizing: content-box;
         }
 
         #slide5 h2 {
@@ -2540,10 +2555,14 @@
             transition: border-color .4s;
         }
 
-        <!-- .submit:hover { -->
-            <!-- color: #fff; -->
-            <!-- border-color: #fff; -->
-        <!-- } -->
+        <!--
+        .submit:hover {
+        --> <!-- color: #fff;
+        --> <!-- border-color: #fff;
+        --> <!--
+        }
+
+        -->
 
         .callus {
             position: absolute;

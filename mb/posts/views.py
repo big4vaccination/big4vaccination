@@ -575,31 +575,39 @@ def city_council(request):
     'explanation': "Please contact your city council to get more information about free vaccinations.","city":city,"phone_number":phone_number,
                                                  "email_address":email_address,"website":website,"address":address})
 
-    
 
 def find_GP(request):
     database = os.path.join(BASE_DIR, '6.db')
     conn = create_connection(database)
     cur = conn.cursor()
     cursor = connection.cursor()
-    
-    
-    #print(city_council1)
-   
-    language = request.POST.get('language',"Select")
+
+    # print(city_council1)
+
+    language = request.POST.get('language', "Select")
     city_council1 = cursor.execute("SELECT lat,lng from gp_data where language = %s", [language])
     row = city_council1.fetchall()
-    #sentence = "SELECT lat,lng from gp_data where language = '" + str(language) + "'"
-    #gp_data = cur.execute(sentence).fetchall()
+    sentence = "SELECT lat,lng,gp,health_centre,address,mobile from gp_data where language = '" + str(language) + "'"
+    gp_info = cur.execute(sentence).fetchall()
     gp_data = row
     push_data = [{}]
+    push_info = [{}]
     if gp_data:
         for i in range(len(gp_data)):
             push_data[i]["lat"] = gp_data[i][0]
             push_data[i]["lng"] = gp_data[i][1]
             push_data.append({})
+        for i in range(len(gp_info)):
+            push_info[i]["lat"] = gp_info[i][0]
+            push_info[i]["lng"] = gp_info[i][1]
+            push_info[i]["gp"] = gp_info[i][2]
+            push_info[i]["health_centre"] = gp_info[i][3]
+            push_info[i]["address"] = gp_info[i][4]
+            push_info[i]["mobile"] = gp_info[i][5]
+            push_info.append({})
 
-    return render(request, 'special_GP.html', {'data': json.dumps(list(push_data)), 'language': language})
+    return render(request, 'special_GP.html',
+                  {'data': json.dumps(list(push_data)), 'language': language, 'gp_info': json.dumps(list(push_info))})
 
 def check_box(request):
     list = request.POST.getlist('')
