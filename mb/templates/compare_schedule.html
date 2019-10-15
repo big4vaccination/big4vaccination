@@ -72,7 +72,7 @@
                                            href="#table_compare">
                                 </div>
                                 <h4 class="comp2">Can't find your country? This list is based on countries with a high
-                                    number of immigrants coming to Australia and
+                                    number of immigrants coming to Australia and where
                                     these countries are also under-vaccined.</h4>
                             </div>
                         </form>
@@ -84,7 +84,7 @@
     </div>
 
 
-    <div class="col-md-auto text-center" id="table_1">
+    <div class="col-md-auto text-center" id="table_1" name="table_1">
         <br>
         <h4>{{ comparison }}</h4>
         <h5>{{ right }}</h5>
@@ -100,7 +100,7 @@
         <input type='text' name='name' value="Enter your name for printing the page"
                onkeydown='if(event.keyCode==13){printProof();}'
                onclick="if (value='Enter your name for printing the page'){value=''}" ; focus();
-               onmouseleave="value='Enter your name for printing the page'"/>
+               onmouseleave="value='Enter your name before printing the page'"/>
         <input class="btn btn-primary 123" formaction="#table_1" type="text" onclick="printProof()" value="Submit"
                style="width: 5%">
         <div name="date" style="margin-left: 0px">
@@ -112,7 +112,7 @@
         </div>
     </div>
 
-    <div class="col-md-auto text-center" id="table_1">
+    <div class="col-md-auto text-center">
         <br>
         <h4>{{ explanation }}</h4>
         <table id="disease">
@@ -271,8 +271,8 @@
 
     <script>
         function printProof() {
-            var printData = document.getElementById("table_1").innerHTML; // 只打印 forPrint 这个div中的内容。
-            window.print();
+            var printData = document.getElementById("table_1"); // 只打印 forPrint 这个div中的内容。
+            window.print(printData);
         }
     </script>
 
@@ -296,7 +296,7 @@
 
         th, td {
             text-align: center;
-            padding: 0.05px;
+            padding: 5px;
             border: 01px solid black;
         }
 
