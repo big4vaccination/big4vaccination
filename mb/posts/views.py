@@ -376,7 +376,7 @@ def advanced_searched(request):
         for i in push_disease:
             if i != {}:
                 out_put2.append(i)
-        out_put2 = sorted(out_put2, key=lambda e:e['Disease Name'],reverse=False)
+        out_put2 = sorted(out_put2, key=lambda e:e['% of Reported cases in Australia'],reverse=True)
 
     ## Generating Return value for frontend
     if country_name == "Select" and out_put == [] and out_put2 == []:
